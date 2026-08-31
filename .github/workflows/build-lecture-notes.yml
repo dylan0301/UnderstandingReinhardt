@@ -1,0 +1,50 @@
+name: Build and publish lecture notes
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'lecture-notes/packings-of-smoothed-polygons/**'
+      - '.github/workflows/build-lecture-notes.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    if: "!contains(github.event.head_commit.message, '[skip lecture build]')"
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: lecture-notes/packings-of-smoothed-polygons
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install XeLaTeX and PDF utilities
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            latexmk \
+            texlive-xetex \
+            texlive-latex-base \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            fonts-dejavu-core \
+            poppler-utils
+
+      - name: Build and verify
+        run: make verify
+
+      - name: Commit compiled PDF when changed
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add release/Packings_of_Smoothed_Polygons_Lecture_Notes.pdf
+          if git diff --cached --quiet; then
+            echo 'Compiled PDF is already current.'
+            exit 0
+          fi
+          git commit -m 'Build lecture-note PDF [skip lecture build]'
+          git push
