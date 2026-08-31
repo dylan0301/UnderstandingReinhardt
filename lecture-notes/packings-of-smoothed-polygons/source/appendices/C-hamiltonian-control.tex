@@ -1,0 +1,359 @@
+% Reconstructed from the compiled lecture-note PDF.
+\chapter{Hamiltonian mechanics and optimal control}
+This appendix explains the vocabulary of cotangent bundles, Hamiltonians, costates, and the Pontryagin maximum principle. The exposition begins in Euclidean space and then indicates what changes on a matrix group.
+
+
+\section{Tangent and cotangent vectors}
+
+\begin{displaytext}
+For an open set M ⊂Rn, a tangent vector at q ∈M is an ordinary vector v ∈Rn. A cotangent \
+vector is a linear functional on tangent vectors. In coordinates it is represented by a row vector or \
+by a one-form \
+p = p1 dq1 + · · · + pn dqn.
+\end{displaytext}
+
+\begin{displaytext}
+The pairing is \
+n \
+⟨p, v⟩∗= X pjvj. \
+j=1 \
+The collection of all pairs (q, p) is the cotangent bundle T ∗M. \
+A smooth manifold looks locally like an open set in Rn, so tangent and cotangent vectors are defined \
+by changing coordinates consistently. The cotangent bundle always has twice the dimension of M.
+\end{displaytext}
+
+\section{The canonical symplectic form}
+
+On T ∗Rn with coordinates (q1, . . . , qn, p1, . . . , pn), define the canonical one-form
+
+
+\begin{displaytext}
+n \
+θ = X pj dqj \
+j=1
+\end{displaytext}
+
+\begin{displaytext}
+and symplectic form \
+n \
+ω = −dθ = X dqj ∧dpj. \
+j=1
+\end{displaytext}
+
+\begin{displaytext}
+A two-form is symplectic if it is closed and nondegenerate. Nondegeneracy means that for every \
+differential dH there is a unique vector field H satisfying \
+ω(H, ·) = dH. \
+This H is the Hamiltonian vector field of H.
+\end{displaytext}
+
+\begin{displaytext}
+In coordinates the equation becomes Hamilton’s equations: \
+∂H q′j = , p′j = −∂H . \
+∂pj ∂qj \
+Example C.1 (Ordinary mechanics). For \
+||p||2 \
+H(q, p) = + V (q), \
+2m \
+Hamilton’s equations give \
+p \
+q′ = m, p′ = −∇V (q), \
+which combine to Newton’s equation mq′′ = −∇V (q).
+\end{displaytext}
+
+\section{Poisson brackets}
+
+For smooth functions F, G on phase space, define
+
+
+\begin{displaytext}
+n ∂F ∂G ∂G ! \{F, G\} = X −∂F . \
+∂qj ∂pj ∂pj ∂qj j=1
+\end{displaytext}
+
+\begin{displaytext}
+Along the Hamiltonian flow of H, \
+d \
+dtF(q(t), p(t)) = \{F, H\}. \
+Therefore F is conserved if \{F, H\} = 0. The bracket is bilinear, antisymmetric, satisfies a product \
+rule, and obeys the Jacobi identity.
+\end{displaytext}
+
+The Fuller system in the source uses a nonstandard but explicit symplectic form, and therefore a nonstandard Poisson bracket. The principle is unchanged.
+
+
+\section{From a control problem to a Hamiltonian}
+
+\begin{displaytext}
+Consider \
+q′ = f(q, u), u(t) ∈U,
+\end{displaytext}
+
+\begin{displaytext}
+with running cost \
+Z tf \
+L(q(t), u(t)) dt. \
+0 \
+Introduce a costate p(t) ∈T q(t)M∗ and a constant multiplier λ0 ≤0. Define the control-dependent \
+Hamiltonian \
+H(q, p, u) = ⟨p, f(q, u)⟩∗+ λ0L(q, u). \
+The first term rewards motion aligned with the costate, while the second incorporates the objective.
+\end{displaytext}
+
+\begin{displaytext}
+The sign convention varies across textbooks. The source uses maximization with λ0 ≤0. In the \
+normal case one rescales to λ0 = −1.
+\end{displaytext}
+
+\section{The Pontryagin maximum principle}
+
+Pontryagin maximum principle, free terminal time
+
+
+\begin{displaytext}
+Let (q∗, u∗) be an optimal trajectory for a sufficiently regular finite-dimensional control \
+problem. Then there exist an absolutely continuous costate p(t) and a constant λ0 ≤0, not \
+both zero, such that almost everywhere:
+\end{displaytext}
+
+\begin{displaytext}
+∂H \
+q′ = = f(q, u∗), \
+∂p \
+p′ = −∂H , \
+∂q \
+H(q, p, u∗) = max H(q, p, u). \
+u∈U
+\end{displaytext}
+
+For an autonomous problem with free terminal time, the maximized Hamiltonian is constant and equals zero along the extremal. Endpoint constraints produce transversality conditions on p.
+
+
+A trajectory satisfying these conditions is a Pontryagin extremal. The principle gives necessary, not sufficient, conditions for optimality.
+
+
+\subsection{Normal and abnormal extremals}
+
+\begin{displaytext}
+If λ0 < 0, rescale all multipliers and set λ0 = −1. This is a normal extremal. If λ0 = 0, the \
+cost disappears from the Hamiltonian; the extremal is abnormal. Abnormality can reflect genuine \
+geometry or an artifact of how constraints were encoded.
+\end{displaytext}
+
+\subsection{Why the Hamiltonian is maximized}
+
+A short needle variation changes the control from u∗to v on a tiny interval. The first-order change of endpoint and cost is measured by the Hamiltonian difference
+
+
+H(q, p, v) −H(q, p, u∗).
+
+
+Optimality forces this difference to be nonpositive for every v, hence maximization by u∗.
+
+
+\section{Bang-bang controls}
+
+Suppose U is a compact convex polytope and H depends affinely on u. A nonconstant affine function on a polytope reaches its maximum on a face, usually at a vertex. Thus optimal controls often take extreme values.
+
+
+In the Reinhardt system the control-dependent term is a ratio of affine functions,
+
+
+−⟨ΛR, Zu⟩ ⟨X, Zu⟩,
+
+
+but along every segment of the control triangle it is monotone. Hence the maximizing set is still a face. On the open regions where a unique vertex wins, the control is bang-bang.
+
+
+\begin{displaytext}
+A switching function compares two candidate vertices. If controls i and j give Hamiltonians Hi, Hj, \
+define \
+χij = Hi −Hj.
+\end{displaytext}
+
+\begin{displaytext}
+The wall χij = 0 is where a switch may occur. A transverse zero gives an isolated switch. An \
+infinite sequence of switches in finite time is chattering.
+\end{displaytext}
+
+\section{Singular controls}
+
+A singular interval is one on which the maximum condition fails to determine a unique control. One differentiates switching functions until the control appears, then solves the resulting equations. This procedure may identify a special interior control.
+
+
+For the Reinhardt problem, full indeterminacy forces
+
+
+\begin{displaytext}
+3 \
+ΛR = 0, X = J, Λ1 = 2λ0J.
+\end{displaytext}
+
+The corresponding control is the center of the triangle,
+
+
+u = (1/3, 1/3, 1/3),
+
+
+and the boundary curve is circular. Thus the singular locus has a concrete geometric meaning.
+
+
+\section{Transversality}
+
+\begin{displaytext}
+Suppose the final state is constrained to lie on a submanifold N ⊂M. A permissible endpoint \
+variation v lies in Tq(tf)N. The boundary term in the first variation is ⟨p(tf), v⟩∗. Optimality \
+requires \
+⟨p(tf), v⟩∗= 0 for all v ∈Tq(tf)N.
+\end{displaytext}
+
+Thus the costate is normal to the endpoint manifold.
+
+
+In the Reinhardt problem, the endpoint is periodic modulo the rotation R. Consequently the state and costate satisfy conjugacy relations such as
+
+
+\begin{displaytext}
+X(tf) = R−1X(0)R, ΛR(tf) = R−1ΛR(0)R.
+\end{displaytext}
+
+These conditions allow the trajectory to be extended periodically after applying the discrete symmetry.
+
+
+\section{Left-invariant systems on a matrix group}
+
+For g ∈SL2(R), write the state equation
+
+
+g′ = gX.
+
+
+\begin{displaytext}
+The vector field is left-invariant because replacing g by hg changes the velocity to hgX. A cotangent \
+vector at g can be transported to the identity and represented by a matrix Λ1 ∈sl2(R) using the \
+trace pairing.
+\end{displaytext}
+
+The Hamiltonian contribution from the group equation is then
+
+
+⟨Λ1, X⟩.
+
+
+Hamilton’s equation for the left-trivialized costate becomes
+
+
+\begin{displaytext}
+Λ′1 = [Λ1, X].
+\end{displaytext}
+
+\begin{displaytext}
+Its solution is \
+Λ1(t) = g(t)−1Λ1(0)g(t),
+\end{displaytext}
+
+so det Λ1 is conserved.
+
+
+\section{The Reinhardt Hamiltonian}
+
+\begin{displaytext}
+The state is (g, X) and the reduced costates are (Λ1, ΛR). With the trace pairing, the Hamiltonian \
+is \
+Zu⟩ H(Λ1, ΛR, X; u) = Λ1 −3 X −⟨ΛR, 2λ0J, ⟨X, Zu⟩. \
+Set \
+Zu \
+P = ⟨X, Zu⟩. \
+The state–costate equations are
+\end{displaytext}
+
+\begin{displaytext}
+g′ = gX, \
+X′ = [P, X], \
+Λ′1 = [Λ1, X], \
+Λ′R = [P, ΛR] −⟨ΛR, P⟩[P, X] + [−Λ1 + 32λ0J, X].
+\end{displaytext}
+
+Every term is a 2 × 2 commutator or trace pairing. The system looks formidable, but it has three simplifying features:
+
+
+\begin{displaytext}
+• X remains on a two-dimensional adjoint orbit; \
+• ΛR is constrained by ⟨ΛR, X⟩= 0; \
+• the control triangle has only three vertices and three walls.
+\end{displaytext}
+
+\section{Noether’s principle and angular momentum}
+
+In mechanics, a continuous symmetry of the Hamiltonian produces a conserved quantity. This is Noether’s theorem. A version remains valid for optimal control.
+
+
+\begin{displaytext}
+For circular control, the control set is invariant under all rotations. Simultaneous rotation of \
+X, Λ1, ΛR, and the control leaves the Hamiltonian unchanged. The corresponding momentum is
+\end{displaytext}
+
+\begin{displaytext}
+A = ⟨J, Λ1 + ΛR⟩.
+\end{displaytext}
+
+It is constant along circular-control extremals.
+
+
+The triangular control set has only discrete rotational symmetry, so this continuous conservation law is lost. The circular problem is therefore a symmetry-enhanced model used to discover the Fuller normal form.
+
+
+\section{Second variation}
+
+The maximum principle detects only first-order obstructions. A Pontryagin extremal can fail to minimize because of a negative second variation.
+
+
+\begin{displaytext}
+For a one-parameter family qs with q0 = q, write \
+s2 \
+J (qs) = J (q0) + s δJ + δ2J + o(s2). \
+2 \
+At an extremal, δJ = 0. If one can choose a variation with δ2J < 0, then q is not a local minimizer.
+\end{displaytext}
+
+The source applies this to the circular singular arc. A compactly supported matrix perturbation has second-order area term proportional to
+
+
+Z − (ψ′1ψ2 −ψ1ψ′2) dt.
+
+
+Choosing the signs of ψ′1, ψ′2 appropriately makes this negative while preserving positive curvature for sufficiently small perturbations. Thus the circle is a Pontryagin extremal but not minimizing.
+
+
+\section{Hamilton–Jacobi viewpoint}
+
+For intuition, define the value function V (q) to be the least cost from q to the target. Formally, V satisfies a Hamilton–Jacobi–Bellman equation
+
+
+\begin{displaytext}
+0 = min L(q, u) + dVq(f(q, u)) . \
+u∈U
+\end{displaytext}
+
+The costate along an optimal trajectory is related to dV . A globally smooth value function rarely exists in switching problems, but this viewpoint explains why a sharp global subsolution could prove the full Reinhardt conjecture without classifying every extremal.
+
+
+\section{Exercises}
+
+\begin{statementbox}{Exercise}
+Exercise C.2. For H(q, p) = pf(q) −L(q) in one dimension, write Hamilton’s equations and verify directly that H is constant when it has no explicit time dependence.
+\end{statementbox}
+
+\begin{statementbox}{Exercise}
+Exercise C.3. Let U = [−1, 1] and H = pu. Determine the maximizing control. What happens when p = 0?
+\end{statementbox}
+
+\begin{statementbox}{Exercise}
+Exercise C.4. Suppose Hi −Hj has a simple zero at t0. Explain why the maximizing control switches only once near t0. Exercise C.5. Verify that Λ1(t) = g(t)−1Λ1(0)g(t) solves Λ′1 = [Λ1, X] when g′ = gX.
+\end{statementbox}
+
+\begin{insightbox}{Chapter summary}
+\end{insightbox}
+
+Pontryagin’s principle lifts the state trajectory to a Hamiltonian trajectory with costates. The control maximizes a pointwise Hamiltonian, producing vertex controls, switching walls, and singular loci. In the Reinhardt problem, left invariance turns the abstract equations into explicit commutator identities on 2 × 2 matrices.
+

@@ -1,0 +1,307 @@
+% Reconstructed from the compiled lecture-note PDF.
+\chapter{Notation, theorem index, and formula sheet}
+This appendix is designed for repeated consultation. The notation follows the source as closely as possible, with occasional simplification explained in the main text.
+
+
+\section{Geometric objects}
+
+Symbol or term Meaning
+
+
+K A centrally symmetric convex disk in R2, centered at the origin. Kmin A global minimizer of greatest packing density, equivalently area after normalization. Kccs The class of centrally symmetric convex disks. Kbal The class of balanced disks admitting the six-curve structure used in the control reduction.
+
+
+δ(K) Greatest packing density of K. For centrally symmetric planar disks, this equals greatest lattice-packing density. L A lattice in R2. det(L) Covolume of the lattice: area of a fundamental parallelogram. HK A least-area centrally symmetric hexagon circumscribing K; a critical hexagon. hK The centrally symmetric hexagon formed by joining six critical boundary points. sj Midpoints of the six edges of a critical hexagon, indexed modulo 6. s∗j The normalized reference multipoint, usually the sixth roots of unity. Tj The equilateral triangular sector containing the jth boundary arc after normalization. σj(t) The six synchronized boundary curves; all have the same image after periodic extension.
+
+
+Symbol or term Meaning
+
+
+\begin{displaytext}
+multicurve The indexed family (σ0, . . . , σ5) satisfying the multipoint relations at \
+every time. \
+star condition The tangent σ′j lies in the open cone prescribed by neighboring \
+critical points.
+\end{displaytext}
+
+smoothed polygon A finite cyclic concatenation of straight segments and tangent hyperbolic arcs of Reinhardt–Mahler type.
+
+
+\section{Matrix and Lie-theoretic notation}
+
+Symbol Meaning
+
+
+SL2(R) Real 2 × 2 matrices of determinant 1. sl2(R) Real 2 × 2 matrices of trace 0. J 01 −10 , the infinitesimal rotation. R exp(πJ/3), rotation by π/3. g(t) Matrix curve carrying the reference multipoint to the current one: σj(t) = g(t)s∗j. X(t) Left-trivialized velocity X = g−1g′, normalized by det X = 1. [X, Y ] Matrix commutator XY −Y X. ⟨X, Y ⟩ Trace pairing tr(XY ). Adg X Adjoint action gXg−1. OJ Adjoint orbit of J; the determinant-one sheet containing J. Φ(z) Parametrization of OJ by the upper half-plane. ρ0, ρ1, ρ2 Linear functions of X encoding the star inequalities and edge directions. Zu Control matrix obtained affinely from u = (u0, u1, u2). P Normalized control matrix P = Zu/ ⟨Zu, X⟩.
+
+
+\section{Control and Hamiltonian notation}
+
+Symbol Meaning
+
+
+\begin{displaytext}
+u = (u0, u1, u2) Normalized curvature control. \
+UT Triangular control set ui ≥0, u0 + u1 + u2 = 1. \
+e0, e1, e2 Vertices of UT ; bang-bang control values. \
+UC, UI, Ur Circular control sets used in the symmetry-enhanced model.
+\end{displaytext}
+
+Symbol Meaning
+
+
+κj State-dependent signed curvature numerator for the even-indexed boundary curves. uj κj/(κ0 + κ1 + κ2). Λ1 Costate paired with the group variable g. Λ2 Original costate paired with X. ΛR Reduced costate [Λ2, X], constrained by ⟨ΛR, X⟩= 0. λ0 Pontryagin cost multiplier; λ0 = −1 in the normal convention. H Control-dependent Hamiltonian. H+ Maximized Hamiltonian maxu∈U H. χij Switching function comparing control vertices i and j. wall A codimension-one set on which two control vertices tie. singular locus The set X = J, ΛR = 0, Λ1 = 32λ0J; geometrically the circle. edge-extremal A trajectory that is also extremal for every restricted edge-control subproblem.
+
+
+chattering Infinitely many switches accumulating in finite time.
+
+
+\section{Hyperbolic coordinates}
+
+\begin{displaytext}
+For z = x + iy with y > 0, \
+x/y −(x2 + y2)/y ! \
+Φ(z) = . \
+1/y −x/y
+\end{displaytext}
+
+The upper-half-plane star domain is
+
+
+\begin{displaytext}
+1 1 h∗= x + iy : −1√ < x < √ x2 + y2 > . 3 3, 3
+\end{displaytext}
+
+\begin{displaytext}
+The area integrand becomes \
+−3 ⟨J, X⟩= 3 x2 + y2 + 1 . \
+2 2 y \
+The center z = i corresponds to X = J and hence to the circular singular state.
+\end{displaytext}
+
+\section{Core equations}
+
+\subsection{Multipoint relations}
+
+\begin{displaytext}
+For j modulo 6, \
+sj+3 = −sj, \
+sj + sj+2 + sj+4 = 0, \
+√ \
+3 \
+det(sj, sj+1) = . \
+2
+\end{displaytext}
+
+\subsection{Star coordinates}
+
+\begin{displaytext}
+For \
+a b ! \
+X = , \
+c −a \
+√ \
+c + 3a \
+ρ0(X) = √ , \
+3 \
+√ \
+c − 3a \
+ρ1(X) = √ , \
+3 \
++ c ρ2(X) = −3b√ . \
+2 3 \
+The star condition is ρj(X) > 0 for j = 0, 1, 2, and
+\end{displaytext}
+
+\begin{displaytext}
+det X = ρ0ρ1 + ρ1ρ2 + ρ2ρ0.
+\end{displaytext}
+
+\subsection{Control matrix}
+
+\begin{displaytext}
+For u0 + u1 + u2 = 1, √ \
+(u1 −u2)/ 3 (u0 −2u1 −2u2)/3 ! \
+Zu = √ . \
+u0 (u2 −u1)/ 3
+\end{displaytext}
+
+It satisfies uj = det(s∗2j, Zus∗2j).
+
+
+\subsection{State and cost}
+
+\begin{displaytext}
+g′ = gX, \
+[Zu, X] X′ = ⟨Zu, X⟩, \
+Z tf area(K) = −3 ⟨J, X⟩dt. \
+2 0 \
+Endpoint conditions: \
+g(0) = I, g(tf) = R, X(tf) = R−1X(0)R.
+\end{displaytext}
+
+\subsection{Hamiltonian system}
+
+\begin{displaytext}
+With P = Zu/ ⟨Zu, X⟩, \
+Zu⟩ H = Λ1 −3 X −⟨ΛR, 2λ0J, ⟨X, Zu⟩, \
+and \
+g′ = gX, \
+X′ = [P, X], \
+Λ′1 = [Λ1, X], \
+Λ′R = [P, ΛR] −⟨ΛR, P⟩[P, X] + [−Λ1 + 2λ0J,3 X].
+\end{displaytext}
+
+\section{Fuller notation}
+
+Symbol Meaning
+
+
+w, b, c Complex hyperboloid coordinates centered at the singular locus. z1, z2, z3 Rescaled leading variables of weighted degrees 1, 2, 3. ζ Primitive cube root exp(2πi/3). VT Triangular control values \{1, ζ, ζ2\}. HF Fuller Hamiltonian. AF Fuller angular-momentum analogue. E Exceptional divisor of the weighted blowup. PF Fuller Poincare first-recurrence map on the divisor. PR Exact Reinhardt Poincare map after analytic extension. qin Fixed point representing the inward self-similar chattering trajectory. qout Fixed point representing the outward self-similar trajectory. W s, W u Stable and unstable manifolds of a fixed point.
+
+
+The triangular Fuller system is
+
+
+\begin{displaytext}
+z′3 = z2, z′2 = z1, z′1 = −iu, u ∈\{1, ζ, ζ2\}.
+\end{displaytext}
+
+For constant u and initial values z0j ,
+
+
+\begin{displaytext}
+z1(t) = z01 −itu, \
+z2(t) = z02 + z01t −iut2 , 2 \
+z01t2 z3(t) = z03 + z02t + −iut3 . 2 6
+\end{displaytext}
+
+Therefore every wall comparison is a real cubic in t.
+
+
+\section{The main theorem chain}
+
+Result Role in the proof
+
+
+Fejes Toth equality Replaces arbitrary packings by lattice packings for centrally symmetric planar disks. Critical-hexagon theorem Expresses density as area(K)/ area(HK) and supplies six synchronized boundary points.
+
+
+Balanced-multicurve Converts the minimizer into six regular curves satisfying reduction algebraic and convexity constraints.
+
+
+Result Role in the proof
+
+
+\begin{displaytext}
+Matrix representation Writes all six curves as σj = gs∗j with g ∈SL2(R). \
+State-control theorem Encodes curvature by u ∈UT and obtains \
+X′ = [Zu, X]/ ⟨Zu, X⟩. \
+Area formula Converts the geometric objective to an integral cost.
+\end{displaytext}
+
+Compactification Confines every possible minimizer to a compact subset of the star domain.
+
+
+Pontryagin maximum Produces costates, switching walls, and necessary principle Hamiltonian dynamics.
+
+
+Finite switching away from Shows every edge-extremal avoiding the singular locus is a singularity finite smoothed polygon.
+
+
+Singular-locus classification Identifies full singular arcs with circular arcs.
+
+
+Second variation Excludes a circular singular interval from a global minimizer.
+
+
+Fuller truncation Gives the universal leading chattering system near the singular locus.
+
+
+Weighted blowup Replaces the singular point by the exceptional divisor carrying triangular Fuller dynamics.
+
+
+Fixed-point theorem Finds the inward and outward self-similar chattering states.
+
+
+Global basin theorem Forces all nonexceptional divisor trajectories toward the outward fixed point.
+
+
+Analytic extension Transfers the fixed points and local invariant manifolds to the exact Reinhardt map. Cluster-point theorem Forces every exact finite-time chattering orbit onto W s(qin). No-return theorem Shows the time-reversed unstable curve cannot close into a periodic orbit.
+
+
+Mahler’s First A periodic global minimizer cannot chatter; hence it is finite bang-bang and a smoothed polygon.
+
+
+\section{What is analytic and what is computer-assisted}
+
+Category Examples
+
+
+Classical theorem Fejes Toth, Filippov, Pontryagin, stable-manifold theorem, Weierstrass preparation.
+
+
+Direct exact calculation Matrix reduction, area formula, state and costate equations, singular-locus classification, Fuller truncation.
+
+
+Symbolic algebra Switching inequalities, fixed-point polynomials, Jacobians, discriminants, resultants, asymptotic coordinate changes.
+
+
+Global computer-assisted Fuller cell-image containments and numerical continuation of the step exact unstable curve.
+
+
+\section{Source-to-notes reading crosswalk}
+
+The notes reorganize rather than duplicate the source. A rough crosswalk is:
+
+
+Lecture-note material Main source location
+
+
+Packing geometry and critical Source Chapters 1–2. hexagons
+
+
+Matrix and control reduction Source Chapters 3–5.
+
+
+Maximum principle Source Chapter 6.
+
+
+Bang-bang polygons and Source Chapters 7–8. singularity
+
+
+Circular model and Fuller Source Chapters 9–12. system
+
+
+Triangular Fuller map and Source Chapters 13–15. blowup
+
+
+Global basin and final proof Source Chapters 16 and the concluding part of Part V.
+
+
+Background structures Source Appendices A–B, supplemented here at a more elementary level.
+
+
+\section{A one-page proof mnemonic}
+
+Remember the sequence
+
+
+\begin{displaytext}
+packing →critical hexagon →six curves →SL2(R) \
+→curvature control →PMP →bang-bang except at the circle
+\end{displaytext}
+
+\begin{displaytext}
+→chattering model →weighted blowup →global basin
+\end{displaytext}
+
+\begin{displaytext}
+→unique stable channel →nonperiodic →finite smoothed polygon.
+\end{displaytext}
+
+\begin{insightbox}{Chapter summary}
+\end{insightbox}
+
+The proof uses many coordinate systems, but each has one job. Planar geometry produces the critical hexagon; SL2(R) synchronizes six curves; the upper half-plane exposes the compact star domain; costates expose switching; complex Fuller coordinates expose chattering; the weighted blowup exposes its limiting directions. The final conclusion is coordinate-independent: the minimizer has only finitely many straight and hyperbolic pieces.
+

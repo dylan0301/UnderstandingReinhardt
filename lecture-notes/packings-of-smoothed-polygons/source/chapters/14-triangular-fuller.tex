@@ -1,0 +1,310 @@
+% Reconstructed from the compiled lecture-note PDF.
+\chapter{The triangular Fuller system}
+\section{The correct leading-order control}
+
+The true Reinhardt control uses the three vertices of a triangle. After the Cayley-transform and rescaling used near the singular locus, these three directions become the cube roots of unity
+
+
+\begin{displaytext}
+n VT = 1, ζ, ζ2o , ζ = e2πi/3.
+\end{displaytext}
+
+The triangular Fuller system is
+
+
+\begin{displaytext}
+z′3 = z2, (14.1) \
+z′2 = z1, (14.2) \
+z′1 = −iu, u(t) ∈VT . (14.3) \
+For constant u, the solution with initial data zj(0) = z0j is \
+z1(t) = −iut + z01, (14.4) \
+z2(t) = −iu t2 + z01t + z02, (14.5) 2 \
+z01 z3(t) = −iu t3 + t2 + z02t + z03. (14.6) 6 2 \
+Thus every switching function is a cubic polynomial in time.
+\end{displaytext}
+
+\section{Hamiltonian and maximum rule}
+
+Define the real bilinear form on C by
+
+
+Re(a, b) = Re(a¯b).
+
+
+The Fuller Hamiltonian is HF (z, u) = Re(z1, iz2) + Re(u, z3).
+
+
+The first term is independent of u. Therefore the maximizing control is the vertex u ∈VT whose direction has the largest projection onto z3:
+
+
+\begin{displaytext}
+u(t) ∈arg max Re(v, z3(t)). \
+v∈VT
+\end{displaytext}
+
+For the free-time extremals relevant to the blowup,
+
+
+HF (z(t), u(t)) = 0.
+
+
+\begin{displaytext}
+The maximization partitions the complex z3-plane into three sectors. Switching occurs on the three \
+rays where two projections tie: \
+W = R≤0 ∪R≤0ζ ∪R≤0ζ2.
+\end{displaytext}
+
+These rays are the walls.
+
+
+Imz3
+
+
+u = 1
+
+
+\begin{displaytext}
+W0 \
+u = ζ Rez3
+\end{displaytext}
+
+\begin{displaytext}
+u = ζ2
+\end{displaytext}
+
+\begin{figureplaceholder}
+Figure 14.1: The maximizing sectors in the z3-plane. Their boundaries are the three switching walls W.
+\end{figureplaceholder}
+
+\section{Switching functions are cubic polynomials}
+
+\begin{displaytext}
+Suppose the current control is uk = ζk and compare it with uj = ζj. Define
+\end{displaytext}
+
+\begin{displaytext}
+1 \
+χkj(t) = √ 3Re(uk −uj, z3(t)).
+\end{displaytext}
+
+Substituting Equation (14.6) shows
+
+
+\begin{displaytext}
+t2 t3 \
+χkj(t) = c0 + c1t + c2 + c3 , \
+2 6 \
+with coefficients determined by z03, z02, z01, uk. The leading coefficient is nonzero because uk ̸= uj.
+\end{displaytext}
+
+The first positive switching time is the least positive root of one of two competing cubics. If a root is simple, it depends smoothly on the initial data. Discontinuities occur only when:
+
+
+• a switching cubic has a multiple root, detected by its discriminant; • two candidate switching cubics share a root, detected by their resultant.
+
+
+This algebraic observation drives the later cell decomposition.
+
+
+\section{Choosing the first control lexicographically}
+
+At a switching point, two or even three control projections may tie at t = 0. To determine which control is optimal for small positive time, compare successively the coefficients of
+
+
+1 z3(t) = z03 + z02t + 1t2 −iu t3. 2z0 6 For each candidate u, form the real vector
+
+
+v(z0, u) = Re(z03, u), Re(z02, u), Re(z01, u) .
+
+
+Choose the lexicographically largest vector. If two controls remain tied through these three entries, the cubic control term breaks the tie in a prescribed cyclic direction.
+
+
+This rule guarantees that every nonzero switching state has a well-defined first control. It also gives a uniform estimate: if z0j ≤rj,
+
+
+then the first switching time is less than 10r. Thus switching times shrink linearly with the weighted radius near the singularity.
+
+
+\section{Symmetries}
+
+The triangular Fuller system has three important symmetries.
+
+
+Weighted scaling
+
+
+For r > 0, zj(t) 7−→rjzj(t/r)
+
+
+preserves the equations and Hamiltonian condition.
+
+
+Discrete rotation
+
+
+\begin{displaytext}
+Multiplication by ζ sends \
+(z1, z2, z3, u) 7−→(ζz1, ζz2, ζz3, ζu).
+\end{displaytext}
+
+Time reversal
+
+
+\begin{displaytext}
+Define \
+τ(z1, z2, z3) = (¯z1, −¯z2, ¯z3).
+\end{displaytext}
+
+If z(t) is a trajectory with control u(t), then
+
+
+τ(z(−t))
+
+
+is a trajectory with control ¯u(−t).
+
+
+Scaling and discrete rotation form the triangular virial group. Time reversal exchanges inward and outward chattering.
+
+
+\section{No nontrivial singular arcs}
+
+Allow temporarily controls in the convex triangle conv(VT ). If the Hamiltonian is maximized by a positive-dimensional face throughout an interval, then the source proves that
+
+
+\begin{displaytext}
+z1 = z2 = z3 = 0, u = 0
+\end{displaytext}
+
+almost everywhere. Thus the origin is the only singular Fuller arc.
+
+
+A finite constant-control segment starting at a nonzero wall point cannot reach the origin. Therefore any approach to the origin requires infinitely many switches, just as in the Reinhardt system.
+
+
+\section{Weighted blowup}
+
+Define the weighted norm
+
+
+1/6 ϕ(z1, z2, z3) = |z1|6 + |z2|3 + |z3|2 .
+
+
+It satisfies ϕ(rz1, r2z2, r3z3) = rϕ(z1, z2, z3).
+
+
+\begin{displaytext}
+Let \
+n o Ξ = ξ ∈C3 : ϕ(ξ) = 1 .
+\end{displaytext}
+
+Every nonzero state has unique weighted polar coordinates
+
+
+\begin{displaytext}
+z1 = rξ1, z2 = r2ξ2, z3 = r3ξ3, r = ϕ(z) > 0.
+\end{displaytext}
+
+The oriented weighted blowup is [0, ∞) × Ξ.
+
+
+The exceptional divisor is \{0\} × Ξ.
+
+
+\begin{displaytext}
+Restrict to switching points \
+ΞW = \{ξ ∈Ξ : ξ3 ∈W\} \
+and quotient by the discrete rotation VT .
+\end{displaytext}
+
+\section{The Poincaré map}
+
+Given a switching state q = (r, ξ), follow the triangular Fuller flow with the first control prescribed by the maximum principle until the next switching time. Rewrite the result in weighted polar coordinates. This defines
+
+
+\begin{displaytext}
+F : (0, ∞) × ΞW /VT −→(0, ∞) × ΞW /VT .
+\end{displaytext}
+
+Scaling equivariance implies that the angular component is independent of r:
+
+
+Fang : ΞW /VT →ΞW /VT .
+
+
+The Hamiltonian is conserved, so we restrict to the compact three-dimensional section
+
+
+\begin{displaytext}
+ΞW,0/VT = \{ξ ∈ΞW : HF (ξ) = 0\} /VT .
+\end{displaytext}
+
+\section{Self-similar fixed points}
+
+A fixed angular point means that after one switch the state is obtained from the initial state by weighted scaling and discrete rotation:
+
+
+\begin{displaytext}
+zj(tsw) = rjζ1zj(0).
+\end{displaytext}
+
+Solving the constant-control equations and the maximum conditions leads to a palindromic polynomial p(r) = 1 −5r −7r2 −5r3 −7r4 −5r5 + r6.
+
+
+It has exactly two positive real roots, reciprocal to each other:
+
+
+\begin{displaytext}
+rscale ≈6.2741673995, r−1scale ≈0.1593836977.
+\end{displaytext}
+
+They give the outward and inward fixed points
+
+
+\begin{displaytext}
+qout, qin = τ(qout).
+\end{displaytext}
+
+\begin{displaytext}
+After one convenient virial normalization, the outward point begins with approximately \
+z1 = −1 + 0.418610i, z2 = −1√ + 0.131590i, z3 = −0.216292, \
+3
+\end{displaytext}
+
+and the first switching time is tsw ≈7.40352
+
+
+in the normalized Fuller scale.
+
+
+\begin{statementbox}{Theorem}
+Theorem 14.1 (Fixed points of the angular Fuller map). On the zero-Hamiltonian Poincaré section, Fang has exactly two fixed points: the outward and inward triangular spirals qout and qin.
+\end{statementbox}
+
+The iterates at the outward point satisfy
+
+
+\begin{displaytext}
+F n(qout) = (rscale, ζ2)n · qout,
+\end{displaytext}
+
+so the physical switching points move outward. For qin, the reciprocal scaling makes them move inward toward the singularity.
+
+
+\section{Local stability}
+
+In local real coordinates on the three-dimensional angular section, the Jacobian of Fang at qout has all eigenvalues of absolute value less than 0.1 according to the source computation. Therefore qout is a strongly asymptotically stable fixed point. Time reversal makes qin unstable in forward time.
+
+
+\begin{insightbox}{Point requiring care}
+\end{insightbox}
+
+Local stability does not imply a global basin. The Poincaré map is only piecewise continuous because the active cubic switching polynomial can change. The hardest discrete-dynamical theorem is to prove that every other point eventually enters the local basin of qout.
+
+
+\begin{insightbox}{Chapter summary}
+\end{insightbox}
+
+The true leading-order system has three discrete control phases. Its switching functions are cubic, its singular locus is only the origin, and weighted blowup produces a compact three-dimensional Poincaré section. The angular recurrence map has exactly two self-similar fixed points, an outward stable triangular spiral and its inward time reverse. The next task is to prove that the outward point attracts the entire section except for the inward point.
+

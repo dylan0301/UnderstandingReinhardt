@@ -1,0 +1,289 @@
+% Reconstructed from the compiled lecture-note PDF.
+\chapter{Curvature becomes a control variable}
+\section{State-dependent curvatures}
+
+\begin{displaytext}
+Recall \
+σj(t) = g(t)s∗j, g′ = gX, det X = 1.
+\end{displaytext}
+
+\begin{displaytext}
+Differentiate twice: \
+σ′j = gXs∗j, σ′′j = g(X2 + X′)s∗j.
+\end{displaytext}
+
+Since det g = 1, signed determinants are unchanged by g. For the three even-indexed curves define
+
+
+\begin{displaytext}
+κj = det(σ′2j, σ′′2j) = det Xs∗2j, (X2 + X′)s∗2j , j = 0, 1, 2.
+\end{displaytext}
+
+Using X−1 = −X, one can rewrite this as
+
+
+\begin{displaytext}
+κj = det s∗2j, (X + X−1X′)s∗2j .
+\end{displaytext}
+
+\begin{displaytext}
+Convexity gives \
+κj ≥0
+\end{displaytext}
+
+almost everywhere.
+
+
+At least one of the three κj is positive at almost every time. Geometrically, if two vanish then two boundary curves are straight, and the third is a genuine hyperbolic arc with positive curvature. Algebraically, the star inequalities force the sum to be positive.
+
+
+\section{Normalized curvature coordinates}
+
+\begin{displaytext}
+Set \
+κ = κ0 + κ1 + κ2 > 0
+\end{displaytext}
+
+\begin{displaytext}
+and define \
+κj \
+uj = . \
+κ \
+Then \
+uj ≥0, u0 + u1 + u2 = 1.
+\end{displaytext}
+
+e2 = (0, 0, 1)
+
+
+UT
+
+
+13, 13, 13
+
+
+\begin{displaytext}
+e0 = (1, 0, 0) e1 = (0, 1, 0)
+\end{displaytext}
+
+each vertex means two curvatures vanish
+
+
+\begin{figureplaceholder}
+Figure 5.1: The triangular control set. Interior points distribute curvature among all three synchronized arcs; vertices concentrate it in one arc.
+\end{figureplaceholder}
+
+Thus the control lies in the standard two-simplex
+
+
+\begin{displaytext}
+n o UT = (u0, u1, u2) ∈R3 : uj ≥0, u0 + u1 + u2 = 1 .
+\end{displaytext}
+
+The normalization is crucial. The unnormalized curvatures depend on the speed of parametrization; the ratios uj do not.
+
+
+\section{Encoding the control by a traceless matrix}
+
+For each u ∈UT , define
+
+
+\begin{displaytext}
+( u1 −u2 u0 −2u1 −2u2 ) \
+√ \
+3 3 | Zu = | | u2 −u1 | ( u0 √ )∈sl2(R). \
+3
+\end{displaytext}
+
+This affine map is chosen so that
+
+
+\begin{displaytext}
+uj = det(s∗2j, Zus∗2j), j = 0, 1, 2.
+\end{displaytext}
+
+Because three such determinant values determine a traceless 2 × 2 matrix, Zu is unique.
+
+
+The vertices give three particularly simple matrices. We write
+
+
+\begin{displaytext}
+Z0 = Ze0, Z1 = Ze1, Z2 = Ze2.
+\end{displaytext}
+
+They are cyclically conjugate by R: RZjR−1 = Zj+1
+
+
+with indices modulo 3.
+
+
+\section{The star inequalities in control form}
+
+A direct calculation gives
+
+
+\begin{displaytext}
+⟨Zu, X⟩= −2√ ρ2(X)u0 + ρ1(X)u1 + ρ0(X)u2 . \
+3
+\end{displaytext}
+
+Since u ranges over the whole simplex,
+
+
+\begin{displaytext}
+ρ0, ho1, ho2 > 0 ⇐⇒ ⟨Zu, X⟩< 0 for every u ∈UT .
+\end{displaytext}
+
+The denominator appearing below is therefore never zero on an admissible trajectory.
+
+
+\section{Deriving the differential equation for X}
+
+From the definition of the curvature controls,
+
+
+\begin{displaytext}
+det s∗2j, (X + X−1X′)s∗2j = κuj = det(s∗2j, κZus∗2j).
+\end{displaytext}
+
+A traceless matrix is determined by these three determinant values, so
+
+
+\begin{displaytext}
+X + X−1X′ = κZu.
+\end{displaytext}
+
+\begin{displaytext}
+Multiply by X: \
+X′ = κXZu −X2.
+\end{displaytext}
+
+\begin{displaytext}
+Since X2 = −I, this is \
+X′ = κXZu + I. \
+Take traces. Because tr X′ = 0, \
+0 = κ tr(XZu) + 2,
+\end{displaytext}
+
+\begin{displaytext}
+after using tr I = 2. Therefore \
+2 \
+κ = − ⟨X, Zu⟩.
+\end{displaytext}
+
+Substitute this back. The identity
+
+
+XZu + ZuX = ⟨X, Zu⟩I
+
+
+for traceless 2 × 2 matrices yields [Zu, X] X′ = ⟨Zu, X⟩.
+
+
+This is the central state equation.
+
+
+\begin{statementbox}{Theorem}
+Theorem 5.1 (Lie-algebra state equation). The normalized body velocity satisfies
+\end{statementbox}
+
+\begin{displaytext}
+[Zu, X] X′ = ⟨Zu, X⟩, u(t) ∈UT .
+\end{displaytext}
+
+Together with g′ = gX, this determines the boundary multicurve.
+
+
+\section{Why the equation is isospectral}
+
+Set Zu P = ⟨Zu, X⟩.
+
+
+Then X′ = [P, X].
+
+
+\begin{displaytext}
+This is a Lax equation. Its basic property is that the characteristic polynomial of X is constant. For \
+example, \
+d \
+tr(X2) = 2 tr(X[P, X]) = 2 tr(XPX −X2P) = 0. \
+dt \
+Thus det X is preserved, consistent with our normalization.
+\end{displaytext}
+
+If P were constant, the solution would be
+
+
+X(t) = etP X(0)e−tP .
+
+
+Even when P varies, the equation says that X(t) moves by infinitesimal conjugation on the determinant-one surface.
+
+
+\section{What the vertices mean geometrically}
+
+\begin{displaytext}
+Suppose u = e0 = (1, 0, 0). Then
+\end{displaytext}
+
+\begin{displaytext}
+κ1 = κ2 = 0, κ0 > 0.
+\end{displaytext}
+
+Two of the three even-indexed curves have zero curvature and hence move along straight lines. By the hyperbolic-envelope lemma, the remaining curve moves along a hyperbola with those lines as asymptotes. The same holds cyclically at the other vertices.
+
+
+Therefore: vertex control ⇐⇒ two straight arcs and one hyperbolic arc .
+
+
+A control that jumps among vertices produces a boundary that alternates among straight and hyperbolic pieces. This is why bang-bang control will imply a smoothed polygon.
+
+
+\section{Interior and edge controls}
+
+If u lies in the interior of UT , all three curvature components are positive. The circle corresponds to the center 1 1 1 u = 3, 3, 3 .
+
+
+If u lies on an edge, exactly one curvature component vanishes. Such edge controls require special treatment because the Pontryagin maximization may fail to choose a unique endpoint of the edge. Chapter 10 develops an auxiliary edge-control problem to prove that true minimizers cannot slide arbitrarily along an edge.
+
+
+\section{Reconstruction of the boundary}
+
+\begin{displaytext}
+Given measurable u(t) ∈UT and initial data g(0) = I, X(0) = X0 satisfying the star inequalities \
+and det X0 = 1, solve \
+[Zu, X] X′ = ⟨Zu, X⟩, g′ = gX.
+\end{displaytext}
+
+\begin{displaytext}
+Then define \
+σj(t) = g(t)s∗j.
+\end{displaytext}
+
+The state equation was derived precisely so that the normalized curvatures of these curves are uj. As long as the star inequalities and endpoint conditions hold, the multicurve reconstructs a balanced disk.
+
+
+\begin{insightbox}{Geometric intuition}
+\end{insightbox}
+
+\begin{displaytext}
+The control does not directly push the point g in the plane. It chooses how the total curvature \
+is distributed among three synchronized boundary arcs. That curvature distribution changes \
+the moving-frame velocity X; X then moves the frame g; and g generates all six boundary \
+curves. \
+u −→X′ −→g′ −→σj.
+\end{displaytext}
+
+\begin{insightbox}{Chapter summary}
+\end{insightbox}
+
+Convexity supplies three nonnegative curvature quantities. Dividing by their sum places the control in a triangle. The affine matrix Zu packages these curvature ratios. The complete normalized state dynamics is
+
+
+\begin{displaytext}
+g′ = gX, X′ = [Zu, X]/ ⟨Zu, X⟩.
+\end{displaytext}
+
+At a vertex of the control triangle, two boundary curves are straight and the third is hyperbolic. Consequently, finite vertex switching is exactly the geometric pattern of a smoothed polygon.
+

@@ -1,0 +1,280 @@
+% Reconstructed from the compiled lecture-note PDF.
+\chapter{The Pontryagin system for Reinhardt's problem}
+\section{State and costate variables}
+
+The state is (g, X) ∈SL2(R) × sl2(R).
+
+
+We represent the two costates by matrices
+
+
+\begin{displaytext}
+Λ1, Λ2 ∈sl2(R)
+\end{displaytext}
+
+\begin{displaytext}
+through the trace pairing. The costate Λ1 corresponds to the group variable g, while Λ2 corresponds \
+to X.
+\end{displaytext}
+
+\begin{displaytext}
+The dynamics are \
+Zu g′ = gX, X′ = [P, X], P = ⟨Zu, X⟩. \
+The running cost is \
+l(X) = −3 ⟨J, X⟩. \
+2
+\end{displaytext}
+
+\section{The Hamiltonian}
+
+The group part contributes ⟨Λ1, X⟩.
+
+
+\begin{displaytext}
+The X-state part contributes \
+⟨Λ2, [P, X]⟩= −⟨[Λ2, X], Zu⟩ . \
+⟨X, Zu⟩ \
+It is convenient to define the reduced costate
+\end{displaytext}
+
+\begin{displaytext}
+ΛR = [Λ2, X].
+\end{displaytext}
+
+Then the full Hamiltonian is
+
+
+\begin{displaytext}
+Zu⟩ H(Λ1, ΛR, X; u) = Λ1 −3 X −⟨ΛR, 2λcostJ, ⟨X, Zu⟩.
+\end{displaytext}
+
+\begin{displaytext}
+For normal extremals we take λcost = −1, so the first term becomes
+\end{displaytext}
+
+3 Λ1 + 2J, X .
+
+
+The source often keeps λcost symbolic until normality is established.
+
+
+\begin{insightbox}{Point requiring care}
+\end{insightbox}
+
+\begin{displaytext}
+The Pontryagin convention maximizes H and uses λcost ≤0. Other textbooks minimize the \
+Hamiltonian or use a positive cost multiplier. Signs must be translated before comparing \
+formulas.
+\end{displaytext}
+
+\section{The state–costate equations}
+
+Let Zu P = ⟨Zu, X⟩.
+
+
+The complete equations are
+
+
+\begin{displaytext}
+g′ = gX, (9.1) \
+X′ = [P, X], (9.2) \
+Λ′1 = [Λ1, X], (9.3) \
+3 \
+Λ′R = [P, ΛR] −⟨ΛR, P⟩[P, X] + −Λ1 + 2λcostJ, X . (9.4)
+\end{displaytext}
+
+The control u(t) maximizes H over UT almost everywhere, and
+
+
+H = 0
+
+
+along a free-time extremal.
+
+
+The equation for Λ1 is another Lax equation. Its solution is explicit:
+
+
+\begin{displaytext}
+Λ1(t) = g(t)−1Λ1(0)g(t).
+\end{displaytext}
+
+\begin{displaytext}
+Thus \
+det Λ1(t) = det Λ1(0)
+\end{displaytext}
+
+is conserved.
+
+
+\section{Why ΛR is the right reduced variable}
+
+\begin{displaytext}
+By construction, \
+⟨ΛR, X⟩= ⟨[Λ2, X], X⟩= 0.
+\end{displaytext}
+
+Hence ΛR lies in the two-dimensional plane orthogonal to X under the trace form. This is exactly the cotangent space to the determinant-one orbit at X.
+
+
+The control-dependent part of H depends only on (X, ΛR):
+
+
+\begin{displaytext}
+Zu⟩ H2(X, ΛR; u) = −⟨ΛR, ⟨X, Zu⟩.
+\end{displaytext}
+
+\begin{displaytext}
+The variables g and Λ1 matter for endpoint conditions and the inhomogeneous term in Equation (9.4), \
+but the switching geometry is controlled by (X, ΛR).
+\end{displaytext}
+
+\section{Hamiltonian maximizers are faces}
+
+\begin{displaytext}
+Fix (X, ΛR). Along a segment in the control simplex, Zu is affine in u, so H2 is a ratio of affine \
+functions. As explained in Chapter 8, the set of maximizers is a face. Thus the cotangent space is \
+partitioned into seven strata indexed by nonempty subsets I ⊂\{0, 1, 2\}:
+\end{displaytext}
+
+\begin{displaytext}
+arg max H2 = (UT )I, \
+u∈UT
+\end{displaytext}
+
+where (UT )I is the face spanned by the vertices in I.
+
+
+The three open vertex regions are separated by three codimension-one walls. The walls meet at the full singular set where the Hamiltonian is independent of u.
+
+
+\section{Switching functions}
+
+Let Zj Pj(X) = ⟨Zj, X⟩
+
+
+for the three vertex controls. The difference between the control-dependent Hamiltonians at vertices i and j is, up to a harmless sign convention,
+
+
+\begin{displaytext}
+χij(X, ΛR) = ⟨ΛR, Pj(X) −Pi(X)⟩.
+\end{displaytext}
+
+A switch between i and j occurs on the wall
+
+
+\begin{displaytext}
+χij = 0.
+\end{displaytext}
+
+Away from multiple zeros, the first switching time is a smooth function of the initial state and costate.
+
+
+\section{Transversality and periodicity}
+
+The geometric endpoint conditions are rotational:
+
+
+\begin{displaytext}
+g(tf) = R, X(tf) = R−1X(0)R.
+\end{displaytext}
+
+The costates satisfy matching conditions of the same form:
+
+
+\begin{displaytext}
+Λ1(tf) = R−1Λ1(0)R, ΛR(tf) = R−1ΛR(0)R.
+\end{displaytext}
+
+Extending by symmetry yields
+
+
+\begin{displaytext}
+X(t + 3tf) = X(t), Λ1(t + 3tf) = Λ1(t), ΛR(t + 3tf) = ΛR(t).
+\end{displaytext}
+
+The group variable has period 6tf because R6 = I.
+
+
+\begin{insightbox}{Geometric intuition}
+\end{insightbox}
+
+The final contradiction will use only one global feature of the boundary conditions: a minimizer extends to a periodic Pontryagin trajectory. The local chattering analysis will show that every trajectory entering the singular locus lies on a stable curve that cannot close periodically.
+
+
+\section{Left invariance}
+
+\begin{displaytext}
+The equations and cost depend on g only through g′ = gX, and replacing g(t) by hg(t) with constant \
+h ∈SL2(R) changes neither X nor the cost. This is left invariance. It explains why the group \
+costate satisfies a conjugation equation and why much of the dynamical analysis can be performed \
+solely in the Lie algebra variables.
+\end{displaytext}
+
+\begin{displaytext}
+For the proof of Mahler’s First conjecture, one often temporarily ignores the endpoint condition on \
+g, analyzes (X, Λ1, ΛR), and restores g(tf) = R at the end. This separation is legitimate because g \
+is reconstructed by integrating g′ = gX once X is known.
+\end{displaytext}
+
+\section{Normality near the singular locus}
+
+\begin{displaytext}
+At a point where \
+ΛR = 0, Λ′R = 0,
+\end{displaytext}
+
+the Hamiltonian equation and Equation (9.4) force
+
+
+\begin{displaytext}
+3 \
+Λ1 = 2λcostJ.
+\end{displaytext}
+
+\begin{displaytext}
+If λcost = 0, then both costates vanish, contradicting the nontriviality condition in the maximum \
+principle. Therefore \
+λcost ̸= 0.
+\end{displaytext}
+
+\begin{displaytext}
+Any extremal that reaches the full singular locus is normal, and after scaling \
+λcost = −1, Λ1 = −3 2J.
+\end{displaytext}
+
+These fixed parameter values are used in the blowup analysis.
+
+
+\section{Constant vertex segments}
+
+\begin{displaytext}
+When u = ej is constant, P = Pj is constant because ⟨X, Zj⟩is conserved. Hence X and g have \
+explicit solutions:
+\end{displaytext}
+
+X(t) = etP X0e−tP ,
+
+
+g(t) = et(X0+P)e−tP
+
+
+\begin{displaytext}
+when g(0) = I. The costate Λ1 follows by conjugation, and ΛR is obtained by elementary quadratures \
+of matrix exponentials.
+\end{displaytext}
+
+These explicit formulas make the Poincaré maps and switching functions computable. The eventual computer-assisted part of the proof depends heavily on the fact that constant-control solutions are analytic and explicit.
+
+
+\begin{insightbox}{Chapter summary}
+\end{insightbox}
+
+\begin{displaytext}
+The maximum principle lifts the Reinhardt state to the matrix system (g, X, Λ1, ΛR). The \
+Hamiltonian is \
+Zu⟩ H = Λ1 −3 X −⟨ΛR, 2λJ, ⟨X, Zu⟩,
+\end{displaytext}
+
+and the control maximizers are faces of the triangle. Rotational transversality makes every minimizing extremal periodic. The full singular locus is necessarily normal and has fixed costate parameters.
+

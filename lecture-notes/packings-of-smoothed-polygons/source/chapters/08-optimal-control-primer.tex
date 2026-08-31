@@ -1,0 +1,236 @@
+% Reconstructed from the compiled lecture-note PDF.
+\chapter{Optimal control from first principles}
+\section{From calculus of variations to control}
+
+In the classical calculus of variations one chooses a curve q(t) to minimize
+
+
+Z tf L(q(t), q′(t)) dt. 0
+
+
+Optimal control separates the velocity choice from the state. One prescribes
+
+
+q′(t) = f(q(t), u(t)),
+
+
+where u(t) is a control taking values in a fixed set U, and minimizes
+
+
+Z tf l(q(t), u(t)) dt. 0
+
+
+The control may be only measurable. Discontinuous controls are not pathologies to be removed; they are often the natural optimizers.
+
+
+\begin{displaytext}
+In the Reinhardt problem, \
+q = (g, X), U = UT ,
+\end{displaytext}
+
+and the control distributes curvature among the synchronized boundary arcs.
+
+
+\section{Why a multiplier is needed}
+
+The state equation is a constraint. Introduce a time-dependent row vector or covector p(t) and consider the augmented integral
+
+
+Z tf λcostl(q, u) + p · (f(q, u) −q′) dt, 0
+
+
+\begin{displaytext}
+where λcost ≤0 is a constant multiplier. Integrating the term −p · q′ by parts and varying q suggests
+\end{displaytext}
+
+\begin{displaytext}
+p′ = −∂H , \
+∂q
+\end{displaytext}
+
+\begin{displaytext}
+where \
+H(q, p, u) = p · f(q, u) + λcostl(q, u)
+\end{displaytext}
+
+is the control-dependent Hamiltonian. Varying p recovers
+
+
+\begin{displaytext}
+∂H \
+q′ = = f(q, u). \
+∂p
+\end{displaytext}
+
+The remaining variation in u leads not to an ordinary derivative equation when U has corners, but to a pointwise maximization rule.
+
+
+\section{The Pontryagin maximum principle}
+
+\begin{insightbox}{Standard theorem used as a black box}
+\end{insightbox}
+
+\begin{displaytext}
+Pontryagin maximum principle, simplified free-time form. Let q∗(t), u∗(t) be an \
+optimal trajectory for a smooth control system with compact control set. Then there exist a \
+nonzero multiplier pair \
+(λcost, p(t)), λcost ≤0,
+\end{displaytext}
+
+such that, almost everywhere,
+
+
+\begin{displaytext}
+∂H \
+q′ = , \
+∂p \
+p′ = −∂H , \
+∂q \
+H(q, p, u∗) = max H(q, p, u). \
+u∈U
+\end{displaytext}
+
+For a free-terminal-time problem with no terminal cost,
+
+
+H(q(t), p(t), u∗(t)) = 0
+
+
+along the extremal. Endpoint constraints give transversality conditions on p.
+
+
+A state–costate trajectory satisfying these necessary conditions is a Pontryagin extremal. Not every extremal is a minimizer, just as not every critical point in calculus is a minimum.
+
+
+\section{Normal and abnormal extremals}
+
+\begin{displaytext}
+If λcost ̸= 0, scale the multiplier so that
+\end{displaytext}
+
+\begin{displaytext}
+λcost = −1.
+\end{displaytext}
+
+\begin{displaytext}
+The extremal is then normal. If \
+λcost = 0,
+\end{displaytext}
+
+the cost disappears from the first-order equations; the extremal is abnormal. Abnormal extremals reflect the geometry of the constraints rather than the cost itself. They can be genuine, but they can also be artifacts of a redundant formulation.
+
+
+The Reinhardt problem has anomalous abnormal edge extremals in its full encoding. The source therefore introduces a reduced edge-control problem to remove them when proving finite switching along an edge.
+
+
+\section{Cotangent vectors without differential geometry}
+
+\begin{displaytext}
+At a point q ∈Rn, a tangent vector is an ordinary vector v ∈Rn. A cotangent vector is a linear \
+functional \
+p : v 7→p · v.
+\end{displaytext}
+
+\begin{displaytext}
+For a matrix group, left translation identifies every tangent space with the same matrix space. Thus \
+the costates for g ∈SL2(R) and X ∈sl2(R) can both be represented by traceless matrices, using \
+the nondegenerate trace pairing \
+⟨A, B⟩= tr(AB).
+\end{displaytext}
+
+\begin{displaytext}
+This is why the source writes the costates as matrices Λ1 and Λ2.
+\end{displaytext}
+
+\section{Maximized Hamiltonian}
+
+\begin{displaytext}
+Define \
+H+(q, p) = max H(q, p, u). \
+u∈U
+\end{displaytext}
+
+If the maximizer is unique and depends smoothly on (q, p), then the extremal follows the ordinary Hamiltonian flow of H+. When the maximizer jumps from one extreme point of U to another, H+ is not differentiable across the switching surface, but the state and costate remain continuous.
+
+
+\begin{statementbox}{Definition}
+Definition 8.1 (Bang-bang control). A control is bang-bang if it takes values only at extreme points of the control set, except possibly on a set of measure zero.
+\end{statementbox}
+
+For an interval control U = [−1, 1], a bang-bang control takes the values −1 and 1. For the Reinhardt triangle, it takes the three vertex values e0, e1, e2.
+
+
+\section{Switching functions}
+
+Suppose the Hamiltonian evaluated at two candidate controls is Hi(t) and Hj(t). Their difference
+
+
+\begin{displaytext}
+χij(t) = Hi(t) −Hj(t)
+\end{displaytext}
+
+\begin{displaytext}
+is a switching function. The maximization rule chooses i when χij > 0 and j when χij < 0. A \
+switch can occur only at a zero of χij.
+\end{displaytext}
+
+\begin{displaytext}
+If a zero is simple, \
+χij(t0) = 0, χ′ij(t0) ̸= 0,
+\end{displaytext}
+
+the switching time varies smoothly with initial conditions by the implicit-function theorem. Multiple zeros are the source of discontinuities in Poincaré maps and require discriminants and resultants later.
+
+
+\section{Faces of a convex control set}
+
+A subset F of a convex set U is a face if whenever an interior point of a segment in U lies in F, both endpoints lie in F. The faces of a triangle are its vertices, edges, and the whole triangle.
+
+
+In the Reinhardt Hamiltonian, the control-dependent term is a ratio of two affine functions of u. Along a line segment u(t) = tu1 + (1 −t)u0, such a ratio has the form at + b ct + d. Its derivative has constant sign unless it is identically constant. Therefore the set of maximizers is always a face of UT .
+
+
+Consequently, at each time exactly one of the following occurs:
+
+
+1. a unique vertex maximizes: regular bang-bang motion; 2. an entire edge maximizes: an edge singularity; 3. the whole triangle maximizes: the fully singular locus.
+
+
+\section{Singular arcs}
+
+A singular arc is a time interval on which the maximization rule fails to determine a unique control. The name refers to singularity of the first-order necessary conditions, not necessarily to a geometric singularity of the state curve.
+
+
+In the Reinhardt problem, full-triangle singularity forces the circular state. Edge singularities are handled by the auxiliary edge-control problem. Outside the full singular locus, edge extremality will imply finite bang-bang switching.
+
+
+\section{Chattering}
+
+A bang-bang control may have infinitely many switches in a finite interval. If the switching times
+
+
+t1 < t2 < · · · < tn < · · ·
+
+
+converge to a finite limit t∗, the control chatters. The state can converge smoothly even though the control oscillates infinitely rapidly.
+
+
+Chattering cannot be excluded by compactness or first-order optimality alone. Fuller’s classical example shows that it can be the genuine optimal behavior. The central difficulty of the source paper is to prove that a periodic Reinhardt minimizer does not chatter into the circular singular locus.
+
+
+\section{Poincaré maps}
+
+For a bang-bang flow, record only the state at switching times. If qn is the state at the nth switch, define qn+1 = F(qn).
+
+
+This F is a Poincaré first-recurrence map. It converts a continuous-time control system into a discrete dynamical system.
+
+
+Near a chattering singularity, the time intervals shrink, but after a suitable blowup the angular switching data can converge to a nontrivial fixed point of F. This is the key idea used in Part V.
+
+
+\begin{insightbox}{Chapter summary}
+\end{insightbox}
+
+The Pontryagin maximum principle augments the state with a costate and replaces minimization by Hamiltonian evolution plus pointwise control maximization. For the triangular control set, maximizers are faces. Unique vertex maximizers give bang-bang motion; edges and the whole triangle give singular behavior. Infinite vertex switching in finite time is chattering, the only obstruction that survives the first-order analysis.
+

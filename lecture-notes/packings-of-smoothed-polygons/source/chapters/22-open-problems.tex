@@ -1,0 +1,237 @@
+% Reconstructed from the compiled lecture-note PDF.
+\chapter{What remains open and how to continue studying}
+\section{The exact endpoint reached by the source}
+
+The 2024 source proves Mahler’s First conjecture: a global minimizer is a finite smoothed polygon. It does not prove the full Reinhardt conjecture, which asserts that the minimizer is specifically the smoothed octagon, unique up to affine transformation.
+
+
+This distinction is easy to miss because the smoothed octagon is present throughout the theory. It is an explicit extremal, it has lower density than the circle, and it is locally isolated among nearby extremals. None of these facts alone proves that no distant periodic extremal has still smaller area.
+
+
+The remaining global problem can be stated in the language developed in these notes:
+
+
+\begin{insightbox}{Proof roadmap}
+\end{insightbox}
+
+Classify all periodic, finite-switching Pontryagin extremals satisfying the Reinhardt endpoint conditions, or prove an area inequality that places every such extremal above the smoothed octagon.
+
+
+\section{Why Mahler’s First is already a major reduction}
+
+Before the theorem, a minimizer could in principle have had a boundary with continuously varying curvature, singular arcs, or infinitely many alternations accumulating at a point. After the theorem, only a finite combinatorial object remains:
+
+
+• a cyclic word in the three vertex controls; • a positive duration attached to each letter; • matrix endpoint equations; • switching inequalities from the maximum principle; • the area computed by a finite sum of elementary integrals.
+
+
+Thus an infinite-dimensional variational problem has been reduced to a countable union of finite-
+
+
+dimensional problems.
+
+
+This reduction does not make the full conjecture automatic. The number of switches is not bounded a priori by the theorem, and the endpoint equations are nonlinear. Still, it changes the nature of the problem decisively.
+
+
+\section{A finite-word formulation of the remaining problem}
+
+\begin{displaytext}
+Choose the three vertices e0, e1, e2 of the control triangle. A finite bang-bang trajectory is encoded \
+by \
+W = ((i1, t1), . . . , (iN, tN)), ik ∈\{0, 1, 2\}, tk > 0,
+\end{displaytext}
+
+where adjacent indices are different. For a specified initial state X0, each constant-control piece has an explicit matrix-exponential solution. Multiplying these pieces gives
+
+
+\begin{displaytext}
+N \
+g(T) = GW(X0; t1, . . . , tN), T = X tk. \
+k=1
+\end{displaytext}
+
+The endpoint equations require
+
+
+\begin{displaytext}
+g(T) = R, X(T) = R−1X0R,
+\end{displaytext}
+
+and the costate must satisfy the corresponding transversality conditions. The maximum principle adds inequalities saying that the selected vertex really maximizes the Hamiltonian on every interval.
+
+
+The full Reinhardt conjecture would follow from a statement of the following form.
+
+
+\begin{statementbox}{Theorem}
+Theorem 22.1 (Desired finite-word theorem). Every periodic finite-switching extremal satisfying the Reinhardt conditions has area at least that of the smoothed octagon, with equality only for its affine orbit.
+\end{statementbox}
+
+This is not proved in the source. It is a precise target made possible by Mahler’s First.
+
+
+\section{Possible routes toward the full Reinhardt conjecture}
+
+\subsection{A priori switch bounds}
+
+The strongest simplification would be a universal bound on the number of switches of a minimizing extremal. If one could show, for example, that a minimizer has at most four control pieces during one sixth of the boundary, only finitely many mode words would remain. The endpoint and switching equations could then be analyzed case by case.
+
+
+What might force such a bound? Possible mechanisms include:
+
+
+• a lower bound for the cost paid by each additional excursion in the hyperbolic state space; • monotonicity of a rotation or winding number; • a comparison principle that removes short alternating words without increasing area; • a second-order condition excluding high-frequency finite switching.
+
+
+None of these is presently supplied by the source.
+
+
+\subsection{Symbolic dynamics plus coercivity}
+
+The control word defines a symbolic itinerary through the three vertex-flow families. One could seek a generating partition and express the endpoint problem through a return map. If long words necessarily move through regions of high cost, a coercive estimate could rule them out for a global minimizer.
+
+
+The compactification of the star domain is useful here: all relevant trajectories lie in a fixed compact set. Compactness makes uniform estimates on switching times, hyperbolic displacement, and cost more plausible.
+
+
+\subsection{A calibration or sharp lower bound}
+
+Another route would avoid classifying extremals. One seeks a function or differential form giving a lower bound area(K) ≥area(Koct)
+
+
+for every admissible trajectory, with equality exactly on the octagonal orbit. In optimal-control language this resembles constructing a global solution or subsolution of the Hamilton–Jacobi–Bellman equation. In geometric language it resembles a calibration.
+
+
+The difficulty is that the control Hamiltonian is nonsmooth across switching walls, and the boundary condition is periodic modulo rotation. A successful calibration would have to encode both features.
+
+
+\subsection{Second variation and conjugate points}
+
+The paper proves that the circle fails a second-order necessary condition and that the smoothed octagon is isolated. A more systematic study of second variation along arbitrary bang-bang extremals might identify conjugate points or negative directions whenever the switching pattern is not octagonal.
+
+
+For bang-bang systems, second variation is delicate because switching times vary. The correct quadratic form includes both continuous state variations and variations of the switching instants. Nevertheless, the finite-dimensional reduction makes this a concrete program.
+
+
+\subsection{Certified computation}
+
+The endpoint equations and switching inequalities are explicit. A computer-assisted global proof could combine:
+
+
+1. interval arithmetic for constant-control flows; 2. branch-and-bound over initial states and switching times; 3. symbolic pruning of impossible control words; 4. validated lower bounds for the cost on every surviving box.
+
+
+This would be substantially larger than the computations in the source, but the theorem proved there supplies the essential finiteness structure.
+
+
+\section{Improving the proof of Mahler’s First}
+
+Even without solving Reinhardt’s full conjecture, several aspects of the existing proof invite refinement.
+
+
+\subsection{Formal certification of the basin theorem}
+
+The global basin argument uses finitely many analytic cells and image-containment checks. Replacing numerical plots by interval certificates would make the computational core independently auditable. The natural output is not a picture but a certificate containing:
+
+
+• a subdivision of every source face; • an interval enclosure for the relevant switching root; • an interval enclosure for its image; • a verified list of target inequalities.
+
+
+A small checker could then validate the entire containment table.
+
+
+\subsection{Validated unstable-manifold continuation}
+
+The no-return result is supported by high-resolution numerical continuation of a one-dimensional unstable curve. A rigorous replacement would use the parameterization method near the hyperbolic fixed point and interval integration thereafter. The main events to certify are the switching sequence, preservation of the star inequalities, and transverse crossing of the star-domain boundary.
+
+
+\subsection{A conceptual global Lyapunov function}
+
+The finite cell order acts as a discrete Lyapunov function. Finding a single analytic function that decreases under the Fuller–Poincare map would greatly shorten the proof and explain the global basin more transparently. The cell decomposition suggests what level sets of such a function should look like.
+
+
+\subsection{Removing auxiliary circular control}
+
+The circular-control problem is a powerful model because rotational symmetry yields angular momentum. Logically, however, the final theorem concerns triangular control. A direct triangular derivation of the relevant normal form and global structure might shorten the route, while the circular model would remain valuable intuition.
+
+
+\section{Connections worth learning next}
+
+The proof sits at the intersection of several subjects. A productive order of further study is:
+
+
+1. convex geometry and geometry of numbers: support functions, polar bodies, critical lattices;
+
+
+2. elementary Lie groups: matrix groups, homogeneous spaces, adjoint orbits; 3. optimal control: Pontryagin’s principle, bang-bang control, singular arcs; 4. hyperbolic geometry: the action of SL2(R) on the upper half-plane; 5. Hamiltonian dynamics: symplectic forms, Poisson brackets, momentum maps; 6. local dynamical systems: hyperbolic fixed points and stable manifolds; 7. singular perturbation and blowup: weighted projective compactification; 8. validated numerics: interval Newton methods and rigorous ODE integration.
+
+
+The appendices give a first pass through the background needed for these topics.
+
+
+\section{A guided exercise program}
+
+The following exercises reproduce the main mechanisms in increasing order of difficulty.
+
+
+\begin{statementbox}{Exercise}
+Exercise 22.2. Show directly that a centrally symmetric hexagon with edge midpoints s0, . . . , s5 satisfies sj+3 = −sj and s0 + s2 + s4 = 0.
+\end{statementbox}
+
+\begin{statementbox}{Exercise}
+Exercise 22.3. For X = ac −ab , verify the formulas for ρ0, ρ1, ρ2 and prove
+\end{statementbox}
+
+\begin{displaytext}
+det X = ρ0ρ1 + ρ1ρ2 + ρ2ρ0.
+\end{displaytext}
+
+\begin{statementbox}{Exercise}
+Exercise 22.4. Starting from g′ = gX and σj = gs∗j, derive the Green-theorem area formula
+\end{statementbox}
+
+Z area(K) = −3 tr(JX) dt. 2
+
+
+\begin{statementbox}{Exercise}
+Exercise 22.5. For a fixed control matrix Z, prove that ⟨X, Z⟩is constant along
+\end{statementbox}
+
+[Z, X] X′ = ⟨Z, X⟩.
+
+
+Then solve the equation by conjugation.
+
+
+\begin{statementbox}{Exercise}
+Exercise 22.6. Write out the triangular Fuller solution for constant u and verify that every switching function is a real cubic polynomial in time.
+\end{statementbox}
+
+\begin{statementbox}{Exercise}
+Exercise 22.7. Check that the weighted dilation
+\end{statementbox}
+
+(z1, z2, z3) 7→(rz1, r2z2, r3z3)
+
+
+preserves the triangular Fuller equations after the time change t 7→rt.
+
+
+\begin{statementbox}{Exercise}
+Exercise 22.8 (Research-level). Construct an interval-arithmetic certificate for one cell inclusion in the global basin table. State precisely which polynomial root and which target inequalities must be enclosed.
+\end{statementbox}
+
+\section{A compact reading plan for the source}
+
+A first pass through the original paper need not be linear. The following sequence is efficient:
+
+
+1. read the introduction and book summary to understand the theorem hierarchy; 2. study the critical-hexagon and multicurve construction; 3. read the statement of the Reinhardt control problem and the area formula; 4. learn the maximum-principle vocabulary from the source’s Chapter 6; 5. read the bang-bang and singular-locus conclusions; 6. jump to the overview at the beginning of Part V; 7. study the triangular Fuller map, blowup, basin theorem, and cluster theorem; 8. return to computational details only after the logical skeleton is clear.
+
+
+\begin{insightbox}{Chapter summary}
+\end{insightbox}
+
+The 2024 theorem removes the infinite-dimensional pathology: every global minimizer is a finite smoothed polygon. The open task is to determine which finite periodic extremal minimizes area. The most direct targets are a switch bound, a sharp calibration, a global second-variation argument, or a certified exhaustive analysis of finite mode words.
+

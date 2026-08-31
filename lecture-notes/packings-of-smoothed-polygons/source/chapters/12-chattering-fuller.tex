@@ -1,0 +1,210 @@
+% Reconstructed from the compiled lecture-note PDF.
+\chapter{Chattering and the Fuller phenomenon}
+\section{Why infinitely many switches can be optimal}
+
+It is tempting to argue that an optimal piecewise-constant control should have only finitely many pieces. This is false. Fuller’s classical problem is
+
+
+\begin{displaytext}
+x′ = y, y′ = u, −1 ≤u ≤1,
+\end{displaytext}
+
+\begin{displaytext}
+with the objective \
+Z ∞ \
+x(t)2 dt −→min . \
+0 \
+For suitable initial data, the optimal control alternates between −1 and 1 infinitely many times \
+before reaching the origin in finite time. The switching intervals form a geometric progression.
+\end{displaytext}
+
+The phenomenon is not an isolated curiosity. In sufficiently high-dimensional optimal-control systems, singularities of the maximized Hamiltonian generically produce Fuller-type chattering.
+
+
+\section{What chattering means in the Reinhardt geometry}
+
+At a vertex control, the boundary is locally made of two straight arcs and one hyperbolic arc. During chattering, the identity of the curved arc changes faster and faster. The boundary itself can remain C1 and converge to a smooth circular state even though the curvature control jumps infinitely often.
+
+
+In the upper-half-plane state space, the switching points form a shrinking triangular spiral around z = i. The control cycles through the three vertices of UT . The challenge is not merely to show that some chattering trajectories exist; it is to classify every possible trajectory that reaches the singular locus.
+
+
+\section{Coordinates centered at the singular locus}
+
+The normal singular point in state–costate space is
+
+
+\begin{displaytext}
+X = J, Λ1 = −3 ΛR = 0. 2J,
+\end{displaytext}
+
+The paper uses the Cayley transform to move from real matrices in sl2(R) to matrices in su(1, 1) and then writes the deviations in three complex coordinates
+
+
+w, b, c ∈C.
+
+
+\begin{displaytext}
+The singular locus becomes simply \
+w = b = c = 0.
+\end{displaytext}
+
+\begin{displaytext}
+The exact coordinate formulas are given in the next chapter. For now, their orders have a transparent \
+interpretation: \
+w = O(t), b = O(t2), c = O(t3)
+\end{displaytext}
+
+for a trajectory reaching the singularity at t = 0.
+
+
+This hierarchy follows from a chain of differential equations:
+
+
+w′ ∼control direction, b′ ∼w, c′ ∼b.
+
+
+Thus c is effectively the third integral of the control.
+
+
+\section{Leading-order truncation}
+
+Near the singular locus, the exact Reinhardt equations have the form
+
+
+\begin{displaytext}
+c \
+w′ = −iρ + O(|w|), \
+|c| \
+b′ = 2iw + O(|b|), \
+c′ = −3ib + O(|c| + |b| |w|2 + |b|2 |w|).
+\end{displaytext}
+
+Discarding higher-order terms gives
+
+
+\begin{displaytext}
+cF \
+w′F = −iρ |cF |, \
+b′F = 2iwF , \
+c′F = −3ibF .
+\end{displaytext}
+
+Introduce rescaled variables
+
+
+\begin{displaytext}
+wF cF z1 = , z2 = −ibF , z3 = ρ 2ρ 6ρ.
+\end{displaytext}
+
+\begin{displaytext}
+Then \
+z3 \
+z′3 = z2, z′2 = z1, z′1 = −i |z3|.
+\end{displaytext}
+
+This is the complex length-three Fuller system with circular control.
+
+
+\section{Scaling symmetry}
+
+The chain is homogeneous under
+
+
+(z1(t), z2(t), z3(t)) 7−→ rz1(t/r), r2z2(t/r), r3z3(t/r) .
+
+
+It is also invariant under simultaneous complex rotation
+
+
+zj 7−→eiθzj.
+
+
+Combining the two gives a two-dimensional virial group. Self-similar chattering trajectories are fixed by a one-parameter subgroup of this scaling-rotation action; they appear as logarithmic spirals.
+
+
+\section{An explicit logarithmic spiral}
+
+For t > 0, the circular Fuller system has the outward solution
+
+
+\begin{displaytext}
+1 \
+z3(t) = 10t3−i, \
+3 −i \
+z2(t) = t2−i, \
+10 \
+(2 −i)(3 −i) \
+z1(t) = t1−i. \
+10
+\end{displaytext}
+
+Because t−i = e−i log t,
+
+
+the phase rotates logarithmically while the magnitudes scale as t, t2, t3. Time reversal and complex conjugation produce an inward spiral reaching the origin in finite time.
+
+
+\begin{insightbox}{Geometric intuition}
+\end{insightbox}
+
+The exponent 3 −i has two jobs. Its real part 3 gives the cubic scaling expected from three integrations. Its imaginary part −1 makes the control direction rotate by an angle proportional to −log t, hence infinitely many turns as t →0+.
+
+
+\section{Why a blowup is natural}
+
+At the singular point, every direction of approach is collapsed to (0, 0, 0). To distinguish them, write
+
+
+\begin{displaytext}
+z1 = rξ1, z2 = r2ξ2, z3 = r3ξ3,
+\end{displaytext}
+
+\begin{displaytext}
+where r ≥0 is a weighted radius and ξ lies on a weighted unit sphere. The set r = 0 is the \
+exceptional divisor. It records the angular profile of a chattering trajectory after factoring out its \
+shrinking scale.
+\end{displaytext}
+
+A self-similar spiral becomes a fixed point on the exceptional divisor. The infinite switching sequence in physical coordinates becomes an ordinary orbit of a discrete Poincaré map on a compact angular space.
+
+
+exceptional divisor r = 0
+
+
+qout
+
+
+blow up qin singular point
+
+
+\begin{figureplaceholder}
+Figure 12.1: A blowup replaces one singular point by a space of approach directions. Inward and outward self-similar spirals become fixed points on the exceptional divisor.
+\end{figureplaceholder}
+
+\section{Why the circular model is not the final proof}
+
+\begin{displaytext}
+The exact Reinhardt control set is a triangle, not a circle. Circular control is smoother and has \
+continuous rotational symmetry, making the first model easier to analyze. But the true chattering \
+sequence uses only three discrete directions. The final proof therefore constructs a triangular Fuller \
+system with control \
+n u ∈ 1, ζ, ζ2o , ζ = e2πi/3.
+\end{displaytext}
+
+Its self-similar solutions are triangular spirals rather than smooth logarithmic spirals.
+
+
+\section{The remaining proof strategy}
+
+The chattering exclusion will proceed as follows.
+
+
+1. Derive the triangular Fuller system as the leading term on the exceptional divisor. 2. Define its Poincaré map from one switching time to the next. 3. Find the inward and outward fixed points qin, qout. 4. Prove that qout has a global basin of attraction on the divisor, except for qin. 5. Show that the true Reinhardt Poincaré map analytically extends to the divisor and has corresponding stable and unstable manifolds. 6. Use periodicity to rule out the only possible approach to qin.
+
+
+\begin{insightbox}{Chapter summary}
+\end{insightbox}
+
+Chattering is a genuine optimal-control phenomenon, so it cannot be dismissed abstractly. Near the circular singularity, the Reinhardt equations have a three-step chain with weighted orders 1, 2, 3. Their leading term is a Fuller system with a scaling symmetry. Weighted blowup separates shrinking scale from angular profile, converting self-similar chattering into fixed points of a Poincaré map on an exceptional divisor.
+

@@ -1,0 +1,236 @@
+% Reconstructed from the compiled lecture-note PDF.
+\chapter{Extending the Reinhardt map across the exceptional divisor}
+\section{The Fuller system is only the leading term}
+
+The global basin theorem concerns the truncated Fuller dynamics on the exceptional divisor. The actual minimizer follows the exact Reinhardt state–costate equations. To transfer the Fuller conclusions, we need to show that the true switching map has a regular extension to the blowup and that its restriction to the exceptional divisor is exactly the Fuller Poincaré map.
+
+
+Fix the parameter values forced by a trajectory meeting the singular locus:
+
+
+\begin{displaytext}
+9 \
+λcost = −1, det Λ1 = 4, ρ = 2.
+\end{displaytext}
+
+\begin{displaytext}
+The singular point is \
+X = J, Λ1 = −3 ΛR = 0. 2J,
+\end{displaytext}
+
+\section{Weighted real coordinates}
+
+Near the singular point, write
+
+
+\begin{displaytext}
+X = J + r eX, (17.1) \
+Λ1 = −3 + r2 eΛ1, 2J (17.2) \
+ΛR = r3 eΛR. (17.3)
+\end{displaytext}
+
+The powers 1, 2, 3 match the orders found in the Fuller truncation. To make this representation unique, normalize ex11 = 1. Then r itself is the (1, 1) coefficient of X −J.
+
+
+\begin{displaytext}
+Let \
+ex = (ex21, el11, el21) ∈R3.
+\end{displaytext}
+
+\begin{displaytext}
+The constraints \
+9 \
+det X = 1, det Λ1 = \
+4 \
+determine the remaining entries of eX and eΛ1. The three linear equations
+\end{displaytext}
+
+\begin{displaytext}
+⟨X, ΛR⟩= 0, H = 0, χ23 = 0
+\end{displaytext}
+
+\begin{displaytext}
+determine eΛR. Therefore \
+(r, ex) ∈R4 \
+is a local coordinate system on the switching section near the outward fixed point.
+\end{displaytext}
+
+The exceptional divisor is simply r = 0.
+
+
+\section{Matching to Fuller angular coordinates}
+
+\begin{displaytext}
+Apply the Cayley transform and hyperboloid coordinates to the triple (X, Λ1, ΛR), obtaining complex \
+variables (wr, br, cr). Define the Fuller-scaled quantities
+\end{displaytext}
+
+\begin{displaytext}
+wr cr = , = −ibr , = bz1 ρ bz2 2ρ bz3 6ρ.
+\end{displaytext}
+
+Their expansions are
+
+
+\begin{displaytext}
+r \
+bz1(r, ex) = 2(ex21 + i) + O(r2), \
+r2 \
+bz2(r, ex) = 3! (el11 −iel21) + O(r3), \
+r3 \
+bz3(r, ex) = 4! (elR,12 + elR,21) + O(r4).
+\end{displaytext}
+
+\begin{displaytext}
+Hence the limit \
+= lim bz1 , bz2 , bz3 z(ex) r→0 r r2 r3
+\end{displaytext}
+
+exists and is nonzero. Its weighted angular component is a point
+
+
+ξ(ex) ∈ΞW,0. At the parameter exout, this is the Fuller fixed point qout modulo virial symmetry. The exact Reinhardt Hamiltonian has the asymptotic expansion
+
+
+\begin{displaytext}
+HRein(r, ex; u) = 24r3HF (z(ex); eu) + O(r4), \
+where the three Reinhardt vertices correspond to 1, ζ, ζ2.
+\end{displaytext}
+
+\section{Matching the constant-control flows}
+
+\begin{displaytext}
+Use rescaled time \
+t \
+s = . \
+r0 \
+Let (r(s), ex(s)) be the exact Reinhardt solution with a fixed vertex control and initial condition \
+(r0, ex0). Let z(s) be the corresponding Fuller solution starting at z(ex0). Then for bounded s, \
+bz1(r(s), ex(s)) = r0z1(s) + O(r20), \
+bz2(r(s), ex(s)) = r20z2(s) + O(r30), \
+bz3(r(s), ex(s)) = r30z3(s) + O(r40).
+\end{displaytext}
+
+The exact switching functions satisfy, for example,
+
+
+\begin{displaytext}
+χRein21 (sr0) = 24r30Re(ζ −1, z3(s)) + O(r40).
+\end{displaytext}
+
+Thus after dividing by r30, the exact switching equation converges to the Fuller cubic.
+
+
+\section{Analytic continuation of the switching time}
+
+Near qout, the relevant Fuller switching cubic has a least positive root
+
+
+ssw,out ≈8.84
+
+
+that is simple and is separated from 0. The exact normalized switching function
+
+
+\begin{displaytext}
+χRein(sr0, r0, ex0) r0, = eχ(s, ex0) r30
+\end{displaytext}
+
+extends analytically to r0 = 0. At
+
+
+(s, r0, ex0) = (ssw,out, 0, exout),
+
+
+\begin{displaytext}
+one has \
+= 0, ∂eχ ̸= 0. eχ ∂s \
+The analytic implicit-function theorem therefore supplies an analytic switching-time function
+\end{displaytext}
+
+ssw = ssw(r0, ex0)
+
+
+for positive, zero, and even small negative r0.
+
+
+Evaluate the exact constant-control solution at
+
+
+tsw = r0ssw(r0, ex0)
+
+
+and rotate by the appropriate power of R so that the next wall is represented in the same coordinate chart. Converting back to (r, ex) gives an analytic map FRein : (r, ex) 7−→(r′, ex′).
+
+
+\begin{statementbox}{Theorem}
+Theorem 17.1 (Analytic extension; source Lemma 14.3.1). The Reinhardt Poincaré map extends to an analytic local diffeomorphism in a neighborhood of (0, exout) ∈R4. Its restriction to r = 0 is the Fuller angular Poincaré map.
+\end{statementbox}
+
+The inverse is obtained by repeating the construction backward in time. Since forward and backward extensions agree as inverses for r > 0, analytic continuation makes them inverse near r = 0 as well.
+
+
+\section{Hyperbolic fixed points and invariant manifolds}
+
+At qout, the three angular eigenvalues have modulus less than 1, while the radial multiplier is
+
+
+rscale > 1.
+
+
+Thus the fixed point is hyperbolic. The stable-manifold theorem gives:
+
+
+\begin{statementbox}{Theorem}
+Theorem 17.2 (Local invariant manifolds at qout). The local stable manifold is the three-dimensional exceptional divisor r = 0. The local unstable manifold is a one-dimensional smooth curve transverse to the divisor.
+\end{statementbox}
+
+By time reversal:
+
+
+\begin{statementbox}{Theorem}
+Theorem 17.3 (Local invariant manifolds at qin). The local stable manifold of qin is a onedimensional curve transverse to the exceptional divisor, and its local unstable manifold is the three-dimensional divisor.
+\end{statementbox}
+
+\section{The global unstable curve from qout}
+
+The local one-dimensional unstable manifold can be continued by iterating the exact Reinhardt map. The source uses r itself as a parameter and numerically follows
+
+
+\begin{displaytext}
+r 7−→(r, ex(r)). \
+The curve begins at \
+ex21 ≈−2.39 \
+and reaches the boundary of the star domain near
+\end{displaytext}
+
+(r, ex21) ≈(0.21, −3.03). For r above roughly 0.065, the continuous Reinhardt trajectory hits the star-domain boundary before another switch occurs. Thus the unstable curve does not turn back toward the exceptional divisor.
+
+
+Geometrically, the corresponding upper-half-plane trajectories form outward triangular spirals that chatter near z = i and then expand until they strike the star-domain boundary.
+
+
+\begin{statementbox}{Theorem}
+Theorem 17.4 (No return along the unstable curve; source Theorem 14.4.1). A Reinhardt trajectory that emanates from qout on the exceptional divisor does not return to the divisor. By time reversal, a trajectory tending to qin did not emanate from the divisor at an earlier time.
+\end{statementbox}
+
+\begin{figureplaceholder}
+Figure 17.1: The source paper’s schematic of the blown-up Reinhardt dynamics. The exceptional divisor carries the Fuller dynamics from qin toward qout; a one-dimensional curve enters at qin and another exits at qout. Source Figure 14.0.1.
+\end{figureplaceholder}
+
+\begin{insightbox}{Point requiring care}
+\end{insightbox}
+
+The continuation of the global unstable curve in the source uses high-resolution Mathematica numerics rather than a fully presented interval-arithmetic certificate. The dynamical conclusion is used as an input to the final proof. Chapter 21 separates this numerical component from the analytic local theory.
+
+
+\section{Why this matters for periodicity}
+
+If a periodic trajectory were to chatter into the singular locus along the stable curve of qin, periodicity would require it to have emerged from the singular locus at an earlier time. Time reversal of the no-return theorem says that this is impossible. The only missing step is to prove that every finite-time cluster on the divisor is indeed qin and lies on its stable curve. That conclusion will use the global basin theorem and the cluster-point argument.
+
+
+\begin{insightbox}{Chapter summary}
+\end{insightbox}
+
+Weighted Lie-algebra coordinates make the exact Reinhardt Poincaré map analytic across the blowup. After rescaling time and dividing the switching function by r3, the map restricts at r = 0 to the triangular Fuller recurrence. The outward fixed point has a one-dimensional unstable curve leaving the divisor; the inward point has a one-dimensional stable curve entering it. Numerical continuation shows the outward curve hits the star-domain boundary and never returns, a fact that will contradict periodic chattering.
+

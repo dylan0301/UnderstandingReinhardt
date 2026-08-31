@@ -1,0 +1,154 @@
+% Reconstructed from the compiled lecture-note PDF.
+\chapter{The proof of Mahler's First conjecture}
+\section{The theorem}
+
+\begin{statementbox}{Theorem}
+Theorem 20.1 (Mahler’s First conjecture). A global minimizer of the Reinhardt packing problem is a bang-bang solution with finitely many switches. Consequently its boundary is a finite-sided smoothed polygon whose rounded pieces are hyperbolic arcs of Reinhardt–Mahler type.
+\end{statementbox}
+
+We now assemble the preceding results in a single proof.
+
+
+\section{Step 1: a minimizer is a periodic edge-extremal}
+
+Reinhardt’s compactness theorem gives a global minimizer. The critical-hexagon reduction and matrix formulation produce an optimal trajectory
+
+
+\begin{displaytext}
+(g, X, Λ1, ΛR, u)
+\end{displaytext}
+
+satisfying the Pontryagin maximum principle.
+
+
+Because the trajectory is globally minimizing, it is also minimizing under variations constrained to any edge of the control triangle. Hence it is edge-extremal.
+
+
+The rotational endpoint conditions give
+
+
+\begin{displaytext}
+g(tf) = R, X(tf) = R−1X(0)R,
+\end{displaytext}
+
+with the same conjugacy conditions for the costates. Extending by rotation makes the lifted trajectory periodic.
+
+
+\section{Step 2: if the trajectory avoids the singular locus, we are done}
+
+The finite-switching theorem away from the singular locus says:
+
+
+\begin{displaytext}
+edge-extremal + avoid Ssing =⇒ finite bang-bang.
+\end{displaytext}
+
+Therefore it remains only to prove that the minimizing trajectory does not meet the singular locus.
+
+
+\section{Step 3: it cannot remain on the singular locus}
+
+A full singular arc is, up to affine transformation, a circular arc. The compactly supported second variation of Chapter 11 lowers its area while preserving endpoint data and convexity. Therefore a minimizer cannot remain on the singular locus during any interval of positive time.
+
+
+\section{Step 4: it cannot reach the singular locus with finitely many switches}
+
+A constant vertex-control extremal cannot meet the singular locus. Hence a finite concatenation of such segments cannot end there. Any contact with the singular locus must occur through infinitely many switches accumulating in finite time.
+
+
+Thus the only remaining possibility is chattering.
+
+
+\section{Step 5: a chattering sequence has a cluster point on the divisor}
+
+Let q0, q1, q2, . . .
+
+
+be the switching points of a chattering segment approaching a finite time t∗. In the weighted blowup, the exceptional divisor is compact. Therefore some subsequence has a cluster point on the divisor.
+
+
+The switching points themselves have positive radial coordinate, because the exact trajectory has not yet reached the singular locus.
+
+
+\section{Step 6: the cluster theorem forces the inward stable curve}
+
+By the cluster-point theorem, the only possible cluster point is
+
+
+qin,
+
+
+and the switching points lie on the one-dimensional stable manifold
+
+
+W s(qin).
+
+
+Thus every exact chattering trajectory entering the singular locus is forced into one specific curve in the four-dimensional blown-up switching section.
+
+
+\section{Step 7: the stable curve cannot be part of a periodic orbit}
+
+Time reversal identifies W s(qin) with the reverse of the unstable curve leaving qout. The no-return theorem says that the unstable curve from qout hits the boundary of the star domain and never returns to the exceptional divisor. Equivalently:
+
+
+A trajectory tending to qin did not emanate from the exceptional divisor at any earlier time.
+
+
+But a periodic trajectory that reaches the singular locus must, when followed one period backward, also have emerged from that same singular locus. This contradicts the no-return theorem.
+
+
+Therefore the minimizing periodic trajectory cannot chatter into the singular locus.
+
+
+\section{Step 8: conclude finite bang-bang behavior}
+
+The minimizer neither stays on, reaches by finitely many switches, nor chatters into the singular locus. Hence it avoids the singular locus entirely. The finite-switching theorem applies, and the control is bang-bang with finitely many switches.
+
+
+Each vertex-control interval gives two straight boundary arcs and one hyperbolic arc. Finitely many intervals give a finite cyclic concatenation of straight segments and hyperbolic arcs. The boundary has no corners and the hyperbolic arcs are tangent to the adjacent straight segments. Therefore the minimizer is a finite-sided smoothed polygon.
+
+
+\section{A dependency diagram}
+
+\section{What the theorem does not yet prove}
+
+The theorem does not identify the number of sides. There may a priori be other finite smoothed polygons satisfying the Pontryagin conditions and endpoint conditions. To prove the full Reinhardt conjecture, one would need to classify the periodic finite-switching extremals or establish a global area comparison among them.
+
+
+The source constructs the family of smoothed (6k + 2)-gon extremals and shows that among that family the smoothed octagon has the smallest area. It also proves that the smoothed octagon is an isolated extremal. What remains open is the exclusion of all other periodic extremals.
+
+
+\begin{insightbox}{Chapter summary}
+\end{insightbox}
+
+The conclusion is obtained by exhaustion of possibilities. Regular motion is finite bang-bang. A singular interval is circular and not minimizing. A finite vertex sequence cannot reach the singularity. Any chattering approach must lie on the inward stable curve, but that curve is incompatible with the periodic boundary conditions of a minimizer. Hence the minimizer stays regular and is a finite smoothed polygon.
+
+
+critical hexagons and balanced multicurves
+
+
+matrix control system and area cost
+
+
+Pontryagin extremal; edge-extremal
+
+
+away from sin- singular locus = circle; gular locus: no singular arc finite bang-bang only remaining obstruction: finite-time chattering
+
+
+weighted blowup and triangular Fuller map
+
+
+global basin and cluster theorem
+
+
+chattering stable curve is nonperiodic
+
+
+periodic minimizer avoids singularity ⇒finite smoothed polygon
+
+
+\begin{figureplaceholder}
+Figure 20.1: Logical dependency of the proof. The long dynamical argument is needed only to exclude chattering at the singular locus.
+\end{figureplaceholder}

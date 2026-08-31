@@ -1,0 +1,25 @@
+\chapter*{How to read these notes}
+\addcontentsline{toc}{chapter}{How to read these notes}
+
+The source paper is a 283-page research monograph. It combines discrete geometry, convexity, ordinary differential equations, optimal control, matrix Lie groups, Hamiltonian mechanics, hyperbolic geometry, singular perturbation, blowup, Poincaré maps, stable-manifold theory, and computer-assisted dynamical estimates. These notes begin from the geometric question and introduce each technical language only when it becomes useful. Almost every abstract construction is specialized immediately to explicit $2\times2$ matrices or elementary complex coordinates.
+
+\begin{insightbox}{The main theorem and the open theorem}
+A centrally symmetric convex disk is a compact convex set $K\subset\mathbb R^2$ with nonempty interior and $K=-K$. The full Reinhardt conjecture predicts that the unique minimizer, up to affine transformation, is the smoothed octagon. The theorem proved by Hales and Vajjha is the structural statement that every global minimizer is a finite-sided smoothed polygon, with boundary alternating between straight segments and hyperbolic arcs of Reinhardt--Mahler type. It does not determine the number of sides.
+\end{insightbox}
+
+\section*{The proof in one page}
+\begin{enumerate}[leftmargin=2.2em]
+\item Classical packing theory reduces the density problem to minimizing the area of $K$ after normalizing a smallest centrally symmetric hexagon circumscribing $K$.
+\item A minimizing boundary is encoded by six synchronized curves $\sigma_0,\ldots,\sigma_5$, hence by a curve $g(t)\in\mathrm{SL}_2(\mathbb R)$.
+\item Writing $g'=gX$ and normalizing $\det X=1$, convexity produces a triangular curvature control. The area becomes an integral cost.
+\item The Pontryagin maximum principle implies finite bang--bang motion away from a singular locus. Such motion gives a smoothed polygon.
+\item The singular locus is the circle, and a second variation excludes a positive-length circular singular arc.
+\item The only remaining obstruction is chattering: infinitely many switches accumulating at the singular locus in finite time.
+\item A weighted blowup replaces the singular point by an exceptional divisor carrying a triangular Fuller system.
+\item The Fuller Poincaré map has inward and outward self-similar fixed points. A computer-assisted cell decomposition proves a global basin theorem.
+\item Stable-manifold theory transfers this structure to the exact Reinhardt map.
+\item The required chattering stable curve cannot belong to a periodic minimizer. Chattering is impossible, so the minimizer has finitely many switches.
+\end{enumerate}
+
+\section*{Prerequisites and proof audit}
+The main text assumes undergraduate linear algebra, multivariable calculus, elementary real analysis, ordinary differential equations, and complex numbers. Fejes Tóth's packing theorem, the Pontryagin maximum principle, the stable-manifold theorem, and Weierstrass preparation are stated as black boxes and specialized to this problem. The global basin theorem includes symbolic and numerical verification; the notes explain precisely where that computation enters.

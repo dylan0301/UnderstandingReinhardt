@@ -1,0 +1,247 @@
+% Reconstructed from the compiled lecture-note PDF.
+\chapter{Optional model: circular control and a conserved angular momentum}
+\section{Why enlarge the triangle to a disk?}
+
+The triangular control set has only discrete rotational symmetry. Replace it temporarily by a circular disk in the affine plane u0 + u1 + u2 = 1.
+
+
+The modified problem is no longer exactly the Reinhardt packing problem, because some controls outside the triangle correspond to negative boundary curvature. It is a toy model. Its advantage is continuous rotational symmetry.
+
+
+Continuous symmetries often produce conserved quantities. In elementary mechanics, invariance under spatial translation gives linear momentum, and invariance under rotation gives angular momentum. The same principle holds for optimal control.
+
+
+\section{Noether’s principle in the present setting}
+
+Let a one-parameter rotation act simultaneously on
+
+
+\begin{displaytext}
+X, Λ1, ΛR, Zu
+\end{displaytext}
+
+by conjugation. When the control set is a disk, the rotated control is still admissible, and the Hamiltonian is invariant. The control-theoretic Noether theorem then yields the conserved scalar
+
+
+\begin{displaytext}
+A = ⟨J, Λ1 + ΛR⟩.
+\end{displaytext}
+
+The source calls this angular momentum.
+
+
+\begin{statementbox}{Theorem}
+Theorem 13.1 (Angular momentum for circular control). Along every Pontryagin extremal of the circular-control problem, d ⟨J, Λ1 + ΛR⟩= 0. dt
+\end{statementbox}
+
+One can verify the conservation directly by differentiating and substituting the costate equations; the control-dependent terms cancel exactly because of rotational symmetry.
+
+
+\section{The Cayley transform and hyperboloid coordinates}
+
+\begin{displaytext}
+The real algebra sl2(R) is isomorphic to \
+( it z ! ) \
+su(1, 1) = : t ∈R, z ∈C . \
+¯z −it
+\end{displaytext}
+
+The isomorphism is a fixed change of basis called the Cayley transform. Its main advantage is that rotations act by multiplication of the complex coordinate by a phase.
+
+
+For a determinant-one state, write
+
+
+( q ) 1 + |w|2 w X = (−i q ). ¯w i 1 + |w|2
+
+
+The pair q 1 + |w|2, w
+
+
+lies on the upper sheet of the hyperboloid t2 −|w|2 = 1.
+
+
+This is another standard model of the hyperbolic plane.
+
+
+The other costates can be encoded by complex variables b, c. Near the singular locus,
+
+
+\begin{displaytext}
+w = b = c = 0.
+\end{displaytext}
+
+This is why these coordinates are adapted to the local analysis.
+
+
+\section{Optimal control on a circle}
+
+\begin{displaytext}
+The boundary of the circular control set can be parametrized by a phase z with |z| = 1. In su(1, 1) \
+coordinates, the control matrix has the form \
+−iα βz ! \
+Z∗(z) = , \
+β/z iα
+\end{displaytext}
+
+after fixing positive constants α, β. The ratio
+
+
+\begin{displaytext}
+β \
+ρ = \
+α \
+records the disk radius. The circumscribed disk of the triangle has ρ = 2; the inscribed disk has \
+ρ = 1.
+\end{displaytext}
+
+\begin{displaytext}
+Hamiltonian maximization and angular-momentum conservation reduce the optimal phase to a \
+quadratic equation. In the source notation, if Q = [ΛR, X], then \
+αQ21z2 −2iβQ11z + αQ12 = 0.
+\end{displaytext}
+
+Near the singular locus, the maximizing root satisfies c z∗= + O(|w|). |c|
+
+
+Thus the optimal control direction is, to leading order, the phase of the third-chain variable c.
+
+
+\section{Exact equations near the singular locus}
+
+With fixed normal parameters
+
+
+\begin{displaytext}
+3 \
+λcost = −1, d1 = 2, A = 3,
+\end{displaytext}
+
+the hyperboloid-coordinate equations imply
+
+
+\begin{displaytext}
+c \
+w′ = −iρ + O(|w|), \
+|c| \
+b′ = 2iw + O(|b|), \
+c′ = −3ib + O(|c| + |b| |w|2 + |b|2 |w|).
+\end{displaytext}
+
+If a trajectory reaches the singularity at t = 0, Gronwall estimates give
+
+
+\begin{displaytext}
+|w| = O(t), |b| = O(t2), |c| = O(t3).
+\end{displaytext}
+
+This justifies the Fuller truncation rigorously.
+
+
+\section{Hamiltonian structure of the truncated system}
+
+\begin{displaytext}
+For \
+z3 \
+z′3 = z2, z′2 = z1, z′1 = −i |z3|,
+\end{displaytext}
+
+\begin{displaytext}
+define \
+i \
+HF = 2(z2¯z1 −¯z2z1) + |z3| , \
+AF = |z2|2 −(z1¯z3 + ¯z1z3).
+\end{displaytext}
+
+Both are conserved. The system is Hamiltonian for the nonstandard symplectic form
+
+
+\begin{displaytext}
+−1 1 ωF = dz1 ∧d¯z3 + dz2 ∧d¯z2 −1 dz3 ∧d¯z1. \
+2i 2i 2i
+\end{displaytext}
+
+The unusual pairing of z1 with z3 reflects the third-order chain.
+
+
+This Hamiltonian structure is conceptually valuable: the Fuller system is not an ad hoc approximation but retains the conservation laws and symplectic geometry of the original problem at leading order.
+
+
+\section{Reducing by the virial symmetry}
+
+\begin{displaytext}
+On the zero set \
+HF = AF = 0,
+\end{displaytext}
+
+introduce scale-invariant quantities
+
+
+\begin{displaytext}
+|z2| |z3| \
+x2 = , x3 = . \
+|z1|2 |z1|3
+\end{displaytext}
+
+The conservation laws imply
+
+
+\begin{displaytext}
+1 \
+2 ≤x3 ≤x2. x2 > 0, x3 > 0, 2x2
+\end{displaytext}
+
+Thus (x2, x3) lies in a curved planar region Ω. Phase signs produce four copies of Ω, glued along their boundary curves to form a topological plane.
+
+
+The Fuller flow descends, after a positive time rescaling, to an explicit vector field on this plane. It has two nontrivial equilibrium points:
+
+
+\begin{displaytext}
+2 r2 ! 2 r2 ! \
+q∗+ = √ 10, 5, +, + , q∗−= √ 10, 5, −, − .
+\end{displaytext}
+
+\begin{displaytext}
+They are the outward and inward logarithmic spirals. The Jacobian eigenvalues at q∗+ are \
+√ √ \
+− 2 ± i 3,
+\end{displaytext}
+
+so q∗+ is asymptotically stable; time reversal makes q∗−unstable.
+
+
+\section{Global behavior of the circular Fuller model}
+
+The source analyzes the vector field on the four glued copies of Ω. Apart from one special timereversal-symmetric trajectory passing through the corner (2, 2), the flow crosses the boundary curves in a controlled sequence. A Lyapunov function near q∗+ and monotonic winding around it show:
+
+
+\begin{statementbox}{Theorem}
+Theorem 13.2 (Global circular Fuller dynamics). Every trajectory other than the inward logarithmic spiral converges, after quotienting by scaling and rotation, to the outward logarithmic spiral as t →+∞. In reverse time, every trajectory other than the outward spiral converges to the inward spiral.
+\end{statementbox}
+
+This is a complete classification for the smooth circular model. It suggests the geometry later proved for the triangular Poincaré map: one inward fixed point, one outward fixed point, and a global basin for the outward one.
+
+
+\section{What transfers to the triangular problem}
+
+The following structural features survive when the circle is replaced by the triangle:
+
+
+• weighted scaling of orders 1, 2, 3; • a time-reversal involution; • inward and outward self-similar spirals; • a stable outward angular profile and unstable inward profile; • global attraction on the blown-up angular space.
+
+
+What changes is regularity. Circular control gives a smooth phase z∗. Triangular control jumps among three phases, so the continuous-time angular flow is replaced by a Poincaré map whose switching times are roots of cubic polynomials.
+
+
+\begin{insightbox}{Chapter summary}
+\end{insightbox}
+
+\begin{displaytext}
+Circularizing the control set creates continuous rotational symmetry and a conserved angular \
+momentum. Hyperboloid coordinates center the singularity at w = b = c = 0 and rigorously \
+produce a complex length-three Fuller system. After quotienting by scaling and rotation, \
+that model has one stable outward spiral and one unstable inward spiral, with a global basin. \
+This chapter supplies the conceptual template for the true triangular analysis, but the final \
+proof does not depend logically on it.
+\end{displaytext}

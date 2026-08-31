@@ -1,0 +1,333 @@
+% Reconstructed from the compiled lecture-note PDF.
+\chapter{Ordinary differential equations and analysis background}
+This appendix records the analytic facts used in the lecture notes. The goal is not to replace a full course in analysis or differential equations, but to isolate exactly what the proof needs.
+
+
+\section{Ordinary differential equations as vector fields}
+
+\begin{displaytext}
+An ordinary differential equation on an open set U ⊂Rn has the form \
+x′(t) = f(t, x(t)), x(t0) = x0.
+\end{displaytext}
+
+A solution is a differentiable curve whose tangent vector equals the prescribed vector field. In an autonomous equation x′ = f(x), the right-hand side does not depend explicitly on time.
+
+
+The matrix equations in the Reinhardt problem are ordinary differential equations on finitedimensional vector spaces. For example, after writing all matrix entries as coordinates, the equation
+
+
+[Zu, X] X′ = ⟨Zu, X⟩ is an ODE in three real variables as long as the denominator does not vanish.
+
+
+\section{Existence and uniqueness}
+
+\begin{statementbox}{Theorem}
+Theorem B.1 (Picard–Lindelof). Suppose f(t, x) is continuous in (t, x) and locally Lipschitz in x. Then for every initial condition (t0, x0) there is a unique local solution of x′ = f(t, x), x(t0) = x0.
+\end{statementbox}
+
+The solution depends continuously on the initial data.
+
+
+A function is locally Lipschitz in x if, on every compact box, there is a constant L such that
+
+
+||f(t, x) −f(t, y)||≤L ||x −y||.
+
+
+Every continuously differentiable function is locally Lipschitz. Rational vector fields are locally Lipschitz wherever their denominators stay away from zero.
+
+
+\subsection{Why uniqueness matters}
+
+Uniqueness permits us to speak of a flow φt(x0): the point reached at time t from initial state x0. It also prevents two distinct trajectories from crossing at an ordinary point. This principle is repeatedly used in the basin and stable-manifold arguments.
+
+
+The projected Fuller vector field on a quotient space is sometimes not Lipschitz along glued boundaries. In that case the projected equation alone may fail uniqueness, and one must refer to the original smooth system before quotienting.
+
+
+\section{Caratheodory solutions and measurable controls}
+
+An optimal control u(t) need only be measurable. Then the vector field f(x, u(t)) may be discontinuous in time. Classical differentiability at every time is too restrictive.
+
+
+A Caratheodory solution is an absolutely continuous curve satisfying
+
+
+Z t x(t) = x(t0) + f(x(s), u(s)) ds. t0 Its derivative exists almost everywhere and equals the vector field almost everywhere. Under standard boundedness and Lipschitz assumptions, existence and uniqueness still hold.
+
+
+A piecewise constant bang-bang control gives a familiar special case: solve the smooth ODE on each interval and join the endpoints continuously.
+
+
+\section{Absolute continuity}
+
+\begin{displaytext}
+A function x : [a, b] →Rn is absolutely continuous if for every ε > 0 there is δ > 0 such that for any \
+disjoint intervals (ak, bk) with total length less than δ, \
+X ||x(bk) −x(ak)||< ε. \
+k
+\end{displaytext}
+
+\begin{displaytext}
+Equivalently, there is an integrable function v such that \
+Z t \
+x(t) = x(a) + v(s) ds. \
+a \
+Then x′ = v almost everywhere. This is the correct regularity class for controlled trajectories.
+\end{displaytext}
+
+\section{Gronwall’s inequality}
+
+\begin{statementbox}{Theorem}
+Theorem B.2 (Integral Gronwall inequality). Let h : [0, T] →[0, ∞) be continuous and suppose
+\end{statementbox}
+
+\begin{displaytext}
+Z t \
+h(t) ≤A + B h(s) ds \
+0 \
+for constants A, B ≥0. Then \
+h(t) ≤AeBt. \
+More generally, if A = A(t) is nondecreasing, then h(t) ≤A(t)eBt.
+\end{displaytext}
+
+\begin{prooftext}
+Proof. Set Z t H(t) = A + B h(s) ds. 0 Then h ≤H and H′ ≤BH. Hence (e−BtH(t))′ ≤0, so H(t) ≤AeBt.
+\end{prooftext}
+
+Gronwall is used for three distinct purposes:
+
+
+• bounding a state trajectory on a finite time interval; • proving continuous dependence on data; • controlling error terms in asymptotic expansions near the singular locus.
+
+
+\begin{statementbox}{Example}
+Example B.3 (Matrix growth). If g′ = gX and ||X(t)||≤M, then
+\end{statementbox}
+
+\begin{displaytext}
+Z t \
+||g(t)||≤||g(0)||+ M ||g(s)||ds, \
+0 \
+so \
+||g(t)||≤||g(0)||eMt.
+\end{displaytext}
+
+This is one ingredient in compactifying the attainable set.
+
+
+\section{Lipschitz functions and Rademacher’s theorem}
+
+\begin{statementbox}{Theorem}
+Theorem B.4 (Rademacher). Every Lipschitz function f : Rn →Rm is differentiable almost everywhere.
+\end{statementbox}
+
+The source proves that the tangent fields of the boundary multicurve are Lipschitz. Rademacher then guarantees the existence of second derivatives almost everywhere, which is enough to define curvature constraints and controls almost everywhere.
+
+
+\section{Curvature for a nonsingular plane curve}
+
+\begin{displaytext}
+Let γ(t) = (x(t), y(t)) be a twice differentiable curve with γ′(t) ̸= 0. Its signed curvature is
+\end{displaytext}
+
+\begin{displaytext}
+det(γ′(t), γ′′(t)) \
+κ(t) = . \
+||γ′(t)||3
+\end{displaytext}
+
+Under an orientation-preserving reparameterization, the sign of curvature is unchanged. A regular simple closed curve oriented counterclockwise bounds a convex region precisely when its signed curvature is nonnegative, interpreted weakly when the curve is only C1,1.
+
+
+In the paper, only the numerator det(γ′, γ′′)
+
+
+is needed because the denominator is positive.
+
+
+\section{Landau notation}
+
+For functions near t = 0, the statement
+
+
+f(t) = O(tk)
+
+
+means that there are constants C, δ > 0 such that
+
+
+\begin{displaytext}
+|f(t)| ≤C |t|k (0 < |t| < δ).
+\end{displaytext}
+
+Similarly, f(t) = g(t) + O(tk)
+
+
+means f −g = O(tk).
+
+
+The usual algebra rules apply:
+
+
+\begin{displaytext}
+O(ta) + O(tb) = O(tmin(a,b)), \
+O(ta)O(tb) = O(ta+b), \
+Z t \
+O(sa) ds = O(ta+1) (a > −1). \
+0
+\end{displaytext}
+
+\begin{displaytext}
+If h(t) = 1 + O(t), then 1/h(t) = 1 + O(t). These elementary rules produce the weighted orders
+\end{displaytext}
+
+\begin{displaytext}
+w = O(t), b = O(t2), c = O(t3)
+\end{displaytext}
+
+near the singular locus.
+
+
+\section{Taylor’s theorem}
+
+If f is k + 1 times continuously differentiable near 0, then
+
+
+\begin{displaytext}
+k f(j)(0) \
+f(t) = X tj + O(tk+1). \
+j! \
+j=0
+\end{displaytext}
+
+For vector-valued functions the formula holds componentwise. Taylor expansion is used to:
+
+
+• determine the multiplicity of switching-function zeros; • derive the Fuller truncation; • identify the leading weighted part of the exact Poincare map; • decide how trajectories cross glued boundaries.
+
+
+\section{Implicit functions}
+
+\begin{statementbox}{Theorem}
+Theorem B.5 (Implicit function theorem). Let F : Rn+m →Rm be continuously differentiable. Suppose F(x0, y0) = 0
+\end{statementbox}
+
+\begin{displaytext}
+and the m × m matrix DyF(x0, y0) is invertible. Then near (x0, y0) the equation F(x, y) = 0 has a \
+unique solution \
+y = φ(x),
+\end{displaytext}
+
+where φ is continuously differentiable.
+
+
+The most elementary application in this proof is a transverse switching time. If
+
+
+\begin{displaytext}
+∂χ \
+χ(t0, q0) = 0, (t0, q0) ̸= 0, \
+∂t
+\end{displaytext}
+
+then for q near q0 there is a unique nearby switching time t = t(q) depending smoothly on q.
+
+
+When the switching zero has higher multiplicity, the ordinary implicit function theorem fails; Weierstrass preparation is then used instead.
+
+
+\section{Compactness and subsequences}
+
+The Bolzano–Weierstrass theorem says every bounded sequence in Rn has a convergent subsequence. In the blown-up system, the exceptional divisor is compact. Therefore any sequence of switching points whose radial coordinate tends to zero has a cluster point on the divisor. This simple compactness observation begins the cluster-point theorem.
+
+
+A continuous function on a compact set attains its maximum and minimum. Compactification of the star domain therefore permits uniform bounds for denominators, velocities, switching derivatives, and costs.
+
+
+\section{Existence of optimal controls: the role of Filippov}
+
+The full proof uses a standard result of optimal control.
+
+
+Filippov existence theorem, simplified form
+
+
+Consider x′ = f(x, u) with u in a compact set U. Suppose the state is confined to a compact set, f is continuous, the velocity set f(x, U) is convex for every x, and the running cost is continuous. Then under appropriate endpoint conditions an optimal measurable control exists.
+
+
+The Reinhardt problem satisfies these hypotheses after compactification. The triangular control set is compact; the velocity set in upper-half-plane coordinates is a triangle and hence convex; and the relevant state region is compact.
+
+
+The source also has an independent geometric existence theorem due to Reinhardt. Filippov’s theorem ensures that the reformulated control problem is analytically well posed.
+
+
+\section{Linearization of a flow}
+
+Let x′ = f(x) and let x(t; x0) be its solution. A small perturbation x0 + εv has first variation
+
+
+\begin{displaytext}
+∂x(t; x0) \
+η(t) = v. \
+∂x0
+\end{displaytext}
+
+Differentiating the ODE with respect to initial data gives the variational equation
+
+
+\begin{displaytext}
+η′ = Df(x(t))η, η(0) = v.
+\end{displaytext}
+
+The matrix solution Ψ(t) with Ψ(0) = I is the fundamental matrix. It is the derivative of the flow with respect to initial conditions.
+
+
+For a Poincare map, the derivative has an extra correction because the return time varies with initial data. If the return section is h(x) = 0 and the return time is T(x), then
+
+
+P(x) = φT(x)(x).
+
+
+Differentiating h(P(x)) = 0 determines DT(x) and hence DP(x). This is the standard route to the Jacobians used at the fixed points.
+
+
+\section{Continuous and discrete time}
+
+A flow φt describes continuous motion. A Poincare map records only successive intersections with a section: qn+1 = P(qn).
+
+
+The map discards time between intersections but retains the recurrence structure. In a chattering problem, switching times are the natural section because the control law changes there.
+
+
+A fixed point P(q) = q need not mean the continuous trajectory is literally stationary. It can represent a self-similar trajectory: after one switching, the state returns to the same shape after scaling and symmetry reduction.
+
+
+\section{Exercises}
+
+\begin{statementbox}{Exercise}
+Exercise B.6. Use Gronwall’s inequality to prove uniqueness for x′ = f(t, x) when f is Lipschitz in x.
+\end{statementbox}
+
+\begin{statementbox}{Exercise}
+Exercise B.7. Suppose f(t) = O(t2) and g′(t) = f(t) + O(g(t)) with g(0) = 0. Prove g(t) = O(t3) by Gronwall.
+\end{statementbox}
+
+\begin{statementbox}{Exercise}
+Exercise B.8. Let χ(t, q) be smooth with χ(0, q0) = 0 and ∂tχ(0, q0) ̸= 0. Derive the formula
+\end{statementbox}
+
+\begin{displaytext}
+q0) Dt(q0) = −Dqχ(0, . \
+∂tχ(0, q0)
+\end{displaytext}
+
+\begin{statementbox}{Exercise}
+Exercise B.9. Show that a continuous trajectory on a compact state space has at least one cluster point as t →∞.
+\end{statementbox}
+
+\begin{insightbox}{Chapter summary}
+\end{insightbox}
+
+The analytic core uses standard finite-dimensional ODE theory: measurable controls give absolutely continuous trajectories; Lipschitz regularity gives uniqueness; Gronwall controls errors; Taylor and implicit-function arguments control switching; compactness yields cluster points. The genuinely specialized tools, stable manifolds and Weierstrass preparation, are summarized in later appendices.
+

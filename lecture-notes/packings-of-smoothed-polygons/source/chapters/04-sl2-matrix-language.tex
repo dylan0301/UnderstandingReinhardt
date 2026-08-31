@@ -1,0 +1,322 @@
+% Reconstructed from the compiled lecture-note PDF.
+\chapter{The matrix language: SL2(R) without prior Lie theory}
+The matrix language: without SL2(R) prior Lie theory
+
+
+\section{Area-preserving matrices}
+
+\begin{displaytext}
+Let \
+SL2(R) = \{g ∈M2(R) : det g = 1\} . \
+This is a group under matrix multiplication. Geometrically, g ∈SL2(R) is an orientation-preserving \
+linear transformation that preserves signed area:
+\end{displaytext}
+
+\begin{displaytext}
+det(gu, gv) = det(g) det(u, v) = det(u, v).
+\end{displaytext}
+
+The corresponding space of infinitesimal matrices is
+
+
+\begin{displaytext}
+( a b ! ) \
+sl2(R) = \{X ∈M2(R) : tr X = 0\} = : a, b, c ∈R . \
+c −a
+\end{displaytext}
+
+The terminology “Lie group” and “Lie algebra” will be explained in Appendix A; for now these are concrete matrix sets.
+
+
+The matrix 0 −1! J = 1 0
+
+
+generates rotations because cos t −sin t ! exp(tJ) = . sin t cos t
+
+
+\begin{displaytext}
+We write \
+π \
+R = exp J \
+3 \
+for counterclockwise rotation by 60◦.
+\end{displaytext}
+
+\section{Every multipoint is an SL2(R)-image of the standard one}
+
+\begin{displaytext}
+Let (sj) and (σj) be two normalized multipoints. Since s0 and s2 are linearly independent, there is \
+a unique linear map g satisfying \
+gs0 = σ0, gs2 = σ2.
+\end{displaytext}
+
+\begin{displaytext}
+The sum relations express every other sj as a linear combination of s0, s2, and the same relations \
+hold for σj. Therefore \
+gsj = σj
+\end{displaytext}
+
+\begin{displaytext}
+for all j. Finally, \
+det(gs0, gs2) det(σ0, σ2) \
+det(g) = = = 1. \
+det(s0, s2) det(s0, s2) \
+Thus g ∈SL2(R).
+\end{displaytext}
+
+Applying this at every time gives the basic representation.
+
+
+\begin{statementbox}{Theorem}
+Theorem 4.1 (Matrix representation of a multicurve). For a normalized multicurve there is a unique curve g : I →SL2(R) such that
+\end{statementbox}
+
+\begin{displaytext}
+σj(t) = g(t)s∗j for all j, t.
+\end{displaytext}
+
+The differentiability of g is the same as that of the multicurve.
+
+
+Six synchronized curves have now been replaced by one curve in a three-dimensional matrix manifold.
+
+
+\section{Body velocity}
+
+\begin{displaytext}
+Differentiate σj(t) = g(t)s∗j: \
+σ′j(t) = g′(t)s∗j.
+\end{displaytext}
+
+Since g(t) is invertible, define
+
+
+\begin{displaytext}
+X(t) = g(t)−1g′(t), equivalently g′(t) = g(t)X(t).
+\end{displaytext}
+
+This X is the velocity measured in the moving frame determined by g. It belongs to sl2(R).
+
+
+To prove tracelessness, differentiate det g(t) = 1. Jacobi’s formula gives
+
+
+\begin{displaytext}
+d \
+0 = det g = det(g) tr(g−1g′) = tr X. \
+dt
+\end{displaytext}
+
+Thus a(t) b(t) ! X(t) = . c(t) −a(t)
+
+
+\begin{displaytext}
+The boundary tangents are \
+σ′j(t) = g(t)X(t)s∗j. \
+Equivalently, because σj = gs∗j, \
+σ′j = gXg−1σj. \
+The conjugate gXg−1 is the same infinitesimal motion written in the fixed laboratory coordinates.
+\end{displaytext}
+
+Background interlude
+
+
+The map X 7→gXg−1 is called the adjoint action and is denoted Adg X. Nothing abstract is hidden here: it is ordinary matrix conjugation. The commutator
+
+
+[X, Y ] = XY −Y X
+
+
+is the corresponding infinitesimal operation.
+
+
+\section{Translating the star condition into inequalities}
+
+\begin{displaytext}
+The standard points are \
+cos(jπ/3)! \
+s∗j = . sin(jπ/3)
+\end{displaytext}
+
+\begin{displaytext}
+Because multiplication by g preserves open cones, the star condition for σ′j = gXs∗j is equivalent to \
+a condition on Xs∗j before applying g. \
+For each j, the vector Xs∗j must lie in the cone spanned by s∗j+1 and s∗j+2. Solving the corresponding \
+linear systems yields three linear forms \
+√ \
+c + 3a \
+ρ0(X) = √ , (4.1) \
+3 \
+√ \
+c − 3a \
+ρ1(X) = √ , (4.2) \
+3 \
++ c ρ2(X) = −3b√ . (4.3) \
+2 3
+\end{displaytext}
+
+The six cone conditions reduce, by central symmetry, to
+
+
+\begin{displaytext}
+ρ0(X) > 0, ρ1(X) > 0, ρ2(X) > 0.
+\end{displaytext}
+
+These are the matrix form of the star inequalities.
+
+
+\begin{displaytext}
+They imply several useful signs: \
+√ \
+c > 0, 3 |a| < c, 3b + c < 0, tr(JX) = b −c < 0.
+\end{displaytext}
+
+The final inequality will guarantee that the area integrand is positive.
+
+
+\section{A determinant identity}
+
+For a b ! X = , c −a
+
+
+we have det X = −a2 −bc.
+
+
+A direct calculation using Equations (4.1) to (4.3) gives
+
+
+\begin{displaytext}
+det X = ρ0ρ1 + ρ1ρ2 + ρ2ρ0.
+\end{displaytext}
+
+Since all ρj are positive, det X > 0.
+
+
+This positivity permits a convenient reparametrization.
+
+
+\section{Normalizing time by det X = 1}
+
+If we replace the parameter t by an increasing parameter τ, then
+
+
+\begin{displaytext}
+dg dt \
+= gX . \
+dτ dτ \
+Thus X is multiplied by the positive scalar dt/ dτ, and its determinant is multiplied by the square \
+of that scalar. Choose \
+dt 1 \
+= dτ p det X(t). \
+Then the reparametrized matrix, again denoted X, satisfies
+\end{displaytext}
+
+det X(t) = 1.
+
+
+This is analogous to arclength parametrization, but it is adapted to the matrix geometry rather than Euclidean speed.
+
+
+For a traceless 2 × 2 matrix, the characteristic polynomial is
+
+
+λ2 + det X.
+
+
+\begin{displaytext}
+Under det X = 1, Cayley–Hamilton gives \
+X2 = −I, X−1 = −X.
+\end{displaytext}
+
+This simple identity is used repeatedly.
+
+
+\section{The trace form}
+
+\begin{displaytext}
+Define \
+⟨X, Y ⟩= tr(XY ), X, Y ∈sl2(R).
+\end{displaytext}
+
+This symmetric bilinear form is nondegenerate. It has the invariance property D gXg−1, gY g−1E = ⟨X, Y ⟩,
+
+
+\begin{displaytext}
+and the commutator identity \
+⟨X, [Y, Z]⟩= ⟨[X, Y ], Z⟩. \
+For X ∈sl2(R), \
+⟨X, X⟩= tr(X2) = −2 det X.
+\end{displaytext}
+
+Hence the determinant-one surface is the quadratic surface
+
+
+⟨X, X⟩= −2.
+
+
+The sign is not a mistake: the trace form is indefinite, not an ordinary Euclidean inner product.
+
+
+\section{Reconstructing the critical hexagon from X}
+
+The directions of the six support edges at the standard multipoint are Xs∗j. The intersection of the lines through s∗j and s∗j+1 in these directions gives a vertex of the current critical hexagon. Solving the two linear equations yields
+
+
+\begin{displaytext}
+ρj+2(X) pj = s∗j + Xs∗j = s∗j+1 −ρj(X) Xs∗j+1. det X det X
+\end{displaytext}
+
+When det X = 1, this simplifies further. Thus X does not merely encode velocity; together with the current multipoint it reconstructs the support hexagon.
+
+
+\begin{insightbox}{Geometric intuition}
+\end{insightbox}
+
+The three-dimensional matrix X simultaneously records:
+
+
+• the six tangent directions of the synchronized boundary curves; • the shape of the current critical hexagon; • the position of the system in a hyperbolic state space introduced later.
+
+
+The star inequalities select one connected region of the determinant-one quadratic surface.
+
+
+\section{Endpoint conditions}
+
+In circle representation, g(0) = I.
+
+
+\begin{displaytext}
+After one sixth of the boundary has been traversed, the jth curve must arrive where the (j + 1)st \
+curve started. Therefore \
+g(tf)s∗j = s∗j+1 = Rs∗j,
+\end{displaytext}
+
+so g(tf) = R.
+
+
+Smooth matching of tangents gives
+
+
+X(tf) = R−1X(0)R.
+
+
+Extending the solution by this symmetry produces a periodic orbit:
+
+
+\begin{displaytext}
+X(t + 3tf) = X(t), g(t + 6tf) = g(t).
+\end{displaytext}
+
+The periodicity of a minimizer will be decisive at the end of the proof.
+
+
+\begin{insightbox}{Chapter summary}
+\end{insightbox}
+
+\begin{displaytext}
+The six-point geometry is encoded by one area-preserving matrix g(t), and its body velocity \
+X = g−1g′ is traceless. Convexity becomes three linear star inequalities ρj(X) > 0. These \
+imply det X > 0, so time can be normalized by det X = 1. The endpoint conditions are \
+rotational, making every admissible minimizer periodic after extension.
+\end{displaytext}

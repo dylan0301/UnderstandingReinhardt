@@ -1,0 +1,231 @@
+% Reconstructed from the compiled lecture-note PDF.
+\chapter{The blown-up Poincaré section and its cells}
+\section{Why the angular section is three-dimensional}
+
+The triangular Fuller state (z1, z2, z3) has six real coordinates. The zero-Hamiltonian equation removes one. Quotienting by positive weighted scaling removes another, and quotienting by the discrete rotation only identifies finitely many points. Restricting to a switching wall removes one more real dimension. Therefore the Poincaré section
+
+
+ΞW,0/VT
+
+
+is three-dimensional.
+
+
+To analyze a piecewise-defined recurrence map globally, we need explicit coordinates and a finite partition into regions where one switching polynomial determines the next switch continuously.
+
+
+\section{Coordinates on a wall}
+
+\begin{displaytext}
+Write \
+zj = rjeiθj, j = 1, 2, 3.
+\end{displaytext}
+
+\begin{displaytext}
+Using the discrete rotation, assume \
+z3 = x3 ≤0
+\end{displaytext}
+
+is real. The zero-Hamiltonian relation becomes
+
+
+\begin{displaytext}
+x3 = 2r1r2 sin(θ1 −θ2) = −2r1r2 sin ψ, ψ = θ2 −θ1.
+\end{displaytext}
+
+When x3 < 0, one has r1r2 > 0, 0 < ψ < π.
+
+
+\begin{displaytext}
+Weighted scaling acts by \
+r1 7→r1/s, r2 7→r2/s2.
+\end{displaytext}
+
+There is a unique s > 0 for which r1/s + r2/s2 = 1.
+
+
+After this normalization, rename the scaled radii and write
+
+
+\begin{displaytext}
+r1 = 1 −r2, 0 ≤r2 ≤1.
+\end{displaytext}
+
+Thus a typical point is described by (r2, ψ, θ2).
+
+
+\section{The two big cells}
+
+For x3 ̸= 0, the sign of Imz2 determines the first control.
+
+
+\begin{statementbox}{Definition}
+Definition 15.1 (Big cells). The first big open cell is
+\end{statementbox}
+
+\begin{displaytext}
+C3(ζ)◦= \{0 < r2 < 1, 0 < ψ < π, 0 < θ2 < π\} .
+\end{displaytext}
+
+Its first control is ζ. The second is
+
+
+\begin{displaytext}
+C3(ζ2)◦= \{0 < r2 < 1, 0 < ψ < π, −π < θ2 < 0\} ,
+\end{displaytext}
+
+with first control ζ2.
+
+
+Each is an open rectangular box in (r2, ψ, θ2) coordinates. Their complement consists of lowerdimensional boundary strata.
+
+
+\begin{displaytext}
+Time reversal acts by \
+τ(r2, ψ, θ2) = (r2, π −ψ, π −θ2)
+\end{displaytext}
+
+on the first cell, with the corresponding −π −θ2 branch on the second.
+
+
+\section{Two competing switching polynomials}
+
+Within a big cell, the current control u can switch to either neighboring control. Denote the corresponding switching cubics by
+
+
+\begin{displaytext}
+χA = χu,u/ζ, χB = χu,¯u.
+\end{displaytext}
+
+At the initial wall, one of these has a zero at t = 0. Remove its known factor and write
+
+
+\begin{displaytext}
+χA χB \
+χA,mA = , χB,mB = . tmA tmB
+\end{displaytext}
+
+The next switching time is the least positive root among the two reduced polynomials.
+
+
+The identity of the active polynomial can change only on algebraic loci:
+
+
+\begin{displaytext}
+• ∆A = 0, where χA has a multiple root; \
+• ∆B = 0, where χB has a multiple root; \
+• Res(χA, χB) = 0, where they share a root.
+\end{displaytext}
+
+These loci are surfaces inside the big cells. Crossing one can make the least positive root jump from one branch to another.
+
+
+Background interlude
+
+
+For a polynomial p, the discriminant vanishes exactly when p and p′ share a root. The resultant of p and q vanishes exactly when they share a complex root. Both are polynomial functions of the coefficients, hence analytic functions of the cell coordinates.
+
+
+\section{Boundary strata and zero switching time}
+
+On parts of the boundary, the limiting first switching time is 0. One must not simply identify the two sides, because the first controls can differ and the Poincaré map has a nontrivial limiting action. The source attaches lower-dimensional cells to the faces so that the dynamics extends continuously wherever possible.
+
+
+\begin{displaytext}
+The two-dimensional cells with x3 ̸= 0 have Imz2 = 0 and a double root at t = 0 for one switching \
+polynomial. Further two-cells occur when z3 = 0. Together they cap the unfilled faces of the big \
+cells.
+\end{displaytext}
+
+Topologically, every point of the Poincaré section is represented in the union of the closures of the two big cells, with specified identifications on their faces.
+
+
+\section{The time-reversal involution}
+
+The recurrence map F and time reversal satisfy
+
+
+\begin{displaytext}
+F −1 = τ ◦F ◦τ.
+\end{displaytext}
+
+\begin{displaytext}
+Therefore \
+ι = τ ◦F
+\end{displaytext}
+
+is an involution: ι2 = id .
+
+
+This converts information about images into information about preimages and makes the discontinuity surfaces geometrically manageable.
+
+
+For example, a boundary two-cell on which a switching polynomial has a multiple zero is mapped by ι to the corresponding discriminant surface inside a big cell. A boundary where both candidate polynomials share a switching time maps to a resultant surface.
+
+
+\section{The five main parts D0, . . . , D4}
+
+The discriminant and resultant surfaces partition the two big cells into five regular closed pieces.
+
+
+\begin{displaytext}
+• D1 lies in the first big cell and contains both fixed points qin and qout. The active switching \
+polynomial is χA. The piece is invariant under ι. \
+• D2 lies in the second big cell, also with active polynomial χA, and is invariant under ι. \
+• D3 is the remaining part of the second big cell, with active polynomial χB.
+\end{displaytext}
+
+\begin{figureplaceholder}
+Figure 15.1: Boundary regions of the two big cells where the limiting first switching time is zero. This is the source paper’s computational visualization (source Figure 15.1.1), included to orient the cell attachment.
+\end{figureplaceholder}
+
+• D4 = ι(D3) lies in the first big cell. • D0 is a very small residual bubble in the first big cell, bounded by pieces of the discriminant surfaces. It is invariant under ι.
+
+
+On the interior of each Di, the first switching time is given by one continuous root branch. The map extends continuously to a function
+
+
+Fi : Di →ΞW,0/VT .
+
+
+(a) Partition of the first big cell. (b) Partition of the second big cell.
+
+
+\begin{figureplaceholder}
+Figure 15.2: Computational visualizations of the geometric partition, adapted directly from source Figures 15.3.1 and 15.3.2. The surfaces are discriminant and resultant loci for cubic switching polynomials.
+\end{figureplaceholder}
+
+\section{Where the fixed points lie}
+
+In the (r2, ψ, θ2) coordinates, the inward fixed point is approximately
+
+
+qin ≈(0.267949, 0.170594, 2.91574).
+
+
+The outward point is its time reverse:
+
+
+\begin{displaytext}
+qout ≈(0.267949, π −0.170594, π −2.91574).
+\end{displaytext}
+
+Both lie in D1. The inward point is extremely close to the triple juncture of D0, D1, D4, while the outward point lies well inside the regular part of D1. This asymmetry explains why the global basin proof is much easier near qout than near qin.
+
+
+\section{Continuity is enough}
+
+The Poincaré map is not globally continuous on the unpartitioned section. The proof does not require it to be. What is needed is:
+
+
+1. a finite cover by closed pieces Di; 2. a continuous extension Fi on each piece; 3. explicit information about which pieces can contain Fi(Di).
+
+
+This is analogous to a piecewise-smooth map in one-dimensional dynamics, except that the pieces are three-dimensional and the boundaries are algebraic surfaces.
+
+
+\begin{insightbox}{Chapter summary}
+\end{insightbox}
+
+After normalizing scaling, the switching section is covered by two three-dimensional boxes. The next switch is the least positive root of one of two cubic polynomials. Discriminants and resultants locate every possible discontinuity. Time reversal turns the recurrence into an involution and organizes the section into five closed pieces D0, . . . , D4, on each of which the Poincaré map extends continuously. This finite partition is the platform for the global basin theorem.
+

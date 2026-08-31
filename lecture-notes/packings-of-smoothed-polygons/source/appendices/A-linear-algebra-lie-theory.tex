@@ -1,0 +1,455 @@
+% Reconstructed from the compiled lecture-note PDF.
+\chapter{Linear algebra, matrix groups, and Lie theory}
+This appendix develops the matrix language used in the proof. No abstract Lie theory is required beyond differentiating matrix products and exponentials.
+
+
+\section{Two-dimensional determinants}
+
+\begin{displaytext}
+For column vectors v = (v1, v2)T and w = (w1, w2)T , write
+\end{displaytext}
+
+det(v, w) = v1w2 −v2w1.
+
+
+Geometrically, det(v, w) is the signed area of the parallelogram spanned by v and w. It is positive when the ordered pair (v, w) is counterclockwise.
+
+
+Let 0 −1! J = . 1 0
+
+
+Then Jv is v rotated counterclockwise by π/2, and
+
+
+det(v, w) = −vT Jw.
+
+
+Indeed, 0 −1 ! w1 ! − v1 v2 = v1w2 −v2w1. 1 0 w2
+
+
+If A is any 2 × 2 matrix, then
+
+
+det(Av, Aw) = det(A) det(v, w).
+
+
+This identity is the reason determinant-one matrices preserve oriented area.
+
+
+\section{The group SL2(R)}
+
+\begin{statementbox}{Definition}
+Definition A.1. The special linear group is
+\end{statementbox}
+
+\begin{displaytext}
+SL2(R) = \{g ∈M2(R) : det g = 1\} .
+\end{displaytext}
+
+It is a group under matrix multiplication.
+
+
+A general element has the form
+
+
+\begin{displaytext}
+a b ! \
+g = , ad −bc = 1, \
+c d
+\end{displaytext}
+
+and d −b ! g−1 = . −c a
+
+
+The equation ad−bc = 1 cuts out a three-dimensional surface in R4, so SL2(R) is a three-dimensional smooth manifold.
+
+
+\subsection{Tangent vectors at the identity}
+
+Let g(t) be a differentiable curve in SL2(R) with g(0) = I. Jacobi’s determinant formula gives
+
+
+\begin{displaytext}
+d \
+0 = det g(t) = tr(g′(0)). \
+dt t=0
+\end{displaytext}
+
+Thus a tangent vector at the identity must have trace zero.
+
+
+\begin{statementbox}{Definition}
+Definition A.2. The Lie algebra of SL2(R) is
+\end{statementbox}
+
+\begin{displaytext}
+( a b ! ) \
+sl2(R) = X = : a, b, c ∈R . \
+c −a
+\end{displaytext}
+
+Its bracket is the commutator [X, Y ] = XY −Y X.
+
+
+The word “Lie algebra” here simply means that sl2(R) is a vector space closed under commutators. The commutator records the first noncommutative correction in products of small matrix motions.
+
+
+\section{The matrix exponential}
+
+\begin{displaytext}
+For any square matrix X, define \
+∞ Xn \
+exp(X) = X . \
+n! n=0 \
+The series converges absolutely. It satisfies
+\end{displaytext}
+
+\begin{displaytext}
+d \
+exp(tX) = X exp(tX) = exp(tX)X. \
+dt
+\end{displaytext}
+
+\begin{displaytext}
+If X and Y commute, then exp(X + Y ) = exp(X) exp(Y ). Without commutativity this formula \
+generally fails. \
+For X ∈sl2(R), the Cayley–Hamilton theorem gives an especially simple formula. Since tr X = 0, \
+the characteristic polynomial is \
+λ2 + det X.
+\end{displaytext}
+
+Therefore X2 = −det(X)I.
+
+
+Write d = det X.
+
+
+\begin{displaytext}
+• If d > 0, then √ \
+√ sin( d t) \
+exp(tX) = cos( d t)I + √ X. \
+d \
+• If d = 0, then X2 = 0 and \
+exp(tX) = I + tX. \
+√ \
+• If d < 0, put λ = −d. Then
+\end{displaytext}
+
+\begin{displaytext}
+sinh(λt) \
+exp(tX) = cosh(λt)I + X. \
+λ
+\end{displaytext}
+
+These formulas make every constant-control segment in the Reinhardt system elementary.
+
+
+\begin{statementbox}{Example}
+Example A.3. Since J2 = −I,
+\end{statementbox}
+
+cos t −sin t ! exp(tJ) = . sin t cos t
+
+
+Thus J is the infinitesimal generator of ordinary rotations.
+
+
+\section{Left-trivialized velocity}
+
+\begin{displaytext}
+Let g(t) ∈SL2(R). Define \
+X(t) = g(t)−1g′(t). \
+Then X(t) ∈sl2(R), and the same equation can be written \
+g′(t) = g(t)X(t).
+\end{displaytext}
+
+This is called the left-trivialized velocity because the tangent vector g′(t) is transported back to the identity by left multiplication with g(t)−1.
+
+
+\begin{displaytext}
+If v is a fixed vector and σ(t) = g(t)v, then
+\end{displaytext}
+
+\begin{displaytext}
+σ′(t) = g′(t)v = g(t)X(t)v.
+\end{displaytext}
+
+Thus one matrix X(t) describes the simultaneous velocities of all vectors moved by g(t).
+
+
+If g is reparameterized by t = t(s), then
+
+
+\begin{displaytext}
+dt \
+eX(s) = X(t(s)) ds. \
+Consequently det eX = (dt/ds)2 det X. When det X > 0, one may choose the parameter so that \
+det X ≡1.
+\end{displaytext}
+
+\section{Adjoint action and Lax equations}
+
+\begin{displaytext}
+For g ∈SL2(R) and X ∈sl2(R), define \
+Adg X = gXg−1.
+\end{displaytext}
+
+This is conjugation. It preserves trace, determinant, eigenvalues, and commutators:
+
+
+Adg[X, Y ] = [Adg X, Adg Y ].
+
+
+\begin{displaytext}
+Differentiating conjugation gives the basic Lax identity. Let P(t) and X(t) be matrix curves. If \
+X(t) = h(t)X0h(t)−1, h′(t) = P(t)h(t),
+\end{displaytext}
+
+\begin{displaytext}
+then \
+X′ = [P, X]. \
+Conversely, a solution of X′ = [P, X] evolves by conjugation. Therefore its characteristic polynomial \
+is constant. \
+Proposition A.4 (Isospectrality). If X′ = [P, X], then tr(Xk) is constant for every positive integer \
+k. In particular, for 2 × 2 trace-zero matrices, det X is constant.
+\end{displaytext}
+
+\begin{prooftext}
+Proof. By cyclicity of trace,
+\end{prooftext}
+
+\begin{displaytext}
+d \
+tr(Xk) = k tr(Xk−1[P, X]) = k tr(Xk−1PX −XkP) = 0. \
+dt
+\end{displaytext}
+
+The Reinhardt state equation is a control-dependent Lax equation: Zu X′ = ⟨Zu, X⟩, X .
+
+
+\section{The trace pairing}
+
+On sl2(R), define ⟨X, Y ⟩= tr(XY ).
+
+
+This is a symmetric bilinear form. It is nondegenerate but not positive definite. For a b ! X = , c −a
+
+
+\begin{displaytext}
+one has \
+⟨X, X⟩= 2(a2 + bc) = −2 det X.
+\end{displaytext}
+
+Thus matrices with positive determinant have negative squared length in this indefinite geometry.
+
+
+\begin{displaytext}
+The pairing is invariant under conjugation: \
+⟨Adg X, Adg Y ⟩= tr(gXY g−1) = tr(XY ).
+\end{displaytext}
+
+It also satisfies ⟨X, [Y, Z]⟩= ⟨[X, Y ], Z⟩.
+
+
+This follows from expanding and cyclically permuting traces.
+
+
+\subsection{Useful 2 × 2 identities}
+
+\begin{displaytext}
+For X, Y ∈sl2(R), \
+XY + Y X = ⟨X, Y ⟩I. \
+To verify it, write out the entries or polarize X2 = −det(X)I. Several consequences are used \
+repeatedly: \
+[X, Y ]2 = ⟨X, Y ⟩2 −⟨X, X⟩⟨Y, Y ⟩ I, \
+⟨[X, Y ], [X, Y ]⟩= 2 ⟨X, Y ⟩2 −⟨X, X⟩⟨Y, Y ⟩ , \
+[X, [X, Y ]] = 2 ⟨X, X⟩Y −2 ⟨X, Y ⟩X. \
+These are the indefinite analogues of vector triple-product identities in R3.
+\end{displaytext}
+
+\section{A concrete basis for sl2(R)}
+
+\begin{displaytext}
+It is useful to use \
+1 0 ! 0 1 ! 0 0 ! \
+H = , E = , F = . \
+0 −1 0 0 1 0
+\end{displaytext}
+
+\begin{displaytext}
+Then \
+[H, E] = 2E, [H, F] = −2F, [E, F] = H. \
+Every X ∈sl2(R) is aH + bE + cF.
+\end{displaytext}
+
+Another basis adapted to geometry is
+
+
+\begin{displaytext}
+0 −1! 0 1 ! 1 0 ! \
+J = , K = , H = . \
+1 0 1 0 0 −1
+\end{displaytext}
+
+The trace pairing has signs
+
+
+\begin{displaytext}
+⟨J, J⟩= −2, ⟨K, K⟩= 2, ⟨H, H⟩= 2,
+\end{displaytext}
+
+and the basis vectors are pairwise orthogonal. Hence sl2(R) is a copy of three-dimensional Minkowski space with signature (−, +, +).
+
+
+\section{Adjoint orbits as hyperboloids}
+
+Because det J = 1, the adjoint orbit
+
+
+\begin{displaytext}
+n o OJ = gJg−1 : g ∈SL2(R)
+\end{displaytext}
+
+\begin{displaytext}
+lies in the quadratic surface det X = 1. Since ⟨X, X⟩= −2 det X, this is one sheet of a two-sheeted \
+hyperboloid in the Minkowski coordinates above. The sign condition ⟨J, X⟩< 0 chooses the sheet \
+containing J. \
+The stabilizer of J is the rotation group SO2(R). Therefore \
+OJ ∼= SL2(R)/SO2(R).
+\end{displaytext}
+
+The same quotient is the hyperbolic plane. This is the structural reason hyperbolic geometry appears in the control problem.
+
+
+\section{The upper-half-plane parametrization}
+
+For z = x + iy with y > 0, define
+
+
+x/y −(x2 + y2)/y ! Φ(z) = . 1/y −x/y
+
+
+A direct calculation gives
+
+
+\begin{displaytext}
++ y2 + 1 tr Φ(z) = 0, det Φ(z) = 1, ⟨J, Φ(z)⟩= −x2 < 0. \
+y
+\end{displaytext}
+
+Thus Φ(z) ∈OJ. The group SL2(R) acts on the upper half-plane by Mobius transformations:
+
+
+a b ! az + b · z = c d cz + d.
+
+
+The map Φ is equivariant: Φ(g · z) = gΦ(z)g−1.
+
+
+One can verify this directly, though the quotient description makes it conceptually inevitable.
+
+
+\section{Differentiating determinants: Jacobi’s formula}
+
+\begin{statementbox}{Theorem}
+Theorem A.5 (Jacobi). For a differentiable invertible matrix curve A(t),
+\end{statementbox}
+
+d det A(t) = det A(t) tr A(t)−1A′(t) . dt
+
+
+For a 2 × 2 matrix, the formula can be checked from coordinates. It implies:
+
+
+\begin{displaytext}
+• if g(t) ∈SL2(R), then g−1g′ has trace zero; \
+• if X(t) has constant determinant, then tr(X−1X′) = 0; \
+• the normalization det X = 1 is compatible with the state equation.
+\end{displaytext}
+
+\section{The Cayley transform and su(1, 1)}
+
+\begin{displaytext}
+The source sometimes changes from real matrices to complex matrices because rotations become \
+multiplication by a phase. Set \
+1 1 −i! \
+C = √ . \
+2 1 i
+\end{displaytext}
+
+Conjugation X 7→CXC−1 identifies sl2(R) with
+
+
+\begin{displaytext}
+( it z ! ) \
+su(1, 1) = : t ∈R, z ∈C . \
+¯z −it
+\end{displaytext}
+
+For a b ! X = , c −a
+
+
+the transformed coordinates can be written
+
+
+\begin{displaytext}
+it z ! b + c b −c \
+CXC−1 = , z = + ia, t = . \
+¯z −it 2 2
+\end{displaytext}
+
+The determinant condition becomes
+
+
+t2 −|z|2 = det X.
+
+
+For determinant 1, this is the upper sheet of a hyperboloid when t > 0. These are the hyperboloid coordinates used near the singular locus.
+
+
+\section{Matrix product rules used in the proof}
+
+The following elementary formulas are worth memorizing:
+
+
+\begin{displaytext}
+(AB)′ = A′B + AB′, \
+(A−1)′ = −A−1A′A−1, \
+(ABA−1)′ = A′BA−1 + AB′A−1 −ABA−1A′A−1, \
+d \
+⟨A, B⟩= A′, B + A, B′ . \
+dt
+\end{displaytext}
+
+If A′ = AP, the conjugation formula simplifies to
+
+
+(ABA−1)′ = A(B′ + [P, B])A−1.
+
+
+\section{Exercises}
+
+\begin{statementbox}{Exercise}
+Exercise A.6. Prove XY + Y X = tr(XY )I for all X, Y ∈sl2(R) by direct multiplication.
+\end{statementbox}
+
+\begin{statementbox}{Exercise}
+Exercise A.7. Show that X′ = [P, X] implies det X is constant without using the general tracepower argument.
+\end{statementbox}
+
+\begin{statementbox}{Exercise}
+Exercise A.8. Verify explicitly that Φ(i) = J and that Φ(g · i) = gJg−1.
+\end{statementbox}
+
+\begin{statementbox}{Exercise}
+Exercise A.9. Let Z be constant and suppose X′ = [Z, X]/ ⟨Z, X⟩. Prove that ⟨Z, X⟩is constant and obtain Z X(t) = exp(tP)X(0) exp(−tP), P = ⟨Z, X(0)⟩.
+\end{statementbox}
+
+\begin{insightbox}{Chapter summary}
+\end{insightbox}
+
+All Lie-theoretic operations in the proof reduce to explicit 2×2 matrix calculus. The essential structures are determinant-one matrices, trace-zero velocities, conjugation, the invariant trace
+
+
+pairing, and the identification of the determinant-one adjoint orbit with the hyperbolic plane.
+

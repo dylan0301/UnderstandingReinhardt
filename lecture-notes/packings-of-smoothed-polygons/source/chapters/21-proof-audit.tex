@@ -1,0 +1,126 @@
+% Reconstructed from the compiled lecture-note PDF.
+\chapter{Proof audit: analytic and computer-assisted components}
+\section{Why a proof audit is necessary}
+
+The source paper mixes conceptual geometry, exact symbolic calculations, local analytic theorems, and numerical dynamical computations. These have different verification burdens. A reader should know which conclusions follow from hand-checkable formulas and which rely on accompanying computer algebra.
+
+
+This chapter classifies the main steps.
+
+
+\section{Classical external theorems}
+
+The following are invoked from established literature rather than reproved in full:
+
+
+\begin{displaytext}
+• Fejes Tóth’s equality δ(K) = δL(K) for centrally symmetric planar convex disks; \
+• existence and regularity results of Reinhardt and Mahler; \
+• Filippov’s existence theorem for optimal controls; \
+• the Pontryagin maximum principle; \
+• the stable-manifold theorem for hyperbolic fixed points; \
+• Weierstrass preparation; \
+• Gronwall and Rademacher theorems.
+\end{displaytext}
+
+The source states or summarizes the needed versions and cites references.
+
+
+\section{Exact symbolic derivations}
+
+The following parts reduce to finite algebraic or differential calculations and are, in principle, checkable by hand:
+
+
+\begin{displaytext}
+• the matrix representation σj = gs∗j;
+\end{displaytext}
+
+• the star inequalities ρj(X) > 0; • the area formula area(K) = −3 R ⟨J, X⟩; 2 • the control matrix Zu and state equation X′ = [Zu, X]/ ⟨Zu, X⟩; • the Hamiltonian and state–costate equations; • the upper-half-plane parametrization and cost; • constant-control matrix exponentials; • classification of the full singular locus as the circle; • the local second variation excluding circular arcs; • the Fuller truncation and weighted-order estimates; • the triangular Fuller switching cubics and fixed-point equations.
+
+
+A computer algebra system greatly shortens many of these calculations but is not conceptually essential.
+
+
+\section{Symbolic calculations delegated to Mathematica}
+
+Several exact assertions are reported as direct Mathematica calculations. Examples include:
+
+
+• explicit costate formulas on constant-control segments; • switching-function inequalities for the smoothed (6k + 2)-gon family; • the exact Jacobian eigenvalues or numerical enclosures at fixed points; • asymptotic expansions matching Reinhardt and Fuller coordinates; • polynomial discriminants, resultants, and cell boundary equations.
+
+
+These are finite identities or inequalities. A rigorous audit should inspect the exact arithmetic and simplification rules in the accompanying notebooks.
+
+
+\section{The global basin computation}
+
+The global basin theorem uses a finite family of set inclusions:
+
+
+Fi(D) ⊂ [ D∗.
+
+
+The source visualizes and numerically checks images of analytic boundary faces. The logical deduction from the inclusion table is exact, but the inclusions themselves are the core computer-assisted input.
+
+
+A modern certification could proceed as follows:
+
+
+1. represent each cell by interval boxes or semialgebraic constraints; 2. isolate the relevant positive root of each switching cubic with interval Newton methods; 3. evaluate the constant-control flow using outward-rounded interval arithmetic; 4. subdivide faces adaptively until each image interval lies in the desired target half-spaces; 5. store a machine-checkable certificate of every subdivision and inequality.
+
+
+This would convert the visual/boundary computations into a formally auditable interval proof.
+
+
+\section{The global unstable curve computation}
+
+The source tracks the one-dimensional unstable manifold from qout using 434 numerically generated data points. The dynamics are strongly contracting in the transverse directions, making the numerical continuation stable in practice. The curve is observed to hit the boundary of the star domain and not return to the exceptional divisor.
+
+
+For a fully certified version one would:
+
+
+• compute a validated local unstable-manifold enclosure from the parameterization method; • propagate it with interval enclosures under each Poincaré branch; • verify the switching order and star inequalities on each segment; • certify a transverse crossing of the star-domain boundary before any possible return.
+
+
+\begin{insightbox}{Point requiring care}
+\end{insightbox}
+
+The source itself notes that the unstable-manifold calculation could be repeated with interval arithmetic but does not present such a certificate. Readers interested in formal proof status should distinguish this from the local analytic stable-manifold theorem, which is standard once the Jacobian is known.
+
+
+\section{Why the conceptual proof remains valuable}
+
+Even when some inclusions are computer-assisted, the proof is not a blind search. The analytic structure determines exactly what the computer must verify:
+
+
+• the control geometry forces cubic switching functions; • time reversal creates an involution; • discriminants and resultants determine the finite partition; • the upper-triangular containment order provides a discrete Lyapunov function; • hyperbolicity identifies the only stable and unstable channels.
+
+
+The computation verifies a finite set of geometric inequalities inside a proof architecture dictated by theory.
+
+
+\section{A reproducibility checklist}
+
+A complete independent audit should answer:
+
+
+1. Which version of Mathematica and which precision settings were used? 2. Are all fixed-point and root-isolation computations exact or high precision? 3. Are plots merely illustrative, or do they encode containment assertions? 4. For each containment, what analytic inequalities define the source and target cells? 5. How are multiple or nearly multiple switching roots separated?
+
+
+6. Is every discontinuity surface accounted for by a discriminant or resultant? 7. Can the unstable curve be enclosed rigorously until boundary crossing?
+
+
+The source provides accompanying code, and these questions indicate how to read it critically.
+
+
+\section{The status of these lecture notes}
+
+These notes reproduce the mathematical definitions, reductions, theorem statements, and logical implications. They do not re-execute or formally certify the full Mathematica package. The embedded computational figures are explanatory reproductions from the user-provided source PDF.
+
+
+\begin{insightbox}{Chapter summary}
+\end{insightbox}
+
+Most of the proof architecture is analytic and exact. Two decisive global dynamical inputs rely on extensive computation: the containment relations proving the Fuller global basin and the continuation of the exact Reinhardt unstable curve to the star-domain boundary. The source explains the algorithms and supplies code; a fully formal modern treatment would replace plot-based or high-precision checks with interval certificates.
+

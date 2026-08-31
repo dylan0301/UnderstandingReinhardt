@@ -1,0 +1,241 @@
+% Reconstructed from the compiled lecture-note PDF.
+\chapter{Critical hexagons and the origin of hyperbolas}
+\section{Support lines and circumscribed polygons}
+
+\begin{displaytext}
+Let K ⊂R2 be a convex disk. A line lis a support line of K if K lies in one of the two closed \
+half-planes bounded by land l∩K ̸= empty. A circumscribed polygon is obtained by intersecting \
+finitely many support half-planes.
+\end{displaytext}
+
+For a centrally symmetric K, support lines naturally occur in opposite pairs. Hence a centrally symmetric circumscribed hexagon has three pairs of opposite edges.
+
+
+\begin{statementbox}{Definition}
+Definition 2.1 (Critical hexagon). A critical hexagon HK of K is a centrally symmetric hexagon of least area among all centrally symmetric hexagons containing K.
+\end{statementbox}
+
+When K is a parallelogram, the optimal density is 1, so such shapes are irrelevant to the minimization. We therefore exclude that degenerate case.
+
+
+\begin{statementbox}{Theorem}
+Theorem 2.2 (Reinhardt–Fejes Tóth reduction). If K is a centrally symmetric convex disk that is not a parallelogram, then area(K) δ(K) = area(HK), where HK is any critical hexagon.
+\end{statementbox}
+
+Explanation of the reduction. By Fejes Tóth, a densest packing can be taken to be a lattice packing. Starting from a fundamental parallelogram of the lattice, move supporting lines inward while preserving the tiling structure. At an area-minimal configuration one obtains either a parallelogram or a centrally symmetric hexagon. The non-parallelogram case gives HK. Since every centrally symmetric hexagon tiles by translations, its area is exactly the covolume of the corresponding tiling lattice. Thus the packing density is the occupied area divided by the tile area.
+
+
+\section{Why the edge midpoints touch K}
+
+Let the vertices of HK be p0, . . . , p5 in counterclockwise order, and let sj be the midpoint of the edge pj−1pj. Minimality forces every sj to lie on ∂K.
+
+
+To see the mechanism, suppose an edge midpoint is separated from K. Then one can rotate the support line slightly about a nearby contact point, simultaneously adjusting its opposite line by central symmetry. To first order the area decreases, contradicting minimality. The midpoint condition is the stationary condition for the area of the hexagon.
+
+
+HK
+
+
+s5 s4 s0 K s3 s1 s2
+
+
+\begin{figureplaceholder}
+Figure 2.1: A critical hexagon HK circumscribing K. Its six edge midpoints sj lie on ∂K. The drawing is schematic.
+\end{figureplaceholder}
+
+\section{The algebra of midpoint hexagons}
+
+A centrally symmetric hexagon is determined conveniently by its edge midpoints. Label the midpoints cyclically by s0, . . . , s5. Central symmetry gives
+
+
+sj+3 = −sj.
+
+
+The midpoint relations also imply s0 + s2 + s4 = 0,
+
+
+and hence, after shifting indices, sj + sj+2 + sj+4 = 0.
+
+
+The determinants of consecutive midpoints are equal:
+
+
+det(sj, sj+1) = c,
+
+
+\begin{displaytext}
+where c > 0 is proportional to the area of HK. Under the paper’s normalization \
+√ \
+area(HK) = 12,
+\end{displaytext}
+
+\begin{displaytext}
+one has √ \
+3 \
+det(sj, sj+1) = . \
+2 \
+Definition 2.3 (Multipoint). A six-tuple (s0, . . . , s5) is a multipoint if \
+√ \
+3 \
+sj+3 = −sj, sj + sj+2 + sj+4 = 0, det(sj, sj+1) = \
+2
+\end{displaytext}
+
+for all indices modulo 6.
+
+
+The standard example is the set of sixth roots of unity
+
+
+\begin{displaytext}
+cos(jπ/3)! \
+s∗j = . sin(jπ/3)
+\end{displaytext}
+
+\section{The hyperbolic envelope}
+
+The special hyperbolas arise before any optimal-control theory appears. Consider two intersecting lines, which after an affine change of coordinates we may take to be the coordinate axes. A moving line with intercepts (a, 0) and (0, b) cuts off a right triangle of area ab/2. If the area is fixed, then
+
+
+ab = C.
+
+
+\begin{displaytext}
+The line is \
+x y \
++ = 1. \
+a b \
+Eliminating b = C/a gives a one-parameter family
+\end{displaytext}
+
+x ay + = 1. a C
+
+
+The envelope is obtained by solving the line equation together with its derivative with respect to a: −x + y = 0. a2 C
+
+
+This gives a2 = Cx/y, and substitution yields
+
+
+C xy = . 4
+
+
+Thus the envelope is a hyperbola whose asymptotes are the coordinate axes.
+
+
+y
+
+
+moving support lines cut off constant area
+
+
+xy = 1
+
+
+x
+
+
+\begin{figureplaceholder}
+Figure 2.2: A pencil of lines with constant product of intercepts has a hyperbola as its envelope.
+\end{figureplaceholder}
+
+Now return to a critical hexagon. Keep four of its six edges fixed, so that they form a parallelogram. Move the remaining opposite pair of edges while keeping the total hexagon area constant. Each moving edge belongs to a constant-area pencil. Therefore its midpoint traces an arc of a hyperbola, and the asymptotes are the lines extending the neighboring fixed edges.
+
+
+\begin{statementbox}{Lemma}
+Lemma 2.4 (Local hyperbola mechanism). If, during an interval of the boundary motion, the two neighboring midpoint curves are straight, then the intervening midpoint curve lies on a hyperbola whose asymptotes are those two straight lines.
+\end{statementbox}
+
+This elementary envelope calculation will later translate a vertex of the control triangle into a rounded hyperbolic corner.
+
+
+\section{Critical lattices and the inscribed hexagon}
+
+There is a dual description through the geometry of numbers. A lattice L is K-admissible if no nonzero lattice point lies in the interior of K. Its minimal determinant is
+
+
+∆(K) = inf det(L). L K-admissible
+
+
+A lattice achieving the infimum is critical.
+
+
+\begin{displaytext}
+Minkowski’s theory produces three boundary points s0, s1, s2 such that s0, s1 form a lattice basis \
+and 0, s0, s1, s2 form a parallelogram. Adding their negatives gives an inscribed centrally symmetric \
+hexagon \
+hK = conv \{±s0, ±s1, ±s2\} .
+\end{displaytext}
+
+For the associated circumscribed critical hexagon HK,
+
+
+\begin{displaytext}
+1 1 \
+∆(K) = area(hK) = area(HK). \
+3 4
+\end{displaytext}
+
+This is the precise bridge between admissible lattices and critical hexagons.
+
+
+\section{What is special about a global minimizer?}
+
+Reinhardt proved several regularity and coverage properties for a global minimizer Kmin.
+
+
+\begin{insightbox}{Standard theorem used as a black box}
+\end{insightbox}
+
+For a normalized global minimizer Kmin: 1. a minimizer exists; 2. every boundary point lies on an edge of some critical hexagon; 3. Kmin has no corners: every boundary point has a unique support line; 4. every boundary point is the midpoint of a unique edge of a critical hexagon; 5. as one midpoint moves counterclockwise around the boundary, the other five move continuously and strictly counterclockwise.
+
+
+The uniqueness of the critical hexagon through each boundary point is essential. It synchronizes six boundary points and turns one planar curve into a six-component moving frame.
+
+
+\section{Monotonicity triangles}
+
+Use affine invariance to send one multipoint to s∗j. The convex hull of these six points is a regular hexagon contained in K. The boundary between s∗j and s∗j+1 is confined to the triangle
+
+
+n o Tj = conv s∗j, s∗j+1, s∗j + s∗j+1 .
+
+
+Reinhardt’s monotonicity theorem says that if a second critical multipoint differs from the first, then its jth point lies in the interior of Tj. These six triangles are the geometric origin of the later “star inequalities.”
+
+
+T0
+
+
+hK
+
+
+\begin{figureplaceholder}
+Figure 2.3: The six triangles Tj surrounding the normalized midpoint hexagon. A moving critical multipoint stays in the corresponding triangles.
+\end{figureplaceholder}
+
+\section{Normalization and the reduced variational problem}
+
+\begin{displaytext}
+After fixing √ \
+area(HK) = 12,
+\end{displaytext}
+
+\begin{displaytext}
+we have \
+area(K) \
+δ(K) = √ . \
+12
+\end{displaytext}
+
+Therefore the Reinhardt minimizer is exactly the minimum-area disk among normalized disks satisfying the critical-hexagon synchronization described above.
+
+
+The next chapter packages these geometric conditions into the notion of a balanced disk and derives the six synchronized boundary curves.
+
+
+\begin{insightbox}{Chapter summary}
+\end{insightbox}
+
+A critical hexagon is a least-area centrally symmetric hexagon around K. Its edge midpoints lie on ∂K and satisfy simple determinant relations. For a global minimizer, every boundary point is the midpoint of a unique critical hexagon, so six boundary points move together. The hyperbolas are already present: a support line that moves while cutting off constant area has a hyperbolic envelope.
+

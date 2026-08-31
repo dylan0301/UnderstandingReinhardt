@@ -1,0 +1,275 @@
+% Reconstructed from the compiled lecture-note PDF.
+\chapter{The hidden hyperbolic plane}
+\section{The determinant-one surface}
+
+The normalized state matrix X satisfies
+
+
+\begin{displaytext}
+X ∈sl2(R), det X = 1, ⟨J, X⟩< 0.
+\end{displaytext}
+
+Write a b ! X = . c −a
+
+
+\begin{displaytext}
+Then −a2 −bc = 1. This is a two-dimensional quadratic surface inside the three-dimensional vector \
+space sl2(R). The component selected by ⟨J, X⟩= b −c < 0 is naturally a copy of the hyperbolic \
+plane.
+\end{displaytext}
+
+\begin{displaytext}
+Define the upper half-plane \
+H = \{z = x + iy ∈C : y > 0\} .
+\end{displaytext}
+
+\begin{displaytext}
+For z = x + iy, set \
+x/y −(x2 + y2)/y ! \
+Φ(z) = . \
+1/y −x/y
+\end{displaytext}
+
+A direct computation gives
+
+
+\begin{displaytext}
++ y2 + 1 tr Φ(z) = 0, det Φ(z) = 1, ⟨J, Φ(z)⟩= −x2 < 0. \
+y
+\end{displaytext}
+
+Conversely, every normalized state matrix in the selected component has this form.
+
+
+\begin{statementbox}{Theorem}
+Theorem 7.1 (Upper-half-plane parametrization). The map
+\end{statementbox}
+
+\begin{displaytext}
+Φ : H −→\{X ∈sl2(R) : det X = 1, ⟨J, X⟩< 0\}
+\end{displaytext}
+
+is a diffeomorphism.
+
+
+\section{Why matrix conjugation becomes a Möbius transformation}
+
+\begin{displaytext}
+A matrix \
+α β ! \
+g = ∈SL2(R) \
+γ δ
+\end{displaytext}
+
+\begin{displaytext}
+acts on H by \
+αz + β \
+g · z = . \
+γz + δ \
+The denominator never vanishes in H, and the imaginary part remains positive. The map Φ is \
+equivariant: \
+gΦ(z)g−1 = Φ(g · z). \
+Thus the conjugation motion of X is exactly the usual action of SL2(R) on the Poincaré upper \
+half-plane. \
+The stabilizer of J = Φ(i) is the rotation group SO2(R). Hence
+\end{displaytext}
+
+H ∼= SL2(R)/SO2(R).
+
+
+This is the geometric meaning of the adjoint orbit of J.
+
+
+Background interlude
+
+
+The Poincaré metric is dx2 + dy2 ds2 = . y2
+
+
+Its geodesics are vertical lines and semicircles orthogonal to the real axis. Möbius transformations by SL2(R) preserve this metric. The source also uses the symplectic form dx ∧dy/y2, but the metric picture is enough for most of the proof.
+
+
+\section{The star domain is an ideal triangle}
+
+Substitute X = Φ(x + iy) into the three star inequalities. They become
+
+
+\begin{displaytext}
+−1√ < x < √1 x2 + y2 > 1 3 3, 3.
+\end{displaytext}
+
+\begin{displaytext}
+Therefore the admissible X-states form \
+√ √ \
+H∗= nx + iy ∈H : −1/ 3 < x < 1/ 3, x2 + y2 > 1/3 o .
+\end{displaytext}
+
+\begin{displaytext}
+Its boundary consists of two vertical geodesics and a semicircle orthogonal to the real axis. Its three \
+vertices lie at the ideal boundary: \
+−1√ √1 ∞. 3, 3, \
+Thus H∗is an ideal hyperbolic triangle.
+\end{displaytext}
+
+y
+
+
+H∗
+
+
+i
+
+
+\begin{displaytext}
+√ √ x \
+−1/ 3 1/ 3
+\end{displaytext}
+
+\begin{figureplaceholder}
+Figure 7.1: The star domain H∗in the upper half-plane. The point z = i corresponds to the circle.
+\end{figureplaceholder}
+
+\section{The cost in hyperbolic coordinates}
+
+\begin{displaytext}
+Because \
++ y2 + 1 ⟨J, Φ(x + iy)⟩= −x2 , \
+y \
+the area becomes \
+3 Z tf x(t)2 + y(t)2 + 1 \
+area(K) = dt. \
+2 0 y(t) \
+The level sets of \
+x2 + y2 + 1 \
+y \
+are hyperbolic circles centered at i. Indeed,
+\end{displaytext}
+
+x2 + y2 + 1 cosh dH(x + iy, i) = . 2y
+
+
+Thus the cost density is 3 cosh dH(z, i).
+
+
+It is smallest at the circular state z = i and increases as the state moves hyperbolically away from the center.
+
+
+\begin{insightbox}{Point requiring care}
+\end{insightbox}
+
+\begin{displaytext}
+A pointwise smaller cost density does not imply a globally better shape. The circle stays at \
+z = i but requires terminal time π/3. Other trajectories can reach the rotational endpoint in \
+shorter time. The optimization balances path location and travel time.
+\end{displaytext}
+
+\begin{displaytext}
+The elementary inequality \
+x2 + y2 + 1 1 \
+≥y + ≥2 \
+y y \
+gives \
+area(K) ≥3tf.
+\end{displaytext}
+
+\begin{displaytext}
+Since a minimizer has area less than π, \
+π \
+tf < . \
+3
+\end{displaytext}
+
+\section{State equations for (x, y)}
+
+Write au bu ! Zu = , cu −au
+
+
+\begin{displaytext}
+where \
+u1 −u2 u0 −2u1 −2u2 \
+au = √ , bu = , cu = u0. \
+3 3 \
+Transferring X′ = [Zu, X]/ ⟨Zu, X⟩through Φ gives
+\end{displaytext}
+
+\begin{displaytext}
+y(2aux + bu −cux2 + cuy2) x′ = , (7.1) \
+2aux + bu −cux2 −cuy2 \
+2y2(au −cux) y′ = . (7.2) \
+2aux + bu −cux2 −cuy2
+\end{displaytext}
+
+Although these formulas look complicated, the vertex trajectories are simple generalized circles.
+
+
+\section{Constant controls}
+
+Fix u. The quantity ⟨X, Zu⟩is constant because
+
+
+\begin{displaytext}
+d ⟨[Zu, X], Zu⟩ \
+⟨X, Zu⟩= = 0. \
+dt ⟨Zu, X⟩
+\end{displaytext}
+
+Hence Zu P0 = ⟨Zu, X(0)⟩
+
+
+is constant and X(t) = etP0X(0)e−tP0.
+
+
+Equivariance implies z(t) = etP0 · z(0).
+
+
+For a vertex control, P0 has real eigenvalues, and the Möbius orbit is a generalized Euclidean circle joining two ideal vertices of H∗.
+
+
+\begin{displaytext}
+Up to cyclic symmetry: \
+√ \
+• one vertex gives straight lines from −1/ 3 toward ∞; \
+√ \
+• a second gives straight lines from ∞toward 1/ 3; \
+√ √ \
+• the third gives circular arcs from 1/ 3 toward −1/ 3.
+\end{displaytext}
+
+e2-flow e1-flow
+
+
+e0-flow
+
+
+\begin{figureplaceholder}
+Figure 7.2: Schematic vertex-control trajectories in the ideal triangle. Exact trajectories are generalized circles determined by the corresponding Möbius one-parameter groups.
+\end{figureplaceholder}
+
+\section{Dihedral symmetry}
+
+The equilateral control triangle has the dihedral symmetry group of order 6 after the central sign in SL2(R) is factored out. Rotation by R cyclically permutes
+
+
+e0, e1, e2
+
+
+and the three ideal vertices of H∗. Reflection across the imaginary axis reverses time and exchanges two controls. These symmetries greatly reduce case analysis. A fundamental domain for the action on H∗is one of six sectors bounded by three geodesics through i. Later, a related time-reversal symmetry will exchange the inward and outward chattering fixed points.
+
+
+\section{Smoothed polygon trajectories}
+
+\begin{displaytext}
+A bang-bang control cycles through the three vertices. In H∗, the state follows a concatenation of \
+generalized-circle arcs. For the known smoothed (6k + 2)-gons, the orbit repeatedly traces the sides \
+of a small equilateral curvilinear triangle centered at i. As k →∞, the triangle shrinks to i, and the \
+smoothed polygons converge to the circle.
+\end{displaytext}
+
+This hyperbolic picture is not required to define the control problem, but it reveals the geometry of its explicit extremals and identifies the circle as the singular center.
+
+
+\begin{insightbox}{Chapter summary}
+\end{insightbox}
+
+The determinant-one state surface is the hyperbolic upper half-plane. The star inequalities cut out an ideal triangle, and the circle is the central point z = i. The area density is 3 cosh dH(z, i). Constant vertex controls move along generalized circles joining ideal vertices, so bang-bang trajectories become curvilinear polygonal paths in the hyperbolic state space.
+

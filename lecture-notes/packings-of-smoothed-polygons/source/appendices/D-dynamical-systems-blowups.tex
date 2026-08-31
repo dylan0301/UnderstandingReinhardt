@@ -1,0 +1,328 @@
+% Reconstructed from the compiled lecture-note PDF.
+\chapter{Dynamical systems, Poincaré maps, and blowups}
+This appendix supplies the local dynamical-systems and algebraic-analytic tools used in the final part of the proof.
+
+
+\section{Fixed points of a map}
+
+\begin{displaytext}
+Let F : U ⊂Rn →Rn be continuously differentiable. A fixed point is q with F(q) = q. The linear \
+approximation is \
+F(q + h) = q + DF(q)h + o(||h||).
+\end{displaytext}
+
+The eigenvalues of DF(q) determine the first-order behavior of iterates near q.
+
+
+\begin{statementbox}{Definition}
+Definition D.1. A fixed point is hyperbolic if no eigenvalue of DF(q) has absolute value 1.
+\end{statementbox}
+
+\begin{displaytext}
+Directions with |λ| < 1 contract under forward iteration; directions with |λ| > 1 expand. Hyperbolicity is robust: sufficiently small C1 perturbations retain a nearby hyperbolic fixed point with the \
+same stable and unstable dimensions.
+\end{displaytext}
+
+\section{Stable and unstable sets}
+
+For a fixed point q, define
+
+
+\begin{displaytext}
+W s(q) = \{x : F n(x) →q as n →+∞\} , \
+W u(q) = x : F −n(x) →q as n →+∞ ,
+\end{displaytext}
+
+where the inverse iterates are defined. These sets need not be smooth globally, but near a hyperbolic fixed point they are manifolds.
+
+
+Stable-manifold theorem for a diffeomorphism
+
+
+Let F be a Cr local diffeomorphism, r ≥1, with a hyperbolic fixed point q. Then there are local Cr manifolds W loc(q)s and W loc(q)u tangent at q to the stable and unstable eigenspaces
+
+
+of DF(q). Points on the local stable manifold converge to q under forward iteration; points on the local unstable manifold converge under backward iteration.
+
+
+In the blown-up Reinhardt map, each relevant fixed point has one radial eigenvalue and several angular eigenvalues. The dimensions of its stable and unstable manifolds follow from the absolute values of those eigenvalues.
+
+
+\section{Poincare first-return maps}
+
+\begin{displaytext}
+Let x′ = f(x) be a smooth flow and let Σ be a hypersurface transverse to the flow. For x ∈Σ, let \
+T(x) > 0 be the first time the trajectory returns to Σ. The Poincare map is
+\end{displaytext}
+
+P(x) = φT(x)(x).
+
+
+It converts a continuous-time problem to a discrete one.
+
+
+In a bang-bang system, switching walls are natural sections. The first recurrence map starts at a switching point, follows the constant-control flow until the next admissible switch, applies symmetry normalization, and records the new switching state.
+
+
+The map is generally only piecewise analytic because different switching roots or control branches can be selected in different regions. The discontinuity surfaces are determined by root collisions and simultaneous wall events.
+
+
+\section{Self-similarity and fixed points after quotienting}
+
+Suppose a system admits scaling
+
+
+(z1, z2, z3, t) 7→(rz1, r2z2, r3z3, rt).
+
+
+A trajectory can reproduce itself after one switching up to this scaling and a discrete rotation. Once these symmetries are quotiented out, the trajectory becomes a fixed point of the recurrence map.
+
+
+Thus the inward and outward Fuller spirals are not fixed in the original phase space; they are fixed shapes under renormalization.
+
+
+\section{Basins of attraction}
+
+The basin of a stable fixed point q is
+
+
+\begin{displaytext}
+B(q) = \{x : F n(x) →q\} .
+\end{displaytext}
+
+Local stability only proves that a neighborhood of q lies in the basin. A global basin theorem must control every other initial condition.
+
+
+The source constructs a finite partition into cells D1, . . . , Dm and proves image relations of the form
+
+
+\begin{displaytext}
+F(Di) ⊂ [ Dj. \
+j≤i
+\end{displaytext}
+
+If the partial order is strict away from a small neighborhood of q, then the cell index is a discrete Lyapunov function: trajectories can move only downward and eventually enter the stable region.
+
+
+\subsection{Lyapunov functions}
+
+For a map, a Lyapunov function is a scalar V satisfying
+
+
+V (F(x)) < V (x)
+
+
+away from the target. A finite cell order is a coarse Lyapunov function. Instead of a real number, it assigns a rank in a finite partially ordered set.
+
+
+\section{Time-reversing involutions}
+
+\begin{displaytext}
+An involution τ satisfies τ 2 = I. It reverses time for a map F if
+\end{displaytext}
+
+\begin{displaytext}
+τFτ = F −1.
+\end{displaytext}
+
+Then a stable fixed point is carried to an unstable fixed point, and
+
+
+\begin{displaytext}
+τ(W s(q)) = W u(τq).
+\end{displaytext}
+
+The triangular Fuller system has such an involution from complex conjugation and sign changes. This symmetry reduces many arguments to one time direction.
+
+
+\section{Ordinary blowup of the origin}
+
+\begin{displaytext}
+The origin is a singular point when the dynamics depends on direction but not smoothly on \
+magnitude. Blowup separates directions. \
+In R2, write \
+(x, y) = r(cos θ, sin θ), r ≥0.
+\end{displaytext}
+
+\begin{displaytext}
+For r > 0 this is ordinary polar coordinates. Instead of collapsing all points with r = 0 to the origin, \
+blowup retains the circle of directions θ ∈S1. That circle is the exceptional divisor.
+\end{displaytext}
+
+A vector field singular at the origin may become regular after multiplication by a suitable power of r and extension to r = 0. The induced vector field on the exceptional divisor describes the leading directional dynamics.
+
+
+\section{Weighted blowup}
+
+The Fuller asymptotics have different orders:
+
+
+\begin{displaytext}
+z1 = O(t), z2 = O(t2), z3 = O(t3).
+\end{displaytext}
+
+\begin{displaytext}
+Ordinary polar coordinates ignore this structure. A weighted blowup uses \
+z1 = rez1, z2 = r2ez2, z3 = r3ez3.
+\end{displaytext}
+
+The variable r measures distance with weights (1, 2, 3); the tilded variables record weighted direction. The exceptional divisor is r = 0 modulo the residual scaling relation.
+
+
+The triangular Fuller equations are homogeneous for these weights. Therefore their recurrence map is exactly the map induced on the exceptional divisor. The exact Reinhardt equations equal the Fuller leading term plus higher weighted-order corrections.
+
+
+\section{Blowup charts}
+
+A projective blowup is covered by coordinate charts. In a simple weighted chart one chooses a nonzero component, for example z1, and sets
+
+
+\begin{displaytext}
+z2 z3 \
+r = |z1| , ez2 = r2 , ez3 = r3 ,
+\end{displaytext}
+
+with a phase normalization for z1/r. Other charts cover directions where z1 = 0 but another weighted component is nonzero.
+
+
+The source chooses coordinates adapted to switching walls and symmetries, reducing the divisor to a three-dimensional section. The exact coordinate formulas are specialized, but the underlying idea is standard weighted projective geometry.
+
+
+\section{Analytic extension across the divisor}
+
+Suppose the exact recurrence map in blown-up coordinates has the form
+
+
+R(r, q) = r a(r, q), F(q) + rG(r, q) .
+
+
+If a, G extend analytically to r = 0, then
+
+
+R(0, q) = (0, F(q)).
+
+
+Thus the exceptional divisor is invariant and carries the Fuller map F. Fixed points of F become fixed points of the exact map on the divisor.
+
+
+The difficult part is that the return time is defined as a root of a switching equation. Near a multiple root, ordinary implicit-function theory does not apply. Weierstrass preparation supplies a polynomial factor whose roots capture the return times.
+
+
+\section{Weierstrass preparation}
+
+Weierstrass preparation theorem, one distinguished variable
+
+
+\begin{displaytext}
+Let f(t, x) be real-analytic near (0, 0), where t ∈R and x ∈Rn. Suppose
+\end{displaytext}
+
+\begin{displaytext}
+f(0, 0) = ∂tf(0, 0) = · · · = ∂m−1t f(0, 0) = 0, ∂mt f(0, 0) ̸= 0.
+\end{displaytext}
+
+Then near (0, 0),
+
+
+f(t, x) = U(t, x) tm + am−1(x)tm−1 + · · · + a0(x) ,
+
+
+where U is analytic and nonzero, and the coefficients aj are analytic with aj(0) = 0.
+
+
+The nonvanishing factor U has no zeros, so the zeros of f are exactly the roots of the monic degree-m polynomial. Root selection can then be analyzed algebraically.
+
+
+For the Fuller switching problem, the switching functions are already cubic. For the exact Reinhardt map, preparation shows that the relevant switching equation is an analytic perturbation of such a cubic.
+
+
+\section{Discriminants}
+
+For a polynomial p(t), the discriminant vanishes exactly when p has a repeated complex root. For
+
+
+p(t) = at2 + bt + c,
+
+
+the discriminant is b2 −4ac. For a cubic
+
+
+p(t) = at3 + bt2 + ct + d,
+
+
+the discriminant is ∆= b2c2 −4ac3 −4b3d −27a2d2 + 18abcd.
+
+
+The sign of the cubic discriminant determines whether there are three distinct real roots or one real root and a complex-conjugate pair.
+
+
+Discriminant surfaces partition parameter space into regions with a fixed root pattern. This is one source of the cells used for the Fuller recurrence map.
+
+
+\section{Resultants}
+
+The resultant Rest(p, q) is a polynomial in the coefficients of p and q that vanishes exactly when p and q share a complex root. It can be computed as the determinant of the Sylvester matrix.
+
+
+In a switching problem, two candidate switching functions vanish simultaneously precisely on a resultant surface. Such surfaces mark changes in which wall is reached first. Together, discriminants and resultants provide an algebraic skeleton for the piecewise analytic partition.
+
+
+\section{Cluster points and invariant manifolds}
+
+Suppose qn is an orbit of the exact recurrence map with radial coordinate rn > 0 and rn →0. Compactness of the divisor gives a cluster point q∗. The leading map on the divisor constrains q∗.
+
+
+A typical argument has three stages:
+
+
+1. prove every divisor cluster point lies in a compact invariant set of the Fuller map; 2. use the global basin theorem to force the cluster point to the inward fixed point; 3. use local hyperbolicity and analytic extension to show the entire exact orbit lies on the stable manifold of that fixed point.
+
+
+The final step is stronger than mere convergence: it identifies a unique low-dimensional channel through which chattering can occur.
+
+
+\section{No-return arguments}
+
+A local unstable manifold says how trajectories leave a fixed point. To rule out periodicity one needs global information. The source continues the unstable curve from the outward fixed point and shows it reaches the boundary of the admissible star domain without returning to the divisor.
+
+
+Time reversal then implies that a trajectory entering through the inward stable curve cannot have emerged from the divisor at an earlier time. This one-sided history contradicts the two-sided recurrence required by a periodic minimizer.
+
+
+\section{Validated numerics for maps}
+
+A numerical picture is not by itself a proof of a set inclusion. Rigorous computation replaces points by sets and ordinary arithmetic by outward-rounded interval arithmetic.
+
+
+For a map defined by a switching root, a validated step has the following structure:
+
+
+1. enclose the initial cell by interval boxes; 2. isolate the desired positive root using interval Newton or Krawczyk methods; 3. evaluate the flow and normalization on the root interval; 4. prove every resulting interval satisfies the target cell inequalities; 5. subdivide if an interval is too wide.
+
+
+The finite containment graph can then be checked by a small independent verifier.
+
+
+\section{Exercises}
+
+\begin{statementbox}{Exercise}
+Exercise D.2. For F(x, y) = (x/2, 2y), find the stable and unstable manifolds of the origin.
+\end{statementbox}
+
+\begin{statementbox}{Exercise}
+Exercise D.3. Show that the map F(r, θ) = (r/2, θ + α) has the entire circle r = 0 as an invariant exceptional divisor, even though the unblown origin is a single point.
+\end{statementbox}
+
+\begin{statementbox}{Exercise}
+Exercise D.4. Compute the discriminant of t3 + pt + q and describe the regions with one or three real roots.
+\end{statementbox}
+
+\begin{statementbox}{Exercise}
+Exercise D.5. Let F(r, q) = (ra(q), G(q) + rH(r, q)). Show that r = 0 is invariant and that a fixed point of G gives a fixed point of F on the divisor.
+\end{statementbox}
+
+\begin{insightbox}{Chapter summary}
+\end{insightbox}
+
+The last part of the proof replaces a singular finite-time limit by regular dynamics on a weighted exceptional divisor. The triangular Fuller system is the induced leading map. Hyperbolic fixed points provide stable and unstable channels; a global basin theorem selects the only possible channel; and a no-return computation makes that channel incompatible with periodicity.
+

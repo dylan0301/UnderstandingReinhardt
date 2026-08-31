@@ -1,0 +1,136 @@
+% Reconstructed from the compiled lecture-note PDF.
+\chapter{Inward and outward fixed points}
+\section{Fixed angular profile versus physical motion}
+
+\begin{displaytext}
+A fixed point of the angular Poincaré map does not mean the physical Fuller state is stationary. It \
+means that one switching step changes only the scale and the discrete phase. If q is fixed angularly, \
+then \
+F(r, q) = (λr, q)
+\end{displaytext}
+
+for some scale factor λ > 0, after quotienting by the cyclic rotation.
+
+
+Thus:
+
+
+\begin{displaytext}
+• λ > 1 gives an outward self-similar spiral; \
+• 0 < λ < 1 gives an inward self-similar spiral.
+\end{displaytext}
+
+\begin{displaytext}
+For the triangular Fuller system, \
+λout = rscale ≈6.27417, λin = r−1scale ≈0.159384.
+\end{displaytext}
+
+\section{Solving the self-similarity equations}
+
+\begin{displaytext}
+Choose a first control u ∈VT and a switching time T > 0. The constant-control solution is \
+polynomial in T. Self-similarity requires \
+zj(T) = rjζ1zj(0), j = 1, 2, 3,
+\end{displaytext}
+
+\begin{displaytext}
+for some r > 0 and ζ1 ∈VT . These are linear equations in the initial data once (r, ζ1, T, u) are fixed.
+\end{displaytext}
+
+Solving the chain equations for z3(0) gives a rational expression. Imposing:
+
+
+• the switching-wall condition at time 0; • the switching-wall condition at time T; • Hamiltonian maximization at both endpoints; • the zero-Hamiltonian equation;
+
+
+reduces the scale to the roots of
+
+
+1 −5r −7r2 −5r3 −7r4 −5r5 + r6 = 0.
+
+
+The palindromic coefficients imply that if r is a root, so is 1/r. The two positive roots give qout and qin.
+
+
+A third formal fixed point with r = 1 appears before the zero-Hamiltonian condition is imposed. Its Hamiltonian is nonzero, so it is irrelevant to the singular extremal problem. It nevertheless arises as a limiting angular profile of the known smoothed (6k + 2)-gon extremals as they converge to the circle. This is a useful warning: taking a geometric limit of Reinhardt extremals need not preserve the leading-order Fuller Hamiltonian normalization.
+
+
+\section{Local contraction at qout}
+
+Choose local coordinates in D1 centered at qout. Differentiate the analytic branch of the next-switch map. The source computes the 3 × 3 Jacobian and finds all three eigenvalues to have modulus less than 0.1. Hence there is a neighborhood Uout such that
+
+
+F n(q) →qout
+
+
+for every q ∈Uout.
+
+
+The small eigenvalues mean the contraction is strong. This numerical fact is later useful when tracking the unstable manifold of the full Reinhardt map: errors transverse to the one expanding direction decay rapidly.
+
+
+\section{Time reversal and qin}
+
+\begin{displaytext}
+The involution \
+τ(z1, z2, z3) = (¯z1, −¯z2, ¯z3)
+\end{displaytext}
+
+conjugates forward and backward dynamics. It exchanges the two fixed points:
+
+
+\begin{displaytext}
+τ(qout) = qin.
+\end{displaytext}
+
+Therefore qin is unstable in forward angular time and stable in backward angular time.
+
+
+For a physical trajectory, however, inward motion means the radial scale decreases under forward iteration. The terminology can therefore be confusing:
+
+
+• qin is radially contracting but angularly unstable in forward time; • qout is radially expanding but angularly stable in forward time.
+
+
+The full four-dimensional Reinhardt map will combine these radial and angular directions.
+
+
+\section{Stable and unstable directions after adding the radius}
+
+At qout, the angular map has three contracting eigenvalues, while the radial multiplier is
+
+
+rscale > 1.
+
+
+Thus the full blown-up map has:
+
+
+• a three-dimensional stable space tangent to the exceptional divisor; • a one-dimensional unstable space transverse to the divisor.
+
+
+At qin, time reversal exchanges them:
+
+
+• a one-dimensional stable direction transverse to the divisor; • a three-dimensional unstable space tangent to the divisor.
+
+
+This dimension count is the heart of the final rigidity argument. A true trajectory entering the singularity must lie on the one-dimensional stable manifold of qin.
+
+
+\section{What the global basin theorem must add}
+
+\begin{displaytext}
+Local hyperbolicity says nothing about an angular point far from the fixed points. The global basin \
+theorem will show \
+q ̸= qin =⇒ F n(q) →qout.
+\end{displaytext}
+
+This implies a complete classification of Fuller trajectories emanating from or arriving at the singularity: an inward trajectory can have only the angular profile qin, and an outward one only qout.
+
+
+\begin{insightbox}{Chapter summary}
+\end{insightbox}
+
+The two fixed points are self-similar switching profiles with reciprocal scale factors. The outward profile is a strong angular attractor, while the inward profile is its time reverse. After restoring the radial coordinate, qout has three stable angular directions and one unstable radial direction; qin has the opposite splitting. The remaining global task is to show that no other angular recurrent behavior exists.
+

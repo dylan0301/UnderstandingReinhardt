@@ -1,0 +1,199 @@
+% Reconstructed from the compiled lecture-note PDF.
+\chapter{Balanced disks and six synchronized boundary curves}
+\section{From one boundary point to six}
+
+\begin{displaytext}
+Let K = Kmin be a normalized global minimizer. Choose a counterclockwise regular parametrization \
+of its boundary, \
+t 7−→σ0(t) ∈∂K. \
+For each t, the point σ0(t) is the midpoint of a unique critical hexagon. Let the other five edge \
+midpoints be \
+σ1(t), . . . , σ5(t).
+\end{displaytext}
+
+At every time, the six points form a multipoint:
+
+
+\begin{displaytext}
+σj+3(t) = −σj(t), (3.1) \
+σj(t) + σj+2(t) + σj+4(t) = 0, (3.2) \
+√ \
+3 \
+det(σj(t), σj+1(t)) = . (3.3) \
+2 \
+The strict monotonicity of critical hexagons implies that every σj runs counterclockwise around the \
+same boundary curve.
+\end{displaytext}
+
+\begin{statementbox}{Definition}
+Definition 3.1 (Multicurve). A family of curves
+\end{statementbox}
+
+\begin{displaytext}
+σj : I →R2, j ∈Z/6Z,
+\end{displaytext}
+
+\begin{displaytext}
+is a multicurve if (σ0(t), . . . , σ5(t)) is a multipoint for every t ∈I.
+\end{displaytext}
+
+A multicurve should be visualized as six synchronized particles on the same convex boundary. The parameter t is not six unrelated time variables; it records one moving critical hexagon.
+
+
+\section{Regularity inherited by all six curves}
+
+\begin{displaytext}
+The boundary of a general convex disk can have corners and flat pieces. Reinhardt’s minimizer has \
+no corners, so its tangent direction is continuous. If σ0 is a regular C1 parametrization, then all \
+other σj are regular C1 curves.
+\end{displaytext}
+
+\begin{displaytext}
+Here is the mechanism for σ2. Differentiate the constant determinant relation \
+√ \
+3 \
+det(σ0(t), σ2(t)) = . \
+2 \
+Writing the unit tangent of σ2 as u2(t) and its speed as v2(t) > 0, so that σ′2 = v2u2, gives \
+det(σ′0, σ2) + v2 det(σ0, u2) = 0.
+\end{displaytext}
+
+The monotonicity triangles guarantee that neither determinant vanishes. Hence
+
+
+\begin{displaytext}
+0(t), σ2(t)) v2(t) = −det(σ′ det(σ0(t), u2(t)),
+\end{displaytext}
+
+which is positive and continuous. The same argument cycles through all indices.
+
+
+\begin{displaytext}
+A further geometric estimate bounds the curvature from above by the curvature of the local \
+hyperbolic envelopes. If σ0 is parametrized by arclength, its tangent is Lipschitz. The determinant \
+relations then transfer Lipschitz regularity to all σ′j. \
+Corollary 3.2. Each σ′j is differentiable almost everywhere.
+\end{displaytext}
+
+\begin{prooftext}
+Proof. A Lipschitz function on an interval is differentiable almost everywhere by Rademacher’s theorem.
+\end{prooftext}
+
+This almost-everywhere second derivative is sufficient for curvature controls and optimal-control equations.
+
+
+\section{The global star condition}
+
+\begin{displaytext}
+Fix a time t and abbreviate sj = σj(t). The tangent σ′j(t) cannot point arbitrarily. Convexity \
+confines it to the open cone based at sj whose boundary rays point toward
+\end{displaytext}
+
+sj+1 and sj + sj+1.
+
+
+After translating the apex to the origin, this says that σ′j is a positive linear combination of the two edge directions sj+1 −sj, sj+1.
+
+
+The source calls this the star condition.
+
+
+Why are the inequalities strict? If a tangent lay exactly on a bounding ray, convexity and the multipoint relations would force another curve to have zero velocity or would create a corner. Both are impossible for a regular minimizing multicurve.
+
+
+\section{The local curvature condition}
+
+For a regular plane curve γ(t), the signed curvature is
+
+
+\begin{displaytext}
+det(γ′(t), γ′′(t)) \
+κsigned(t) = . \
+|γ′(t)|3
+\end{displaytext}
+
+ray through sj + sj+1
+
+
+σ′j(t) ray through sj+1
+
+
+sj
+
+
+\begin{figureplaceholder}
+Figure 3.1: The star condition: the tangent lies strictly inside a convex cone determined by the current critical multipoint.
+\end{figureplaceholder}
+
+A counterclockwise simple closed curve bounds a convex disk if and only if its signed curvature is nonnegative, interpreted almost everywhere when the derivative is Lipschitz. Hence
+
+
+\begin{displaytext}
+det(σ′j(t), σ′′j (t)) ≥0
+\end{displaytext}
+
+for almost every t.
+
+
+There are thus two distinct convexity constraints:
+
+
+• the global star condition, which controls tangent directions relative to the synchronized hexagon; • the local curvature condition, which forbids negative turning.
+
+
+Both are needed. Local nonnegative curvature alone would not ensure the six curves remain synchronized in the critical-hexagon geometry. The star condition alone would not prevent smallscale nonconvex bending.
+
+
+\section{Balanced disks}
+
+The paper packages the preceding properties into a class Kbal.
+
+
+\begin{statementbox}{Definition}
+Definition 3.3 (Balanced disk). A centrally symmetric convex disk K is balanced if its boundary admits six regular C1 curves σj such that:
+\end{statementbox}
+
+1. the derivatives σ′j are Lipschitz; 2. at each time the six points form a normalized multipoint; 3. the signed curvature is nonnegative almost everywhere; 4. the star condition holds at every time; 5. the six curves have the same image and fit together periodically.
+
+
+Every normalized global minimizer is balanced. The balanced class may contain non-minimizers; it is a convenient admissible class for the variational problem.
+
+
+\section{Circle representation}
+
+By affine invariance, choose one critical multipoint and send it to the sixth roots of unity s∗j. Reparametrize time so that this multipoint occurs at t = 0:
+
+
+\begin{displaytext}
+σj(0) = s∗j.
+\end{displaytext}
+
+This normalization is called the circle representation. The term does not mean that K is a circle. It means only that one synchronized hexagon is the regular one inscribed in the unit circle.
+
+
+The balanced Reinhardt problem is now:
+
+
+minimize area(K) over balanced disks in circle representation.
+
+
+\section{A first preview of the matrix reduction}
+
+The multipoint equations are linear and preserve determinants. This strongly suggests that every current multipoint is obtained from the standard one by a determinant-one linear map. Indeed, the next chapter proves that there is a unique matrix g(t) ∈SL2(R) such that
+
+
+\begin{displaytext}
+σj(t) = g(t)s∗j (j = 0, . . . , 5).
+\end{displaytext}
+
+Thus six plane curves are generated by one curve of matrices. The tangent directions are encoded by a traceless matrix X(t) = g(t)−1g′(t).
+
+
+The star condition becomes three elementary linear inequalities on the entries of X. The curvature condition becomes a control lying in a triangle.
+
+
+\begin{insightbox}{Chapter summary}
+\end{insightbox}
+
+A minimizing boundary is not treated as one free curve. Every boundary point determines a unique critical hexagon, so six points move together. Their multipoint identities, star inequalities, and nonnegative curvature define a balanced disk. Affine normalization fixes one multipoint as the sixth roots of unity. This makes a matrix representation unavoidable and prepares the passage from convex geometry to a finite-dimensional control system.
+

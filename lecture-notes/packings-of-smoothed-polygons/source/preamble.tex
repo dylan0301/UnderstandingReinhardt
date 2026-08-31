@@ -1,0 +1,36 @@
+\usepackage[letterpaper,margin=1in,headheight=14pt]{geometry}
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif}
+\setsansfont{DejaVu Sans}
+\setmonofont{DejaVu Sans Mono}[Scale=0.82]
+\usepackage{mathtools,amssymb}
+\usepackage{enumitem}
+\usepackage{booktabs,longtable,array}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{ragged2e}
+\usepackage{emptypage}
+\usepackage{tocloft}
+
+\hypersetup{hidelinks,pdftitle={Packings of Smoothed Polygons: A Self-Contained Guide},pdfauthor={Pedagogical lecture notes based on Hales and Vajjha}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55em}
+\raggedbottom
+\setlist{itemsep=.25em,topsep=.35em}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\small\itshape\rightmark}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{.3pt}
+
+% Reserve enough horizontal space for two-digit chapter and section numbers.
+\setlength{\cftchapnumwidth}{3.2em}
+\setlength{\cftsecnumwidth}{4.4em}
+\setlength{\cftsubsecnumwidth}{5.2em}
+
+\newenvironment{insightbox}[1]{\par\medskip\noindent\begin{minipage}{\textwidth}\hrule\smallskip\textbf{#1}\par\smallskip}{\smallskip\hrule\end{minipage}\par\medskip}
+\newenvironment{statementbox}[1]{\par\medskip\noindent\begin{minipage}{\textwidth}\hrule\smallskip\textbf{#1}\par\smallskip}{\smallskip\hrule\end{minipage}\par\medskip}
+\newenvironment{figureplaceholder}{\par\smallskip\noindent\begin{minipage}{\textwidth}\itshape\small\textbf{Figure note.}\ }{\end{minipage}\par\smallskip}
+\newenvironment{tableplaceholder}{\par\smallskip\noindent\begin{minipage}{\textwidth}\itshape\small\textbf{Table note.}\ }{\end{minipage}\par\smallskip}
+\newenvironment{displaytext}{\begin{center}\begin{minipage}{.94\textwidth}\small\RaggedRight}{\end{minipage}\end{center}}
+\newenvironment{prooftext}{\par\noindent\textbf{Proof.}\ }{\hfill$\square$\par}

@@ -1,0 +1,241 @@
+% Reconstructed from the compiled lecture-note PDF.
+\chapter{Bang-bang extremals and smoothed polygons}
+\section{Finite vertex switching gives the desired geometry}
+
+Suppose the control is piecewise constant and takes values only in the three vertices e0, e1, e2. On each constant segment, two state-dependent curvatures vanish. Therefore two synchronized boundary arcs are straight and the third is a hyperbolic arc. At a switching time, the state g, X is continuous, so the plane curves and their tangent lines match continuously.
+
+
+\begin{statementbox}{Proposition}
+Proposition 10.1. A bang-bang state trajectory with finitely many switches reconstructs a finitesided smoothed polygon of Reinhardt–Mahler type.
+\end{statementbox}
+
+Conversely, a smoothed polygon whose corners are rounded by the prescribed hyperbolas yields a finite vertex-control sequence. Thus the geometric theorem is equivalent to finite bang-bang behavior of the global minimizer.
+
+
+\section{Explicit constant-control splines}
+
+Let u0 be one vertex and let g0(z, t) be the constant-control solution with initial upper-half-plane state z. Cyclic symmetry gives gk(z, t) = Rkg0(z, t)R−k.
+
+
+A finite control word I = ((k1, t1), . . . , (kN, tN)) means: use control Rk1u0 for time t1, then Rk2u0 for time t2, and so on. Multiplying the corresponding segment solutions constructs a spline
+
+
+g(I, z0, t).
+
+
+Every finite bang-bang state trajectory arises in this way. The total area is the sum of the elementary segment costs.
+
+
+This explicit parametrization turns the search for special extremals into algebraic endpoint and switching equations.
+
+
+\section{The known family of smoothed (6k + 2)-gons}
+
+Choose the cyclic control sequence
+
+
+e2, e1, e0, e2, e1, e0, . . .
+
+
+with equal switching time tsw. In H∗, the state travels counterclockwise around a curvilinear equilateral triangle centered at i. Let the starting point be
+
+
+\begin{displaytext}
+1 \
+z0 = iy0, √ < y0 < 1. \
+3
+\end{displaytext}
+
+\begin{displaytext}
+The requirement that one segment moves z0 to R−1 · z0 gives \
+log 4/(3y20 + 1) \
+tsw = √ . \
+3y0
+\end{displaytext}
+
+The group endpoint condition after 3k + 1 segments imposes
+
+
+\begin{displaytext}
+4 πk \
+= 2 cos . \
+3y20 + 1 3k + 1
+\end{displaytext}
+
+For each positive integer k, these equations determine a smoothed (6k + 2)-gon that is a normal Pontryagin extremal.
+
+
+\begin{displaytext}
+For k = 1, one obtains the smoothed octagon. Its parameters are \
+s√ \
+8 −1 log 2 \
+y0 = , tsw = . 3 q√ 2 8 −1
+\end{displaytext}
+
+\begin{displaytext}
+Its area and density are √ \
+√ 8 − 32 −log 2 \
+area(Koct) = 12 √ , \
+8 −1 \
+√ \
+8 − 32 −log 2 \
+δoct = √ . \
+8 −1 \
+As k →∞, the triangular state orbit contracts to z = i, and the smoothed polygons converge to the \
+circle.
+\end{displaytext}
+
+\begin{insightbox}{Relation to the source paper}
+\end{insightbox}
+
+The source proves the Hamiltonian maximization inequalities on each segment by reducing a switching-function inequality to an elementary but lengthy inequality on a triangle in two real variables. This establishes that the constructed splines are genuine Pontryagin extremals, not merely state trajectories satisfying endpoint conditions.
+
+
+\section{Why the maximum principle alone is not yet enough}
+
+At a generic cotangent state, the Hamiltonian has a unique maximizing vertex. But on a wall, an entire edge of UT maximizes. A priori the optimal control might move through interior points of that edge for a positive time or switch infinitely often between its endpoints.
+
+
+The full Reinhardt encoding admits abnormal edge extremals with arbitrary measurable edge controls. To obtain a useful conclusion, the source re-encodes the same state motion as a smaller three-dimensional edge-control problem.
+
+
+\section{The edge-control problem}
+
+Consider the edge
+
+
+\begin{displaytext}
+1 1 u0 = 0, u1 = + v, u2 = −v, −1 ≤v ≤1 2 2 2 2. \
+In upper-half-plane coordinates the state equations simplify to \
+√ \
+2 3y2v \
+x′ = y, y′ = √ −1 + 2 3xv.
+\end{displaytext}
+
+In particular, x′ = y > 0,
+
+
+so x is strictly increasing. Introduce a third state variable
+
+
+1 s′ = y.
+
+
+The group variable g can then be reconstructed explicitly from (s, x, y). After subtracting an endpoint-dependent constant, the cost reduces to Z x2 dt. y
+
+
+This is the edge-control problem.
+
+
+\begin{displaytext}
+Let (λ1, λ2, λ3) be its costates. The control-dependent part of the Hamiltonian is λ2y′. Since y′ is \
+strictly monotone in v, the maximizing control is
+\end{displaytext}
+
+\begin{displaytext}
+1 v = −1 or v = \
+2 2 \
+according to the sign of λ2. Thus λ2 is the edge switching function.
+\end{displaytext}
+
+\section{Zeros of the edge switching function are isolated}
+
+\begin{displaytext}
+When \
+λ2(t0) = 0, λ′2(t0) ̸= 0, \
+the zero is plainly isolated. The delicate case is \
+λ2(t0) = λ′2(t0) = 0.
+\end{displaytext}
+
+The Hamiltonian equation H = 0 and the costate equation give
+
+
+\begin{displaytext}
+λ1(t0) = 0, λ3 = −x(t0)2λcost, λcost ̸= 0.
+\end{displaytext}
+
+Because x is strictly increasing, this exceptional relation can occur at at most two times.
+
+
+\begin{displaytext}
+A local expansion then shows that the zero remains isolated. After shifting t0 to 0 and normalizing \
+λcost = −1:
+\end{displaytext}
+
+\begin{displaytext}
+• if x(0) ̸= 0, then \
+λ2(t) = Ct2 + O(t3), C ̸= 0;
+\end{displaytext}
+
+\begin{displaytext}
+• if x(0) = 0, then \
+λ2(t) = −2 + O(t4). 3t3
+\end{displaytext}
+
+The estimates are uniform over all measurable edge controls. They are obtained by constructing explicit polynomial approximations to the costates and controlling the error with Gronwall’s inequality.
+
+
+\begin{statementbox}{Theorem}
+Theorem 10.2 (Finite switching on an edge; source Theorem 8.1.4). Every Pontryagin extremal of the edge-control problem is bang-bang with finitely many switches on a compact time interval.
+\end{statementbox}
+
+Logical core. The edge control is determined by the sign of the continuous switching function λ2. Every zero is isolated, including the possible double or triple zeros described above. A compact interval cannot contain infinitely many isolated zeros without an accumulation point, and every accumulation point would be another zero, contradicting its isolatedness. Hence only finitely many switches occur.
+
+
+\section{Edge extremality of a global minimizer}
+
+A globally minimizing Reinhardt trajectory is automatically optimal among all variations whose control remains on the same edge during any subinterval. Therefore it is also an extremal of the corresponding edge-control problem.
+
+
+\begin{statementbox}{Definition}
+Definition 10.3 (Edge-extremal trajectory). A Reinhardt trajectory is edge-extremal if, on every interval where its control lies in one edge of UT , it satisfies the Pontryagin conditions for the corresponding reduced edge-control problem.
+\end{statementbox}
+
+Every global minimizer is both Reinhardt extremal and edge-extremal.
+
+
+\section{The full singular locus}
+
+Let us temporarily denote by S the set where the Hamiltonian is independent of the entire triangle. We will identify it precisely in the next chapter. The following local result is the bridge from edge analysis to global bang-bang behavior.
+
+
+\begin{statementbox}{Theorem}
+Theorem 10.4 (Local edge confinement). Let a Reinhardt extremal be edge-extremal. At any time when it does not lie in S, there is a neighborhood on which all Hamiltonian-maximizing controls lie in one fixed edge of UT .
+\end{statementbox}
+
+\begin{displaytext}
+The proof is by contrapositive. If arbitrarily near t0 the maximizer is not confined to one edge, then \
+all three walls accumulate at t0. Continuity forces ΛR(t0) = 0. Estimates on the costate equation \
+then force \
+3 \
+Λ1(t0) = 2λcostJ, X(t0) = J, \
+which is exactly the singular locus.
+\end{displaytext}
+
+Combining local confinement with finite edge switching gives the decisive regular-region theorem.
+
+
+\begin{statementbox}{Theorem}
+Theorem 10.5 (Finite bang-bang switching away from the singular locus). Let a Reinhardt extremal be edge-extremal and avoid the singular locus on a compact interval. Then its control is bang-bang with finitely many switches on that interval.
+\end{statementbox}
+
+\begin{prooftext}
+Proof. Every time has a neighborhood in which the maximizers lie in one edge. On that neighborhood, the edge-control theorem gives finitely many switches between the endpoints. A finite subcover of the compact interval gives global finiteness.
+\end{prooftext}
+
+\section{What remains to prove}
+
+For a global minimizer, the preceding theorem already gives a smoothed polygon unless the trajectory meets or accumulates at the singular locus. The next chapter shows:
+
+
+• a trajectory cannot remain on the singular locus for positive time; • the singular locus is the circle; • the circle is not locally minimizing.
+
+
+After that, the only unresolved possibility is chattering into the singular locus in finite time.
+
+
+\begin{insightbox}{Chapter summary}
+\end{insightbox}
+
+Finite vertex switching is exactly the geometry of a smoothed polygon. The source constructs explicit smoothed (6k +2)-gon extremals, including the octagon. More importantly, a reduced edge-control problem proves that every edge-extremal trajectory has only finitely many edge switches. Hence any global minimizer that stays away from the full singular locus is already a finite bang-bang solution.
+

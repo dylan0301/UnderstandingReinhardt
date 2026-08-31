@@ -1,0 +1,177 @@
+% Reconstructed from the compiled lecture-note PDF.
+\chapter{The cluster-point theorem for the exact Reinhardt map}
+\section{The statement}
+
+Let q0, q1, q2, . . .
+
+
+be consecutive switching points of an exact Reinhardt Pontryagin extremal in the blown-up switching section. Assume:
+
+
+• each qn has positive radial coordinate rn > 0; • the switching times accumulate at a finite physical time; • a subsequence of qn converges to the exceptional divisor r = 0.
+
+
+The key theorem is:
+
+
+\begin{statementbox}{Theorem}
+Theorem 19.1 (Cluster-point theorem; source Theorem 16.4.1). Every such cluster point is qin, and the switching points lie on the one-dimensional stable manifold
+\end{statementbox}
+
+W s(qin)
+
+
+of the exact Reinhardt Poincaré map.
+
+
+This upgrades the leading-order Fuller classification to the exact nonlinear system.
+
+
+\section{Why exact switching functions are still cubic-like}
+
+In rescaled time s = t/r, an exact Reinhardt switching function has an analytic expansion
+
+
+\begin{displaytext}
+χRein(s, r, ξ) \
+= χF (s, ξ) + O(r), \
+r3
+\end{displaytext}
+
+where χF is a cubic Fuller switching polynomial. The convergence includes derivatives with respect to s on compact sets.
+
+
+For small r, the third derivative therefore has the same nonzero sign as the Fuller cubic’s leading coefficient. Consequently the exact switching function has at most three real zeros and the same qualitative shape as a cubic: at most one inflection point and at most two critical points.
+
+
+For a precise analytic factorization, the source invokes Weierstrass preparation.
+
+
+\begin{insightbox}{Standard theorem used as a black box}
+\end{insightbox}
+
+Weierstrass preparation, specialized form. Let f(s, p) be real analytic near (s0, p0), and suppose s 7→f(s, p0) has a zero of multiplicity m at s0. Then near (s0, p0),
+
+
+f(s, p) = U(s, p)W(s, p),
+
+
+where U is analytic and nonzero, and
+
+
+W(s, p) = (s −s0)m + am−1(p)(s −s0)m−1 + · · · + a0(p)
+
+
+is a monic polynomial whose coefficients are analytic in p.
+
+
+Apply this near each root of the limiting Fuller cubic and multiply the local Weierstrass polynomials. One obtains a global cubic polynomial in s whose coefficients depend analytically on (r, ξ) and whose real roots are exactly the relevant switching roots near the divisor.
+
+
+Thus the discriminants, resultants, multiplicities, active-root choices, and cell definitions from the Fuller system extend analytically to the exact Reinhardt system.
+
+
+\section{Thickening the cell partition}
+
+Let Di be a Fuller cell on the divisor. For sufficiently small r, define a thickened exact cell DRi
+
+
+\begin{displaytext}
+using the same sign conditions on the exact cubic coefficients, discriminants, resultants, and active \
+switching roots. Then \
+DRi ∩\{r = 0\} = Di. \
+On each DRi , the exact Poincaré map has a continuous branch \
+F iR : DRi →blown-up section
+\end{displaytext}
+
+that restricts at r = 0 to the Fuller branch Fi.
+
+
+The refined boxes D1,ij are thickened similarly. The exact definitions away from r = 0 are not unique; what matters is that they agree on the divisor and preserve the finite containment order for sufficiently small r.
+
+
+\section{Finite time converts a cluster point into a limit near a hyperbolic fixed point}
+
+Suppose qin is a cluster point. Near qin, the exact map has one contracting eigenvalue transverse to the divisor and three expanding eigenvalues tangent to it. A point whose forward iterates remain
+
+
+near qin and converge to it must lie on the local stable manifold.
+
+
+Could the orbit repeatedly visit a small neighborhood and then leave? The finite physical-time hypothesis excludes this. The unscaled time between switches is approximately
+
+
+∆tn = rn ∆sn.
+
+
+Near the fixed point, the scale changes by approximately the factor r−1scale. Traveling from outside an ε-neighborhood to inside an ε/rscale-neighborhood consumes a definite fraction of the current radial scale. Infinitely many large excursions would contribute a divergent or nonvanishing amount of time. Hence once a finite-time orbit enters sufficiently deeply, it must remain near the fixed point.
+
+
+Therefore a cluster at qin is actually convergence to qin, and the orbit lies on
+
+
+W s(qin).
+
+
+\section{Why qout cannot be a cluster point}
+
+At qout, the local stable manifold of the exact four-dimensional map is exactly the exceptional divisor. If a positive-radius switching orbit converged to qout, it would have to lie in this stable manifold, forcing rn = 0
+
+
+for all sufficiently large n. This contradicts the assumption that the switching points themselves are off the divisor.
+
+
+Thus qout is not a cluster point of an exact non-divisor orbit.
+
+
+\section{Descending the set of possible cluster points}
+
+Assume for contradiction that a cluster point q exists on the divisor and
+
+
+q ̸= qin, qout.
+
+
+Assign q to one of the Fuller pieces D in the finite geometric partition, choosing a subsequence qnk that lies in the corresponding thickened piece DR.
+
+
+Continuity of the branch gives F R(qnk) −→F(q). The global basin containment relations imply that F(q) lies in a piece eD that is strictly lower in the finite upper-triangular order, unless D is already the outward contraction region. Passing to a further subsequence, the exact images lie in eDR and have a cluster point in eD. Repeat. Because the order is finite and strictly descending, one eventually produces a cluster point in Dout.
+
+
+Within the outward box, the exact map is analytic and the local structure forces the closed cluster set to contain qout itself. But qout has already been excluded.
+
+
+This contradiction proves that no cluster point other than qin exists.
+
+
+\section{Why the orbit lies on the stable curve}
+
+We have shown that the switching points converge to qin. By definition, the stable set is
+
+
+\begin{displaytext}
+W s(qin) = \{q : F n(q) →qin\} .
+\end{displaytext}
+
+Near a hyperbolic fixed point, the stable set is the one-dimensional stable manifold. Once a tail of the orbit lies in the local stable manifold, invariance under the diffeomorphism propagates the conclusion backward along all switching points in the considered chattering segment.
+
+
+Thus the entire switching sequence approaching the singularity lies on the stable curve.
+
+
+\section{The logical dependence on the Fuller basin theorem}
+
+The cluster theorem uses the global basin theorem only through a finite descent property on the divisor. It does not require exact Reinhardt trajectories to shadow Fuller trajectories for arbitrarily long continuous time. The analytic blowup and cell thickening give enough continuity to transfer the combinatorial order of possible cluster regions.
+
+
+\begin{insightbox}{Geometric intuition}
+\end{insightbox}
+
+A cluster point is a possible “asymptotic direction” of chattering. The Fuller basin theorem says that every direction except the inward one is eventually carried toward the outward direction. But a true positive-radius orbit cannot converge to the outward fixed point because its stable manifold lies entirely on the divisor. Therefore the only direction available to an exact orbit entering the divisor is the inward stable curve.
+
+
+\begin{insightbox}{Chapter summary}
+\end{insightbox}
+
+Weierstrass preparation turns exact Reinhardt switching functions near the divisor into analytic cubic polynomials with the same root structure as the Fuller cubics. This thickens the Fuller cell partition to the exact system. Any non-inward cluster direction descends through the finite containment order to the outward box, where positive-radius convergence is impossible because the stable manifold is the divisor. Hence every finite-time chattering sequence converges to qin along its one-dimensional stable manifold.
+

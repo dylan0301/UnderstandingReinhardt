@@ -1,0 +1,203 @@
+% Reconstructed from the compiled lecture-note PDF.
+\chapter{The global basin theorem}
+\section{Statement}
+
+The central discrete-dynamical result is:
+
+
+\begin{statementbox}{Theorem}
+Theorem 18.1 (Global basin; source Theorem 16.1.1). Let q ∈ΞW,0/VT . If q ̸= qin, then
+\end{statementbox}
+
+\begin{displaytext}
+F n(q) −→qout (n →∞).
+\end{displaytext}
+
+The theorem rules out periodic, quasiperiodic, or chaotic angular switching patterns on the exceptional divisor. There is one exceptional backward attractor qin; everything else is drawn to qout.
+
+
+\section{Why local stability is insufficient}
+
+The map is three-dimensional and piecewise continuous. Even a strongly attracting fixed point can coexist with other invariant sets far away. A global proof must force every orbit through a finite sequence of regions into the local contraction neighborhood.
+
+
+The source accomplishes this by a finite containment graph. The geometric partition D0, . . . , D4 makes each branch continuous. Then D1, the piece containing both fixed points, is subdivided into smaller rectangular boxes.
+
+
+\section{The coarse containment table}
+
+Let Din ⊂D1
+
+
+be a small rectangular box containing qin, and
+
+
+Dout ⊂D1
+
+
+be a box containing qout. The verified coarse inclusions are summarized by the following table. A star means that the row-set may map into the column-set.
+
+
+Din Dout D4 D2 D0 D3 D1 \textbackslash{} Din
+
+
+Din ∗ ∗ ∗ ∗ ∗ ∗ ∗ Dout ∗ D4 ∗ ∗ D2 ∗ D0 ∗ D3 ∗ D1 \textbackslash{} Din ∗
+
+
+The first row imposes no restriction near the unstable inward point. Every other row is upper triangular in the displayed ordering.
+
+
+The inclusions have conceptual explanations from the involution:
+
+
+\begin{displaytext}
+F(D4) = τ(D3) ⊂D2 ∪D3, \
+F(D2) = τ(D2) ⊂D3, \
+F(D0) = τ(D0) ⊂D1 \textbackslash{} Din, \
+F(D3) = τ(D4) ⊂D1 \textbackslash{} Din.
+\end{displaytext}
+
+The contraction inclusion F(Dout) ⊂Dout
+
+
+is checked directly.
+
+
+\section{The boundary containment method}
+
+On each Di, the selected switching root and the resulting map Fi are continuous. The sets used for containment are boxes or regular closed cells described by analytic inequalities. The source evaluates the images of their boundary faces and encloses those images in convex target regions.
+
+
+The computational principle is:
+
+
+1. express the constant-control solution and switching time analytically; 2. restrict the initial data to one face of a cell; 3. calculate or sample the resulting image surface; 4. verify that each supporting half-space defining the target contains the image; 5. use the branch’s topological regularity to conclude containment of the full cell.
+
+
+The source calls this the boundary method. It is a finite-dimensional analogue of interval-arithmetic containment, though the presentation uses Mathematica rather than a full interval package.
+
+
+\section{A strict order inside D1}
+
+\begin{displaytext}
+The coarse table leaves D1 \textbackslash{} Din invariant, so a finer descent is needed. Divide the coordinate ranges \
+into thirds: \
+π 2π \
+0 = a0 < a1 = < a2 = < a3 = π, \
+3 3
+\end{displaytext}
+
+\begin{figureplaceholder}
+Figure 18.1: The image of the box Dout lies strictly inside it and contracts toward qout. Source Figure 16.1.1.
+\end{figureplaceholder}
+
+\begin{displaytext}
+π = b0 > b1 = π −1.1 > b2 = 1.1 > b3 = 0.
+\end{displaytext}
+
+\begin{displaytext}
+Define boxes \
+Dij = \{0 ≤r2 ≤1, ai ≤ψ ≤ai+1, bj+1 ≤θ2 ≤bj\} ,
+\end{displaytext}
+
+\begin{displaytext}
+and \
+D1,ij = D1 ∩Dij, i, j ∈\{0, 1, 2\} .
+\end{displaytext}
+
+\begin{displaytext}
+Then \
+qout ∈D1,00 = Dout, qin ∈D1,22 = Din.
+\end{displaytext}
+
+Order the index pairs lexicographically:
+
+
+\begin{displaytext}
+(k, l) < (i, j) ⇐⇒ k < i or (k = i and l< j).
+\end{displaytext}
+
+The verified refinement is F(D1,ij) ⊂ [ Dkl (k,l)<(i,j)
+
+
+after excluding (i, j) = (0, 0), (2, 2). Therefore every orbit in D1 \textbackslash{} Din strictly descends through a finite ordered list of boxes until it enters Dout.
+
+
+\begin{insightbox}{Geometric intuition}
+\end{insightbox}
+
+The lexicographic pair (i, j) is a discrete Lyapunov function. It need not decrease at every point of the original continuous flow, but it decreases at every Poincaré step once the orbit is in D1 \textbackslash{} Din.
+
+
+\section{Representative computed images}
+
+The source displays full three-dimensional images of two difficult boxes. Their projections are contained in unions of earlier boxes, providing the strict descent.
+
+
+\section{Escaping the inward box}
+
+The inward fixed point is unstable in forward angular time. However, an arbitrary point in Din could in principle remain there for many iterates. Time reversal resolves this.
+
+
+\begin{displaytext}
+Suppose q ∈Din and q ̸= qin. Apply the time-reversal involution. The point τ(q) lies near qout for \
+the inverse dynamics. Because qout is locally attracting forward, it is locally repelling backward. \
+Therefore the backward orbit of τ(q) eventually leaves Dout, which translates into the forward orbit \
+of q eventually leaving Din.
+\end{displaytext}
+
+Once the orbit exits Din, the coarse upper-triangular structure sends it after finitely many steps into D1 \textbackslash{} Din. The refined lexicographic structure then sends it into Dout.
+
+
+(a) A computed image corresponding to one refined box. (b) A second computed image.
+
+
+\begin{figureplaceholder}
+Figure 18.2: Representative images used in the containment verification, from source Figure 16.1.4. The purpose is not visual aesthetics but certified range control for the recurrence map.
+\end{figureplaceholder}
+
+\section{Convergence inside Dout}
+
+The inclusion F(Dout) ⊂Dout
+
+
+keeps all subsequent iterates inside the contraction box. The Jacobian at qout has spectral radius less than 0.1, and the verified image is already substantially smaller than the box. Standard contraction or local asymptotic-stability theory gives
+
+
+F n(q) →qout.
+
+
+This completes the proof of the global basin theorem.
+
+
+\section{Classification of Fuller trajectories reaching the singularity}
+
+Restore the radial coordinate. Suppose a Fuller trajectory reaches the singularity in forward time. Let q be any of its angular switching points. If q ̸= qin, the global basin theorem says its forward angular iterates approach qout. But qout has radial multiplier greater than 1, so the physical trajectory eventually moves outward, not inward. Contradiction.
+
+
+Therefore every inward Fuller trajectory has all switching points on the ray over qin. By time reversal, every outward trajectory has all switching points over qout.
+
+
+\begin{statementbox}{Theorem}
+Theorem 18.2 (Classification of singular Fuller trajectories). Every triangular Fuller trajectory emanating from the singularity is the outward self-similar triangular spiral, up to virial symmetry. Every trajectory arriving at the singularity is the inward self-similar triangular spiral.
+\end{statementbox}
+
+\section{What has been achieved}
+
+The complicated angular Poincaré map has no hidden recurrent set. Its entire global dynamics is organized by two fixed points and a finite transient graph. This rigidity is what makes the cluster-point theorem for the exact Reinhardt map possible.
+
+
+\begin{insightbox}{Point requiring care}
+\end{insightbox}
+
+The global basin theorem is the most substantial computer-assisted step. Its logical implication from the containment relations is elementary and fully explained above. The burden of computation is the verification of those inclusions for the analytic branches of the switching map.
+
+
+\begin{insightbox}{Chapter summary}
+\end{insightbox}
+
+A finite geometric partition makes the Fuller Poincaré map continuous branch by branch. A coarse upper-triangular containment table moves every orbit toward D1, while a 3 × 3 box refinement inside D1 supplies a strict lexicographic descent to the contraction box around qout. Time reversal excludes trapping near qin. Therefore qout attracts every angular point except qin, and the only Fuller trajectories reaching or leaving the singularity are the two
+
+
+self-similar triangular spirals.
+
