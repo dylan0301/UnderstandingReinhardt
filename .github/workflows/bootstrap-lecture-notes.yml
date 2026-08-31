@@ -1,0 +1,39 @@
+name: Install structured lecture-note project
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'bootstrap/reinhardt-source-bundle.part-*'
+      - '.github/workflows/bootstrap-lecture-notes.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reassemble and verify source bundle
+        run: |
+          cat bootstrap/reinhardt-source-bundle.part-* | base64 --decode > /tmp/reinhardt-source-bundle.tar.xz
+          echo 'b3731eae0ef00f93d1548816227b1e129fa3f1ff38fd613b1363d7ce19e94a61  /tmp/reinhardt-source-bundle.tar.xz' | sha256sum --check
+          tar -xJf /tmp/reinhardt-source-bundle.tar.xz
+      - name: Install TeX and PDF utilities
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y latexmk texlive-xetex texlive-latex-base texlive-latex-extra texlive-fonts-recommended fonts-dejavu-core poppler-utils
+      - name: Build and verify lecture notes
+        working-directory: lecture-notes/packings-of-smoothed-polygons
+        run: make verify
+      - name: Replace bootstrap payload with structured project
+        run: |
+          rm -rf bootstrap
+          rm -f .github/workflows/bootstrap-lecture-notes.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Add structured Reinhardt lecture notes and compiled PDF [skip lecture build]'
+          git push
